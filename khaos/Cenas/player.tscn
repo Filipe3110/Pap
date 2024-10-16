@@ -1,112 +1,46 @@
-[gd_scene load_steps=15 format=3 uid="uid://ggd4lo3ux08y"]
+[gd_scene load_steps=8 format=3 uid="uid://ggd4lo3ux08y"]
 
 [ext_resource type="Script" path="res://Scrips/player.gd" id="1_5jnab"]
-[ext_resource type="Texture2D" uid="uid://dccph3d2ovpth" path="res://Sprites/Asset Packs 1-5/Asset Pack-V1/Player Idle/Player Idle 48x48.png" id="2_odjg4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0g4dc"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(0, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_in0lc"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(48, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufwpm"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(96, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hb5uk"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(144, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0uun7"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(192, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_541tn"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(240, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y8jxh"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(288, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j6jt1"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(336, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vv06"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(384, 0, 39, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_exw1g"]
-atlas = ExtResource("2_odjg4")
-region = Rect2(432, 0, 39, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w8p6f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0g4dc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_in0lc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ufwpm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hb5uk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0uun7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_541tn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y8jxh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j6jt1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1vv06")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_exw1g")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Jump",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Walk",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://b7s8iuxs6a2ch" path="res://Sprites/Players/Player Idle 1.png" id="2_slnbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qylks"]
-size = Vector2(125, 124)
+size = Vector2(210, 239)
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_op6sh"]
+min_space = Vector2(0, -1)
+max_space = Vector2(2, 1)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7xcpf"]
+states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_op6sh")
+states/BlendSpace2D/position = Vector2(578, 165)
+
+[sub_resource type="Animation" id="Animation_wnhqr"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwcbs"]
+_data = {
+"Idle": SubResource("Animation_wnhqr")
+}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5jnab")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimatedSprite2D")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-15, -50)
-scale = Vector2(10.4708, 8.06901)
-sprite_frames = SubResource("SpriteFrames_w8p6f")
-animation = &"Jump"
-autoplay = "Idle"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(11, -43.5)
 shape = SubResource("RectangleShape2D_qylks")
+
+[node name="PlayerIdle1" type="Sprite2D" parent="."]
+position = Vector2(10, -44)
+scale = Vector2(11.1579, 9.23077)
+texture = ExtResource("2_slnbw")
+
+[node name="Animation_tree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_7xcpf")
+parameters/BlendSpace2D/blend_position = Vector2(0.885533, -0.776596)
+
+[node name="Animation_player" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_wwcbs")
+}
+autoplay = "Idle"

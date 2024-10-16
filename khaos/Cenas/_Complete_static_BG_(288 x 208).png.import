@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx8su63p67lle"
-path="res://.godot/imported/player air spin 48x48.png-f336adc0567a9a8386eba8af14c5db3d.ctex"
+uid="uid://b63d4wiuafwhw"
+path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-d6eb1624300832bb6a522405bd5e0209.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Asset Packs 1-5/Asset Pack-V2/Air Spin/player air spin 48x48.png"
-dest_files=["res://.godot/imported/player air spin 48x48.png-f336adc0567a9a8386eba8af14c5db3d.ctex"]
+source_file="res://Cenas/_Complete_static_BG_(288 x 208).png"
+dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-d6eb1624300832bb6a522405bd5e0209.ctex"]
 
 [params]
 

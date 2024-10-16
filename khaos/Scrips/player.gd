@@ -14,11 +14,9 @@ func _physics_process(delta: float) -> void:
 	# Movimento para a direita
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED if is_on_floor() else SPEED * 1.3
-		$AnimatedSprite2D.flip_h = false
 	# Movimento para a esquerda
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED if is_on_floor() else -SPEED * 1.3
-		$AnimatedSprite2D.flip_h = true
 	# Nenhum movimento lateral
 	else:
 		velocity.x = 0
@@ -26,5 +24,6 @@ func _physics_process(delta: float) -> void:
 	# Salto
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_FORCE  # Aplica a força do salto
+
 
 	move_and_slide()  # Necessário para mover e aplicar física no personagem

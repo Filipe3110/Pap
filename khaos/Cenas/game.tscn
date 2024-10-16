@@ -8,10 +8,12 @@ size = Vector2(1153, 20)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ov8iu")]
-position = Vector2(212, 335)
+position = Vector2(288, 568)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(575.5, 639)
+position = Vector2(576, 641)
 shape = SubResource("RectangleShape2D_20rpe")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
