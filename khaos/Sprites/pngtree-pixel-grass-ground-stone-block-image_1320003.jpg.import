@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blx2hk2ugdmc2"
-path="res://.godot/imported/Player Side-Climb 48x48.png-c6fd8112ea429eeeaccf4e3e4fc98688.ctex"
+uid="uid://b45osm4luxms1"
+path="res://.godot/imported/pngtree-pixel-grass-ground-stone-block-image_1320003.jpg-69ff616726bf0b53a921a961875e43db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scrips/Asset Packs 1-5/Asset Pack-V4/Player Climb-Side/Player Side-Climb 48x48.png"
-dest_files=["res://.godot/imported/Player Side-Climb 48x48.png-c6fd8112ea429eeeaccf4e3e4fc98688.ctex"]
+source_file="res://Sprites/pngtree-pixel-grass-ground-stone-block-image_1320003.jpg"
+dest_files=["res://.godot/imported/pngtree-pixel-grass-ground-stone-block-image_1320003.jpg-69ff616726bf0b53a921a961875e43db.ctex"]
 
 [params]
 
