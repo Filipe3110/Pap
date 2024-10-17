@@ -1,20 +1,24 @@
 extends CharacterBody2D
 
-@export var SPEED:= 200.0
-@export var grav: = 10.0
-#@onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
-	#anim_player.play("idle")
-@onready var anim_sprite := $AnimatedSprite2
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+@onready var anim_sprite :=$anim as AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	if !is_on_floor():
-		velocity.y += grav
-	if Input.is_action_pressed("right"):
-		velocity.x = SPEED if (is_on_floor()) else SPEED * 1.3
-		$AnimatedSprite2D.flip_h = false
-	elif Input.is_action_pressed("left"):
-		velocity.x = -SPEED if (is_on_floor()) else -SPEED * 1.3
-		$AnimatedSprite2D.flip_h = true
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	var direction := Input.get_axis("left", "right")
+	if direction !=0:
+		velocity.x = direction * SPEED
+		anim_sprite.play("run")
+		anim_sprite.scale.x = direction
 	else:
-		velocity.x = 0
-	
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		anim_sprite.play("idle")
+		 
+
+	move_and_slide()
