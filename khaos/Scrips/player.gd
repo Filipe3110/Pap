@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		is_jumping = false
 	
 	# Verifica se o player pode pular
-	if Input.is_action_just_pressed("up") and is_on_floor():
+	if Input.is_action_just_pressed("up") and is_on_floor() and not is_attacking:
 		velocity.y = JUMP_FORCE
 		is_jumping = true
 	
@@ -25,23 +25,22 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("left", "right")
 
-	# Executa o movimento independentemente de estar atacando ou não
-	if direction != 0:
-		velocity.x = direction * SPEED
-		anim_sprite.scale.x = direction
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	# Executa o movimento APENAS se não estiver atacando
+	if not is_attacking:
+		if direction != 0:
+			velocity.x = direction * SPEED
+			anim_sprite.scale.x = direction
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Escolhe a animação correta
-	if is_attacking:
-		anim_sprite.play("attack")
-	elif is_jumping:
-		anim_sprite.play("jump")
-	elif direction != 0:
-		anim_sprite.play("run")
-	else:
-		anim_sprite.play("idle")
-	
+		# Escolhe a animação correta com base no movimento e pulo
+		if is_jumping:
+			anim_sprite.play("jump")
+		elif direction != 0:
+			anim_sprite.play("run")
+		else:
+			anim_sprite.play("idle")
+
 	move_and_slide()
 
 func start_attack() -> void:
@@ -50,5 +49,6 @@ func start_attack() -> void:
 
 # Este método será chamado automaticamente quando qualquer animação acabar
 func _on_animation_finished() -> void:
+	# Verifica se a animação finalizada é a de ataque
 	if anim_sprite.animation == "attack":
 		is_attacking = false
