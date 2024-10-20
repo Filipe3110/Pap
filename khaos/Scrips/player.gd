@@ -6,6 +6,10 @@ var is_jumping := false
 var is_attacking := false
 @onready var anim_sprite := $anim as AnimatedSprite2D
 
+func _ready() -> void:
+	# Conecta o sinal animation_finished ao método _on_animation_finished usando Callable no Godot 4
+	anim_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
 func _physics_process(delta: float) -> void:
 	# Checa se o player está no ar
 	if not is_on_floor():
