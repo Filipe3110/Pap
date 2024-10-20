@@ -211,14 +211,14 @@ _data = {
 script = ExtResource("1_5jnab")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(44, -6)
-scale = Vector2(0.0554017, 0.0524193)
+position = Vector2(44.2576, -5.3639)
+scale = Vector2(0.0551399, 0.0515414)
 sprite_frames = SubResource("SpriteFrames_mp6q4")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2.8)
 shape = SubResource("RectangleShape2D_qylks")
 
 [node name="Animation_player" type="AnimationPlayer" parent="."]
