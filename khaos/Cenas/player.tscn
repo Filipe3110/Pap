@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ggd4lo3ux08y"]
+[gd_scene load_steps=18 format=3 uid="uid://ggd4lo3ux08y"]
 
 [ext_resource type="Script" path="res://Scrips/player.gd" id="1_5jnab"]
 [ext_resource type="Texture2D" uid="uid://dsw5v1c5xc3r5" path="res://Sprites/Players/Player_jeb1.png" id="2_mm2ma"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dpjb36jbiidue" path="res://Sprites/Players/Player_jeb4.png" id="5_o61mv"]
 [ext_resource type="Texture2D" uid="uid://rgavgsgk5j42" path="res://Sprites/Players/Player_jeb5.png" id="6_jwbp3"]
 [ext_resource type="Texture2D" uid="uid://doqknr8gtki5d" path="res://Sprites/Players/Player_jeb6.png" id="7_e0s04"]
-[ext_resource type="Texture2D" uid="uid://7yjs8wvrfxtw" path="res://Sprites/Player_idle1.png" id="9_fixg2"]
-[ext_resource type="Texture2D" uid="uid://bd88pu7moi3b" path="res://Sprites/Player_idle2.png" id="10_pse3y"]
+[ext_resource type="Texture2D" uid="uid://b7qgo0b8kjdo" path="res://Sprites/Player_jump.png" id="9_ldj0s"]
+[ext_resource type="Texture2D" uid="uid://c3bsl5uc6vj6f" path="res://Sprites/Players/Player_idle2.png" id="9_qbry0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0d4wa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mp6q4"]
 animations = [{
@@ -42,18 +44,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_fixg2")
+"texture": ExtResource("2_mm2ma")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_pse3y")
+"texture": ExtResource("9_qbry0")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_e0s04")
+"texture": ExtResource("9_ldj0s")
 }],
 "loop": true,
 "name": &"jump",
@@ -61,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_fixg2")
+"texture": SubResource("CompressedTexture2D_0d4wa")
 }],
 "loop": true,
 "name": &"run",
@@ -69,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qylks"]
-size = Vector2(353, 518)
+size = Vector2(353, 515)
 
 [sub_resource type="Animation" id="Animation_nyvoe"]
 length = 0.001
@@ -100,14 +102,17 @@ script = ExtResource("1_5jnab")
 position = Vector2(8.34465e-07, 3)
 scale = Vector2(1, 1.043)
 sprite_frames = SubResource("SpriteFrames_mp6q4")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-23.5, 19)
+position = Vector2(-23.5, 17.5)
 shape = SubResource("RectangleShape2D_qylks")
 
 [node name="Animation_player" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_yr444")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, -217)
