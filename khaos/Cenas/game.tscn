@@ -11,7 +11,7 @@ size = Vector2(2689, 33)
 
 [node name="Player" parent="." instance=ExtResource("1_ov8iu")]
 position = Vector2(243, 408)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.45, 0.45)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -44,5 +44,3 @@ z_index = -1
 position = Vector2(597.5, 525.5)
 scale = Vector2(4.19097, 6.36058)
 texture = ExtResource("3_qww4j")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
