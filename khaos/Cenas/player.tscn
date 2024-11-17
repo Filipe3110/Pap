@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpjb36jbiidue" path="res://Sprites/Players/Player_jeb4.png" id="5_o61mv"]
 [ext_resource type="Texture2D" uid="uid://rgavgsgk5j42" path="res://Sprites/Players/Player_jeb5.png" id="6_jwbp3"]
 [ext_resource type="Texture2D" uid="uid://doqknr8gtki5d" path="res://Sprites/Players/Player_jeb6.png" id="7_e0s04"]
-[ext_resource type="Texture2D" uid="uid://b7qgo0b8kjdo" path="res://Sprites/Player_jump.png" id="9_ldj0s"]
+[ext_resource type="Texture2D" uid="uid://iv04cn48j211" path="res://Sprites/Players/Player_jump.png" id="9_1ugfl"]
 [ext_resource type="Texture2D" uid="uid://c3bsl5uc6vj6f" path="res://Sprites/Players/Player_idle2.png" id="9_qbry0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0d4wa"]
@@ -55,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_ldj0s")
+"texture": ExtResource("9_1ugfl")
 }],
 "loop": true,
 "name": &"jump",
@@ -102,7 +102,7 @@ script = ExtResource("1_5jnab")
 position = Vector2(8.34465e-07, 3)
 scale = Vector2(1, 1.043)
 sprite_frames = SubResource("SpriteFrames_mp6q4")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
