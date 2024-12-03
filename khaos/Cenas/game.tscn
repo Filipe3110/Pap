@@ -1,46 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://duw3yppumbcw6"]
 
 [ext_resource type="PackedScene" uid="uid://ggd4lo3ux08y" path="res://Cenas/player.tscn" id="1_ov8iu"]
-[ext_resource type="Texture2D" uid="uid://b45osm4luxms1" path="res://Sprites/pngtree-pixel-grass-ground-stone-block-image_1320003.jpg" id="2_vkatu"]
-[ext_resource type="Texture2D" uid="uid://bh6nr2p2k3jbf" path="res://Sprites/Asset Packs 1-5/_Complete_static_BG_(288 x 208).png" id="3_qww4j"]
+[ext_resource type="Texture2D" uid="uid://br6jleo2xnfof" path="res://fundo espaço.jpg" id="2_gjn81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20rpe"]
-size = Vector2(2689, 33)
+size = Vector2(2998.5, 33)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaglm"]
 
 [node name="Game" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_ov8iu")]
-position = Vector2(243, 408)
-scale = Vector2(0.45, 0.45)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1328.5, 565.5)
+position = Vector2(1483.75, 633)
 shape = SubResource("RectangleShape2D_20rpe")
 
-[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1028, 623)
-scale = Vector2(0.377049, 0.230499)
-texture = ExtResource("2_vkatu")
+[node name="FundoEspaço2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1502, 318.5)
+scale = Vector2(1, 1.01385)
+texture = ExtResource("2_gjn81")
 
-[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(481, 623)
-scale = Vector2(0.377049, 0.230499)
-texture = ExtResource("2_vkatu")
+[node name="Player" parent="." instance=ExtResource("1_ov8iu")]
+position = Vector2(742, 450)
+scale = Vector2(7, 7)
 
-[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(731.574, 623.5)
-scale = Vector2(0.375706, 0.229329)
-texture = ExtResource("2_vkatu")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(160, 623)
-scale = Vector2(0.377049, 0.230499)
-texture = ExtResource("2_vkatu")
-
-[node name="CompleteStaticBg(288X208)" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(597.5, 525.5)
-scale = Vector2(4.19097, 6.36058)
-texture = ExtResource("3_qww4j")
+[node name="FundoEspaço" type="Sprite2D" parent="."]
+position = Vector2(1484, 322)
+texture = SubResource("CompressedTexture2D_aaglm")
