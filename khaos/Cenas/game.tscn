@@ -1,30 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://duw3yppumbcw6"]
+[gd_scene load_steps=2 format=3 uid="uid://bn5pbtplu5c3u"]
 
-[ext_resource type="PackedScene" uid="uid://ggd4lo3ux08y" path="res://Cenas/player.tscn" id="1_ov8iu"]
-[ext_resource type="Texture2D" uid="uid://br6jleo2xnfof" path="res://fundo espaço.jpg" id="2_gjn81"]
+[ext_resource type="PackedScene" uid="uid://8nnegsu7xa8v" path="res://Cenas/mapa_espaço.tscn" id="1_1ytwb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20rpe"]
-size = Vector2(2998.5, 33)
+[node name="Game" type="Node"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aaglm"]
-
-[node name="Game" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1483.75, 633)
-shape = SubResource("RectangleShape2D_20rpe")
-
-[node name="FundoEspaço2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1502, 318.5)
-scale = Vector2(1, 1.01385)
-texture = ExtResource("2_gjn81")
-
-[node name="Player" parent="." instance=ExtResource("1_ov8iu")]
-position = Vector2(742, 450)
-scale = Vector2(7, 7)
-
-[node name="FundoEspaço" type="Sprite2D" parent="."]
-position = Vector2(1484, 322)
-texture = SubResource("CompressedTexture2D_aaglm")
+[node name="Mapa espaço" parent="." instance=ExtResource("1_1ytwb")]

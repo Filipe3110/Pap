@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:khaos/fundo espaço.jpg.import
-uid="uid://br6jleo2xnfof"
+uid="uid://bxhpisj42gyyq"
 path="res://.godot/imported/fundo espaço.jpg-b42487c6da66f443d7188712dbe66a25.ctex"
-========
-uid="uid://iv04cn48j211"
-path="res://.godot/imported/Player_jump.png-e97fd458b255017f6c3fc36265990fef.ctex"
->>>>>>>> 4d3f2b096acaa07936f09aa34bded5193a38660f:khaos/Sprites/Players/Player_jump.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:khaos/fundo espaço.jpg.import
 source_file="res://fundo espaço.jpg"
 dest_files=["res://.godot/imported/fundo espaço.jpg-b42487c6da66f443d7188712dbe66a25.ctex"]
-========
-source_file="res://Sprites/Players/Player_jump.png"
-dest_files=["res://.godot/imported/Player_jump.png-e97fd458b255017f6c3fc36265990fef.ctex"]
->>>>>>>> 4d3f2b096acaa07936f09aa34bded5193a38660f:khaos/Sprites/Players/Player_jump.png.import
 
 [params]
 
