@@ -1,13 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://di40hisi35iii"]
+[gd_scene load_steps=7 format=3 uid="uid://di40hisi35iii"]
 
 [ext_resource type="Script" path="res://Cenas/player.gd" id="1_1eeiq"]
 [ext_resource type="Texture2D" uid="uid://b5h15x12j3w51" path="res://Sprites/Players/Player Idle 3.png" id="2_b6hpf"]
 [ext_resource type="Texture2D" uid="uid://sk78sbich6j5" path="res://Sprites/Players/player jump.png" id="3_7mrrp"]
 [ext_resource type="Texture2D" uid="uid://cq1qdqcrwl8v" path="res://Sprites/Players/PlayerWalk 1.png" id="4_altuy"]
-[ext_resource type="PackedScene" uid="uid://ckd34p5khgc6n" path="res://Cenas/bara_devida.tscn" id="5_2jb8k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bpq6h"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_b6hpf")
@@ -39,13 +43,11 @@ size = Vector2(20, 30)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1eeiq")
 
-[node name="BaraDevida" parent="." instance=ExtResource("5_2jb8k")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bpq6h")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
