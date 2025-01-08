@@ -593,6 +593,11 @@ sprite_frames = SubResource("SpriteFrames_bpq6h")
 animation = &"jump"
 autoplay = "idle"
 
+[node name="anim" type="AnimatedSprite2D" parent="anim"]
+sprite_frames = SubResource("SpriteFrames_bpq6h")
+animation = &"jump"
+autoplay = "idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_fcwrx")
