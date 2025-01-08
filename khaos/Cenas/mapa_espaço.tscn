@@ -1,31 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://8nnegsu7xa8v"]
+[gd_scene load_steps=7 format=3 uid="uid://8nnegsu7xa8v"]
 
 [ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://fundo espaço.jpg" id="1_iblnp"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_6aw1m"]
-[ext_resource type="Texture2D" uid="uid://dry1cqn70y0u" path="res://d6e7538ad13c4f0deaf298f6084da3d9.jpeg" id="2_bqpeh"]
+[ext_resource type="PackedScene" uid="uid://7ialaa0vvgvn" path="res://Cenas/dano.tscn" id="3_43uwx"]
+[ext_resource type="PackedScene" uid="uid://bns60wf8rxgsx" path="res://Cenas/player_2.tscn" id="3_t4ud1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
+size = Vector2(81, 639.5)
 
 [node name="Mapa espaço" type="Node2D"]
 
 [node name="FundoEspaço" type="Sprite2D" parent="."]
 position = Vector2(1501, 327)
-scale = Vector2(1, 1)
 texture = ExtResource("1_iblnp")
 
-[node name="D6e7538Ad13c4f0Deaf298f6084Da3d9" type="Sprite2D" parent="."]
-position = Vector2(1517, 2382)
-scale = Vector2(0.987691, 1)
-texture = ExtResource("2_bqpeh")
-
 [node name="Player" parent="." instance=ExtResource("2_6aw1m")]
-position = Vector2(552, 423)
-scale = Vector2(7, 7)
+position = Vector2(1115, 486)
+scale = Vector2(5, 5)
+
+[node name="Player2" parent="." instance=ExtResource("3_t4ud1")]
+position = Vector2(1570, 506)
+scale = Vector2(10, 10)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1502, 645)
+position = Vector2(1510, 663)
 shape = SubResource("RectangleShape2D_ltyrb")
+
+[node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2964, 322)
+shape = SubResource("RectangleShape2D_xwa4g")
+
+[node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(41.5, 321.25)
+shape = SubResource("RectangleShape2D_xwa4g")
+
+[node name="Dano" parent="." instance=ExtResource("3_43uwx")]
+position = Vector2(1908, 642)

@@ -1,9 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://f5m3a4bejhb1"]
+[gd_scene load_steps=7 format=3 uid="uid://f5m3a4bejhb1"]
 
 [ext_resource type="Script" path="res://Scrips/main.gd" id="1_mdxp0"]
 [ext_resource type="PackedScene" uid="uid://bn5pbtplu5c3u" path="res://Cenas/game.tscn" id="2_yyoa3"]
+[ext_resource type="Texture2D" uid="uid://u1m7y55f183u" path="res://Jogo_Tela_inicial1.jpg" id="3_kkcen"]
+[ext_resource type="Texture2D" uid="uid://clcbjev7l828m" path="res://Jogo_Tela_inicial2.jpg" id="4_nwb2i"]
+[ext_resource type="Texture2D" uid="uid://cukgjoxqj5s0w" path="res://Jogo_Tela_inicial3.jpg" id="5_vuyhy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh0wv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kkcen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nwb2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vuyhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nwb2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kkcen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_mdxp0")
 
 [node name="Game" parent="." instance=ExtResource("2_yyoa3")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.5, 325)
+scale = Vector2(1.61431, 1.32114)
+sprite_frames = SubResource("SpriteFrames_mh0wv")
+frame_progress = 0.609061
