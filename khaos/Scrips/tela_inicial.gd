@@ -1,25 +1,15 @@
 extends Control
 
-func _ready() -> void:
-	for button in get_tree().get_nodes_in_group("butao"):
-		button.connect("pressed", self, "on_button_pressed", [botao])
-		button.connect("mouse_exited", self, "mouse_interaction", [botao, "exited"])
-		button.connect("mouse_entered", self, "mouse_interaction", [botao, "entered"])
+func _ready():
+	$HBoxContainer/Campanha.pressed.connect(_on_campanha_pressed)
+	$HBoxContainer/Controles.pressed.connect(_on_controles_pressed)
+	$HBoxContainer/Sair.pressed.connect(_on_sair_pressed)
 
-func mouse_interaction(button: Button, state: String) -> void:
-	match state:
-		"entered":
-			can_click = true
-			button.modulate.a = .5
-				
-		"exited":
-			can_click = false
-			button.modulate.a = 1.0
-			
-func on_button_pressed(button: Button) -> void:
-	match button.name:
-		"Campanha":
-			var _game: bool = get_tree().chage_scene("res://Cenas/game.tscn")
-		"Sair":
-		 	get_tree().quit()
-			
+func _on_controles_pressed():
+	get_tree().change_scene_to_file("res://Cenas/controles.tscn")
+	
+func _on_campanha_pressed():
+	get_tree().change_scene_to_file("res://Cenas/game.tscn")
+
+func _on_sair_pressed():
+	get_tree().quit()

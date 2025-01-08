@@ -1,11 +1,7 @@
 [gd_scene load_steps=111 format=3 uid="uid://bns60wf8rxgsx"]
 
-[ext_resource type="Script" path="res://Cenas/player_2.gd" id="1_xnihn"]
-[ext_resource type="Texture2D" uid="uid://by3h2o1jtcr1w" path="res://Sprites/Players/Player Idle 48x48.png" id="2_ht05a"]
-[ext_resource type="Texture2D" uid="uid://co8pyohoaie2e" path="res://Sprites/Players/Player Idle 3.png" id="3_qxjtk"]
-[ext_resource type="Texture2D" uid="uid://sk78sbich6j5" path="res://Sprites/Players/player jump.png" id="4_5kcl1"]
-[ext_resource type="Texture2D" uid="uid://cq1qdqcrwl8v" path="res://Sprites/Players/PlayerWalk 1.png" id="5_5nmss"]
-[ext_resource type="Script" path="res://Cenas/barra_de_vida2.gd" id="6_fmxx5"]
+[ext_resource type="Script" path="res://Scrips/player_2.gd" id="1_xnihn"]
+[ext_resource type="Script" path="res://Scrips/barra_de_vida2.gd" id="6_fmxx5"]
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Sprites/Barra de vida/0.png" id="7_nn4r2"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Sprites/Barra de vida/1.png" id="8_syttf"]
 [ext_resource type="Texture2D" uid="uid://cyl1s7o5e2die" path="res://Sprites/Barra de vida/2.png" id="9_yuerj"]
@@ -108,6 +104,14 @@
 [ext_resource type="Texture2D" uid="uid://dx1iwh1rnmoxl" path="res://Sprites/Barra de vida/99.png" id="106_jt7q8"]
 [ext_resource type="Texture2D" uid="uid://bsqpuwl4ykl2b" path="res://Sprites/Barra de vida/100.png" id="107_f2u2c"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7xarp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_utu6y"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_248ei"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qn4sw"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bpq6h"]
 animations = [{
 "frames": [],
@@ -122,10 +126,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ht05a")
+"texture": SubResource("CompressedTexture2D_7xarp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qxjtk")
+"texture": SubResource("CompressedTexture2D_utu6y")
 }],
 "loop": true,
 "name": &"idle",
@@ -133,7 +137,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_5kcl1")
+"texture": SubResource("CompressedTexture2D_248ei")
 }],
 "loop": true,
 "name": &"jump",
@@ -141,7 +145,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_5nmss")
+"texture": SubResource("CompressedTexture2D_qn4sw")
 }],
 "loop": true,
 "name": &"run",

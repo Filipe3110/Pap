@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://8nnegsu7xa8v"]
 
-[ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://fundo espaço.jpg" id="1_iblnp"]
+[ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://Sprites/fundo espaço.jpg" id="1_iblnp"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_6aw1m"]
 [ext_resource type="PackedScene" uid="uid://7ialaa0vvgvn" path="res://Cenas/dano.tscn" id="3_43uwx"]
 [ext_resource type="PackedScene" uid="uid://bns60wf8rxgsx" path="res://Cenas/player_2.tscn" id="3_t4ud1"]
