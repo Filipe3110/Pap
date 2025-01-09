@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://8nnegsu7xa8v"]
+[gd_scene load_steps=5 format=3 uid="uid://8nnegsu7xa8v"]
 
 [ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://Sprites/fundo espaço.jpg" id="1_iblnp"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_6aw1m"]
-[ext_resource type="PackedScene" uid="uid://7ialaa0vvgvn" path="res://Cenas/dano.tscn" id="3_43uwx"]
-[ext_resource type="PackedScene" uid="uid://bns60wf8rxgsx" path="res://Cenas/player_2.tscn" id="3_t4ud1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -19,11 +17,7 @@ texture = ExtResource("1_iblnp")
 
 [node name="Player" parent="." instance=ExtResource("2_6aw1m")]
 position = Vector2(1115, 486)
-scale = Vector2(5, 5)
-
-[node name="Player2" parent="." instance=ExtResource("3_t4ud1")]
-position = Vector2(1570, 506)
-scale = Vector2(10, 10)
+scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 3.05176e-05)
@@ -39,6 +33,3 @@ shape = SubResource("RectangleShape2D_xwa4g")
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(41.5, 321.25)
 shape = SubResource("RectangleShape2D_xwa4g")
-
-[node name="Dano" parent="." instance=ExtResource("3_43uwx")]
-position = Vector2(1908, 642)
