@@ -688,7 +688,7 @@ script = ExtResource("1_xnihn")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_26xaq")
-animation = &"Crunsh"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -722,5 +722,5 @@ autoplay = "idle"
 [node name="anim2" type="AnimatedSprite2D" parent="."]
 position = Vector2(119, -10)
 sprite_frames = SubResource("SpriteFrames_ftirl")
-animation = &"Crunsh"
+animation = &"uppercut"
 autoplay = "idle"

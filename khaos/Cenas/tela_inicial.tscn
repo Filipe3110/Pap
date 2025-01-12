@@ -414,6 +414,7 @@ text = "Sair"
 flat = true
 
 [node name="Feito" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 866.0
 offset_top = 602.0

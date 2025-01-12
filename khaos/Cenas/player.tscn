@@ -1,21 +1,24 @@
-[gd_scene load_steps=118 format=3 uid="uid://di40hisi35iii"]
+[gd_scene load_steps=120 format=3 uid="uid://di40hisi35iii"]
 
 [ext_resource type="Script" path="res://Scrips/player.gd" id="1_1eeiq"]
-[ext_resource type="Texture2D" uid="uid://c4clqgdsfs175" path="res://p1/down.png" id="2_0jdvs"]
+[ext_resource type="Texture2D" uid="uid://cjl01rha1u7ss" path="res://Sprites/Players/baixo.png" id="2_cavlt"]
 [ext_resource type="Texture2D" uid="uid://ctssqg7w0x6ac" path="res://Sprites/Players/Player id1.png" id="2_fyj2x"]
+[ext_resource type="Texture2D" uid="uid://dxk3wy6rqn7bu" path="res://Sprites/Players/s2baixo.png" id="2_h2qaf"]
 [ext_resource type="Texture2D" uid="uid://bh4s2pvt688tf" path="res://Sprites/Players/Player id2.png" id="3_27pp6"]
+[ext_resource type="Texture2D" uid="uid://d25fplokcr18l" path="res://Sprites/Players/ss2baixo.png" id="4_2iaij"]
 [ext_resource type="Texture2D" uid="uid://8q7ta38mwqi4" path="res://Sprites/Players/salto.png" id="4_6fkm3"]
 [ext_resource type="Texture2D" uid="uid://ch2unqo4ia5qx" path="res://Sprites/Players/walk1.png" id="4_d5it7"]
 [ext_resource type="Texture2D" uid="uid://bvdtme14eyacn" path="res://Sprites/Players/walk2.png" id="5_lvtcl"]
 [ext_resource type="Script" path="res://Scrips/Barradevida.gd" id="6_fpgwu"]
 [ext_resource type="Texture2D" uid="uid://bc34tbcxitkbb" path="res://Sprites/Players/walk3.png" id="6_ny12n"]
 [ext_resource type="Texture2D" uid="uid://bsqpuwl4ykl2b" path="res://Sprites/Barra de vida/100.png" id="7_mhjc4"]
-[ext_resource type="Texture2D" uid="uid://58vs2dgrfqwu" path="res://p1/SSS1.png" id="7_yvyc1"]
+[ext_resource type="Texture2D" uid="uid://dedv84gc5shqn" path="res://Sprites/Players/block.png" id="7_w603w"]
 [ext_resource type="Texture2D" uid="uid://dx1iwh1rnmoxl" path="res://Sprites/Barra de vida/99.png" id="8_8aqus"]
-[ext_resource type="Texture2D" uid="uid://dld47fra1var" path="res://p1/SSS2.png" id="8_l2oec"]
 [ext_resource type="Texture2D" uid="uid://br5pc1mx1rvl0" path="res://Sprites/Barra de vida/98.png" id="9_x8k84"]
 [ext_resource type="Texture2D" uid="uid://cy47wy1et4bai" path="res://Sprites/Barra de vida/97.png" id="10_nk6mk"]
 [ext_resource type="Texture2D" uid="uid://byg4cywbejtsl" path="res://Sprites/Barra de vida/96.png" id="11_hglhj"]
+[ext_resource type="Texture2D" uid="uid://ob8d722dme4j" path="res://Sprites/Players/SSS2.png" id="11_q05ll"]
+[ext_resource type="Texture2D" uid="uid://dudxurqsybgk4" path="res://Sprites/Players/SSS3.png" id="12_2l1af"]
 [ext_resource type="Texture2D" uid="uid://dig1d8jbxjfmr" path="res://Sprites/Barra de vida/95.png" id="12_wr3gj"]
 [ext_resource type="Texture2D" uid="uid://bd7dad0qenk3f" path="res://Sprites/Barra de vida/94.png" id="13_7k0h7"]
 [ext_resource type="Texture2D" uid="uid://bu503ki4p0twb" path="res://Sprites/Barra de vida/93.png" id="14_mqfk2"]
@@ -119,10 +122,40 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0jdvs")
+"texture": ExtResource("2_cavlt")
 }],
 "loop": false,
 "name": &"Crunsh",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cavlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h2qaf")
+}],
+"loop": false,
+"name": &"baixo_soco_direita",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cavlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2iaij")
+}],
+"loop": false,
+"name": &"baixo_soco_esquerda",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_w603w")
+}],
+"loop": true,
+"name": &"block",
 "speed": 5.0
 }, {
 "frames": [{
@@ -182,18 +215,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_yvyc1")
+"texture": ExtResource("2_fyj2x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_l2oec")
+"texture": ExtResource("11_q05ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2l1af")
 }],
 "loop": false,
 "name": &"uppercut",
 "speed": 3.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcwrx"]
-size = Vector2(20, 88.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oaoea"]
 animations = [{
@@ -512,15 +545,13 @@ script = ExtResource("1_1eeiq")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_b1pb1")
-animation = &"run"
+animation = &"baixo_soco_esquerda"
 autoplay = "idle"
-frame_progress = 0.707716
+frame = 1
+frame_progress = 1.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.75)
-shape = SubResource("RectangleShape2D_fcwrx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, 23, 8, 30, 11, 49, 27, 49, 21, 45, 18, 21, 1, 4, 3, -6, 15, -1, 19, -3, 19, -22, 16, -23, 9, -23, 12, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -15, -3, -15, 3, -17, 6, -18, 16, -18, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
@@ -529,6 +560,7 @@ limit_right = 3000
 limit_bottom = 650
 
 [node name="BarraDeVida" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_fpgwu")
 
 [node name="BarraSprite" type="AnimatedSprite2D" parent="BarraDeVida"]
@@ -537,4 +569,8 @@ scale = Vector2(4.4537, 4.75)
 sprite_frames = SubResource("SpriteFrames_oaoea")
 animation = &"Barra de vida"
 
-[node name="TimerCombo" type="Timer" parent="."]
+[node name="ComboTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
