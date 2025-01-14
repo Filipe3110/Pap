@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://bns60wf8rxgsx"]
+[gd_scene load_steps=148 format=3 uid="uid://bns60wf8rxgsx"]
 
 [ext_resource type="Script" path="res://Scrips/player_2.gd" id="1_xnihn"]
 [ext_resource type="Texture2D" uid="uid://ctssqg7w0x6ac" path="res://Sprites/Players/Player id1.png" id="2_ge4ih"]
@@ -682,13 +682,742 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_nxs2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-2, 23, 7, 31, 9, 48, 27, 49, 19, 45, 16, 23, 1, 4, 3, -6, 13, 0, 19, -1, 19, -21, 16, -22, 9, -23, 11, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -16, -3, -15, 3, -17, 6, -18, 16, -19, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, -18)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Area2D2/colisao_do_block:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_e3les"]
+resource_name = "baixo_soco_direita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"baixo_soco_direita"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37), PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37), PackedVector2Array(-8, 32, 5, 30, 6, 48, 24, 48, 16, 44, 13, 20, -5, 20, -4, 12, -2, 4, 9, 3, 17, 3, 21, 2, 22, -6, 14, -6, 6, -6, 7, -10, 6, -15, 1, -19, -5, -19, -9, -16, -11, -9, -14, -7, -18, -1, -19, 4, -19, 20, -21, 32, -21, 47, -17, 52, -13, 52, -9, 46, -9, 37), PackedVector2Array(-8, 32, 5, 30, 6, 48, 24, 48, 16, 44, 13, 20, -5, 20, -4, 12, -2, 4, 9, 3, 17, 3, 21, 2, 22, -6, 14, -6, 6, -6, 7, -10, 6, -15, 1, -19, -5, -19, -9, -16, -11, -9, -14, -7, -18, -1, -19, 4, -19, 20, -21, 32, -21, 47, -17, 52, -13, 52, -9, 46, -9, 37)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.466667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, -3), Vector2(29, -3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_toryo"]
+resource_name = "baixo_soco_esquerda"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"baixo_soco_esquerda"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37), PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37), PackedVector2Array(-3, 32, 2, 29, 5, 49, 22, 49, 14, 43, 10, 19, -4, 20, -3, 6, 3, 6, 13, 4, 19, 5, 24, 5, 23, -3, 15, -3, 2, -4, 3, -10, 1, -15, -6, -19, -13, -16, -16, -9, -14, -5, -26, -4, -30, 2, -28, 11, -20, 20, -23, 31, -23, 46, -19, 52, -15, 52, -11, 47, -9, 33), PackedVector2Array(-3, 32, 2, 29, 5, 49, 22, 49, 14, 43, 10, 19, -4, 20, -3, 6, 3, 6, 13, 4, 19, 5, 24, 5, 23, -3, 15, -3, 2, -4, 3, -10, 1, -15, -6, -19, -13, -16, -16, -9, -14, -5, -26, -4, -30, 2, -28, 11, -20, 20, -23, 31, -23, 46, -19, 52, -15, 52, -11, 47, -9, 33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.466667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, 2), Vector2(31, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mmgje"]
+resource_name = "crunsh"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"crunsh"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37), PackedVector2Array(-3, 32, 7, 30, 9, 48, 27, 48, 20, 45, 14, 19, -1, 20, 2, 14, 9, 18, 17, 19, 19, 15, 19, 3, 17, -3, 14, -1, 9, -4, 11, -8, 9, -15, 5, -18, -3, -18, -6, -16, -8, -7, -16, -3, -18, -1, -19, 4, -15, 20, -19, 32, -18, 46, -13, 52, -9, 52, -7, 47, -6, 37)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hjhgu"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.500403, 0.502709, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 23, 8, 32, 11, 47, 24, 48, 19, 44, 17, 24, 9, 13, 4, 9, 0, 4, 0, 1, 2, -6, 16, -1, 18, -5, 18, -22, 12, -22, 6, -6, 9, -19, 9, -23, 11, -30, 4, -37, -2, -36, -6, -32, -12, -21, -17, -20, -20, -16, -16, -2, -19, 20, -19, 32, -26, 47, -26, 53, -10, 53, -14, 47, -8, 37), PackedVector2Array(-3, 23, 8, 32, 11, 47, 24, 48, 19, 44, 17, 24, 9, 13, 4, 9, 0, 4, 0, 1, 2, -6, 16, -1, 18, -5, 18, -22, 12, -22, 6, -6, 9, -19, 9, -23, 11, -30, 4, -37, -2, -36, -6, -32, -12, -21, -17, -20, -20, -16, -16, -2, -19, 20, -19, 32, -26, 47, -26, 53, -10, 53, -14, 47, -8, 37)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_27h0a"]
+resource_name = "soco_direita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.433333, 1.00461),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-2, 23, 7, 31, 9, 48, 27, 49, 19, 45, 16, 23, 1, 4, 3, -6, 13, 0, 19, -1, 19, -21, 16, -22, 9, -23, 11, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -16, -3, -15, 3, -17, 6, -18, 16, -19, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37), PackedVector2Array(-2, 23, 7, 31, 9, 48, 27, 49, 19, 45, 16, 23, 1, 4, 3, -6, 13, 0, 19, -1, 19, -21, 16, -22, 9, -23, 11, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -16, -3, -15, 3, -17, 6, -18, 16, -19, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37), PackedVector2Array(-6, 21, 4, 31, 5, 48, 21, 48, 15, 44, 12, 20, -5, 1, -1, -16, 5, -16, 25, -19, 23, -26, 15, -25, 9, -24, 7, -28, 5, -36, -2, -39, -7, -38, -10, -33, -13, -27, -18, -20, -20, -13, -19, -2, -20, 3, -21, 10, -21, 15, -24, 31, -30, 44, -34, 50, -16, 49, -22, 46, -15, 39), PackedVector2Array(-6, 21, 4, 31, 5, 48, 21, 48, 15, 44, 12, 20, -5, 1, -1, -16, 5, -16, 25, -19, 23, -26, 15, -25, 9, -24, 7, -28, 5, -36, -2, -39, -7, -38, -10, -33, -13, -27, -18, -20, -20, -13, -19, -2, -20, 3, -21, 10, -21, 15, -24, 31, -30, 44, -34, 50, -16, 49, -22, 46, -15, 39)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"soco_direita"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.433333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, -23), Vector2(30, -23)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_686mp"]
+resource_name = "soco_esquerda"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-2, 23, 7, 31, 9, 48, 27, 49, 19, 45, 16, 23, 1, 4, 3, -6, 13, 0, 19, -1, 19, -21, 16, -22, 9, -23, 11, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -16, -3, -15, 3, -17, 6, -18, 16, -19, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37), PackedVector2Array(-2, 23, 7, 31, 9, 48, 27, 49, 19, 45, 16, 23, 1, 4, 3, -6, 13, 0, 19, -1, 19, -21, 16, -22, 9, -23, 11, -27, 9, -35, 5, -37, -1, -37, -6, -32, -7, -26, -18, -20, -20, -13, -16, -3, -15, 3, -17, 6, -18, 16, -19, 32, -24, 45, -27, 53, -9, 53, -15, 49, -6, 37), PackedVector2Array(-12, 14, 2, 32, 0, 48, 17, 48, 12, 45, 9, 22, -7, 2, -5, -6, -1, -15, 24, -15, 25, -22, 14, -23, -1, -24, 1, -28, -1, -35, -8, -39, -15, -36, -16, -32, -17, -26, -29, -23, -31, -17, -29, -8, -23, -2, -22, 4, -23, 7, -24, 29, -26, 44, -27, 52, -18, 52, -18, 47, -14, 30), PackedVector2Array(-12, 14, 2, 32, 0, 48, 17, 48, 12, 45, 9, 22, -7, 2, -5, -6, -1, -15, 24, -15, 25, -22, 14, -23, -1, -24, 1, -28, -1, -35, -8, -39, -15, -36, -16, -32, -17, -26, -29, -23, -31, -17, -29, -8, -23, -2, -22, 4, -23, 7, -24, 29, -26, 44, -27, 52, -18, 52, -18, 47, -14, 30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.4, 0.433333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 1, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"soco_esquerda"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.433333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, -18), Vector2(29, -18)]
+}
+
+[sub_resource type="Animation" id="Animation_ei7d1"]
+resource_name = "uppercut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area2D/colisao_do_soco:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(26, -24), Vector2(26, -24)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.266667, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 15, 10, 29, 9, 48, 26.125, 48.875, 20, 45, 18.25, 24, 13.5, 16.875, 1, 2, 2.875, -7.125, 4, -13, 9, -13, 9, -17, 4, -19, 4, -21, 9, -24, 12, -29, 11, -34, 6, -39, -1, -39, -5, -33, -6, -28, -15, -22, -19, -18, -23, -4, -14, 0, -18, 41, -19, 51, -10, 51, -10, 47, -10, 43, -6, 29), PackedVector2Array(-3, 15, 10, 29, 9, 48, 26.125, 48.875, 20, 45, 18.25, 24, 13.5, 16.875, 1, 2, 2.875, -7.125, 4, -13, 9, -13, 9, -17, 4, -19, 4, -21, 9, -24, 12, -29, 11, -34, 6, -39, -1, -39, -5, -33, -6, -28, -15, -22, -19, -18, -23, -4, -14, 0, -18, 41, -19, 51, -10, 51, -10, 47, -10, 43, -6, 29), PackedVector2Array(1, 19, 7, 25, 9, 48, 27, 48, 20, 45, 20, 24, 17, 16, 0, 0, 9, -8, 23, -4, 27, -6, 28, -19, 23, -19, 20, -15, 13, -19, 7, -22, 10, -34, 4, -39, -4, -38, -7, -33, -8, -25, -21, -22, -26, -4, -13, -3, -15, 10, -19, 32, -28, 44, -20, 47, -16, 44, -10, 40, -4, 31), PackedVector2Array(1, 19, 7, 25, 9, 48, 27, 48, 20, 45, 20, 24, 17, 16, 0, 0, 9, -8, 23, -4, 27, -6, 28, -19, 23, -19, 20, -15, 13, -19, 7, -22, 10, -34, 4, -39, -4, -38, -7, -33, -8, -25, -21, -22, -26, -4, -13, -3, -15, 10, -19, 32, -28, 44, -20, 47, -16, 44, -10, 40, -4, 31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"uppercut"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jjkxx"]
+resource_name = "block"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"block"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 4, -8, 7, -12, 6, -13, 6, -17, 8, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -15, -20, -15, -13, -15, -2, -18, 11, -19, 32, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_31h2r"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333, 0.6, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_afnos"]
+_data = {
+"RESET": SubResource("Animation_nxs2c"),
+"baixo_soco_direita": SubResource("Animation_e3les"),
+"baixo_soco_esquerda": SubResource("Animation_toryo"),
+"block": SubResource("Animation_jjkxx"),
+"crunsh": SubResource("Animation_mmgje"),
+"idle": SubResource("Animation_hjhgu"),
+"run": SubResource("Animation_31h2r"),
+"soco_direita": SubResource("Animation_27h0a"),
+"soco_esquerda": SubResource("Animation_686mp"),
+"uppercut": SubResource("Animation_ei7d1")
+}
+
 [node name="Player2" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_xnihn")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_26xaq")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -723,4 +1452,11 @@ autoplay = "idle"
 position = Vector2(119, -10)
 sprite_frames = SubResource("SpriteFrames_ftirl")
 animation = &"uppercut"
+autoplay = "idle"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../anim")
+libraries = {
+"": SubResource("AnimationLibrary_afnos")
+}
 autoplay = "idle"
