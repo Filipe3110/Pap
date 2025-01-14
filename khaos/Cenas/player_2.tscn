@@ -919,6 +919,81 @@ tracks/5/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_jjkxx"]
+resource_name = "block"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"block"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 4, -8, 7, -12, 6, -13, 6, -17, 8, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -15, -20, -15, -13, -15, -2, -18, 11, -19, 32, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Area2D2/colisao_do_block:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, -13)]
+}
+
 [sub_resource type="Animation" id="Animation_mmgje"]
 resource_name = "crunsh"
 tracks/0/type = "value"
@@ -1044,6 +1119,69 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_31h2r"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.333333, 0.6, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Area2D2/colisao_do_block:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29)]
 }
 
 [sub_resource type="Animation" id="Animation_27h0a"]
@@ -1257,144 +1395,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_jjkxx"]
-resource_name = "block"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"block"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 4, -8, 7, -12, 6, -13, 6, -17, 8, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -15, -20, -15, -13, -15, -2, -18, 11, -19, 32, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Area2D2/colisao_do_block:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Area2D2/colisao_do_block:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(13, -13)]
-}
-
-[sub_resource type="Animation" id="Animation_31h2r"]
-resource_name = "run"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"run"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.333333, 0.6, 0.633333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 0, 1, 1, 2, 2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Area2D2/colisao_do_block:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Area2D/colisao_do_soco:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../CollisionPolygon2D:polygon")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.633333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, 6, 29, 9, 48, 26, 49, 20, 45, 18, 24, 13, 17, -1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -18, 11, -22, 42, -28, 54, -10, 54, -17, 49, -13, 46, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29), PackedVector2Array(-3, 22, -5, 29, -5, 43, -5, 50, 13, 50, 7, 45, 6, 20, 1, 4, 2, -7, 14, -1, 19, -7, 18, -18, 17, -22, 12, -22, 9, -21, 10, -25, 9, -34, 3, -38, -2, -37, -7, -33, -8, -25, -19, -18, -20, -11, -15, -2, -16, 11, -12, 30, -24, 54, -7, 54, -15, 50, -5, 43, -5, 29)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_afnos"]
