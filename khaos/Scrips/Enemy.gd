@@ -31,29 +31,29 @@ func _physics_process(delta: float) -> void:
 	else:
 		esta_pulando = false
 
-	if Input.is_action_just_pressed("up") and is_on_floor() and not esta_atacando:
+	if Input.is_action_just_pressed("Eup") and is_on_floor() and not esta_atacando:
 		velocity.y = FORCA_PULO
 		esta_pulando = true
 
-	if Input.is_action_just_pressed("attack") and not esta_bloqueando:
-		if Input.is_action_pressed("down") and is_on_floor():
+	if Input.is_action_just_pressed("Eattack") and not esta_bloqueando:
+		if Input.is_action_pressed("Edown") and is_on_floor():
 			iniciar_ataque_baixo()
 		else:
 			iniciar_ataque()
 
-	if Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando:
+	if Input.is_action_pressed("Edown") and is_on_floor() and not esta_pulando and not esta_atacando:
 		esta_abaixando = true
 		animation_player.play("crunsh")
 	else:
 		esta_abaixando = false
 
-	if Input.is_action_pressed("block") and is_on_floor() and not esta_pulando and not esta_atacando:
+	if Input.is_action_pressed("Eblock") and is_on_floor() and not esta_pulando and not esta_atacando:
 		esta_bloqueando = true
 		animation_player.play("block")
 	else:
 		esta_bloqueando = false
 
-	var direcao := Input.get_axis("left", "right")
+	var direcao := Input.get_axis("Eleft", "Eright")
 
 	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
 		if direcao != 0:
@@ -97,7 +97,7 @@ func _quando_animacao_finalizar(anim_name):
 	if anim_name in combo or anim_name in Baixo_combo:
 		esta_atacando = false
 
-func Player_receber_dano(dano):
+func Enemy_receber_dano(dano):
 	if barra_de_vida == null:
 		return
 	if not barra_de_vida.has_method("receber_dano"):
@@ -108,8 +108,8 @@ func morrer():
 	queue_free()
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("inimigos"):
+	if body.is_in_group("Player"):
 		if combo[contcombo] == "soco_direita" or combo[contcombo] == "soco_esquerda":
-			body.call("Enemy_receber_dano", 5)  
+			body.call("Player_receber_dano", 5)  
 		elif combo[contcombo] == "uppercut":
-			body.call("Enemy_receber_dano", 10)
+			body.call("Player_receber_dano", 10)
