@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var barra_sprite = $BarraSprite  
 
-var vida_atual = 100 
+var vida_atual = 5 
 var vida_maxima = 100  
 
 func _ready():
@@ -11,7 +11,6 @@ func _ready():
 func receber_dano(dano):
 	vida_atual -= dano
 	vida_atual = clamp(vida_atual, 0, vida_maxima)  
-	print("Vida Atual do Inimigo: ", vida_atual)
 
 	if vida_atual <= 0:
 		get_parent().morrer()  
