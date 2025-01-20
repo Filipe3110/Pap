@@ -1471,4 +1471,4 @@ position = Vector2(15, 7)
 shape = SubResource("CapsuleShape2D_m3e42")
 disabled = true
 
-[connection signal="area_entered" from="SocoArea" to="." method="_on_soco_area_area_entered"]
+[connection signal="body_entered" from="SocoArea" to="." method="_on_soco_area_body_entered"]

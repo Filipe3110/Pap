@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var barra_sprite = $BarraSprite  
 
-var vida_atual = 5 
+var vida_atual = 100 
 var vida_maxima = 100  
 
 func _ready():
