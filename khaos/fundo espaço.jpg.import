@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blc24wqpwock7"
-path="res://.godot/imported/Jogo Tela inicial2.jpg-35ccd0c3fa0e4ba812fb816f439deeec.ctex"
+uid="uid://ck6086rrvdoak"
+path="res://.godot/imported/fundo espaço.jpg-b42487c6da66f443d7188712dbe66a25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Telas/Jogo Tela inicial2.jpg"
-dest_files=["res://.godot/imported/Jogo Tela inicial2.jpg-35ccd0c3fa0e4ba812fb816f439deeec.ctex"]
+source_file="res://fundo espaço.jpg"
+dest_files=["res://.godot/imported/fundo espaço.jpg-b42487c6da66f443d7188712dbe66a25.ctex"]
 
 [params]
 

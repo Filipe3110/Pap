@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=4 uid="uid://dodqa0hhxsm5p"]
 
 [ext_resource type="Script" path="res://Scrips/tela_inicial.gd" id="1_csuh1"]
-[ext_resource type="Texture2D" uid="uid://b6he86q1i3hiw" path="res://Telas/Jogo Tela inicial1.jpg" id="2_q2yse"]
-[ext_resource type="Texture2D" uid="uid://blc24wqpwock7" path="res://Telas/Jogo Tela inicial2.jpg" id="3_2hqka"]
-[ext_resource type="Texture2D" uid="uid://ycfpbdsc2n83" path="res://Telas/Jogo Tela inicial3.jpg" id="4_n322b"]
+[ext_resource type="Texture2D" uid="uid://b6he86q1i3hiw" path="res://Sprites/Telas/Jogo Tela inicial1.jpg" id="2_q2yse"]
+[ext_resource type="Texture2D" uid="uid://blc24wqpwock7" path="res://Sprites/Telas/Jogo Tela inicial2.jpg" id="3_2hqka"]
+[ext_resource type="Texture2D" uid="uid://ycfpbdsc2n83" path="res://Sprites/Telas/Jogo Tela inicial3.jpg" id="4_n322b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yoqlf"]
 animations = [{
@@ -433,3 +433,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_8juko")
 text = "Filipe Nunes"
 flat = true
+
+[connection signal="pressed" from="HBoxContainer/Multijogador" to="." method="_on_multijogador_pressed"]

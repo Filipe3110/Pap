@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjvo8kx16jyx3"
-path="res://.godot/imported/Jogo Tela controles2.jpg-eff33866a1f04f5ef6afc320ceef2e02.ctex"
+uid="uid://bvj3ut0ms78eb"
+path="res://.godot/imported/Jogo Tela controles1.jpg-147ca57b8b1b0e654d0e0fe061d28b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Telas/Jogo Tela controles2.jpg"
-dest_files=["res://.godot/imported/Jogo Tela controles2.jpg-eff33866a1f04f5ef6afc320ceef2e02.ctex"]
+source_file="res://Sprites/Telas/Jogo Tela controles1.jpg"
+dest_files=["res://.godot/imported/Jogo Tela controles1.jpg-147ca57b8b1b0e654d0e0fe061d28b50.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@ var esta_pulando := false
 var esta_atacando := false
 var esta_abaixando := false
 var esta_bloqueando := false
-var direcao_atual := 1  # 1 para direita, -1 para esquerda
+var direcao_atual := 1  
 
 @onready var animation_player = $AnimationPlayer
 @onready var barra_de_vida = $BarraDeVida
@@ -24,54 +24,6 @@ func _ready():
 	soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
 	print("Sinal area_entered conectado")
 
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		esta_pulando = true
-	else:
-		esta_pulando = false
-
-	if Input.is_action_just_pressed("Eup") and is_on_floor() and not esta_atacando:
-		velocity.y = FORCA_PULO
-		esta_pulando = true
-
-	if Input.is_action_just_pressed("Eattack") and not esta_bloqueando:
-		if Input.is_action_pressed("Edown") and is_on_floor():
-			iniciar_ataque_baixo()
-		else:
-			iniciar_ataque()
-
-	if Input.is_action_pressed("Edown") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_abaixando = true
-		animation_player.play("crunsh")
-	else:
-		esta_abaixando = false
-
-	if Input.is_action_pressed("Eblock") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_bloqueando = true
-		animation_player.play("block")
-	else:
-		esta_bloqueando = false
-
-	var direcao := Input.get_axis("Eleft", "Eright")
-
-	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
-		if direcao != 0:
-			velocity.x = direcao * VELOCIDADE
-			if direcao * direcao_atual < 0:
-				direcao_atual = direcao
-				scale.x = -scale.x
-		else:
-			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
-		
-		if esta_pulando:
-			animation_player.play("jump")
-		elif direcao != 0:
-			animation_player.play("run")
-		else:
-			animation_player.play("idle")
-
-	move_and_slide()
 
 func iniciar_ataque() -> void:
 	if not esta_atacando:

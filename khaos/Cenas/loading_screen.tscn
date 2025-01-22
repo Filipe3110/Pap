@@ -1,7 +1,39 @@
-[gd_scene format=3 uid="uid://bkmbr4dopoe02"]
+[gd_scene load_steps=2 format=3 uid="uid://bkmbr4dopoe02"]
+
+[ext_resource type="Texture2D" uid="uid://cwtd7611ukfbp" path="res://Sprites/Telas/Jogo_Tela_inicial1.jpg" id="1_7ux1g"]
 
 [node name="LoadingScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1150.0
+offset_bottom = 646.0
+
+[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
+position = Vector2(576.25, 323)
+scale = Vector2(1.61501, 1.31707)
+texture = ExtResource("1_7ux1g")
+
+[node name="Borda" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.554
+anchor_bottom = 0.434
+offset_left = 319.0
+offset_top = 546.0
+offset_right = 197.9
+offset_bottom = 305.636
+color = Color(0, 0, 0, 1)
+
+[node name="Interior" type="ColorRect" parent="Borda"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 514.0
+offset_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="Borda/Interior"]
+layout_mode = 0
+offset_left = -321.0
+offset_top = -548.0
+offset_right = -281.0
+offset_bottom = -508.0
