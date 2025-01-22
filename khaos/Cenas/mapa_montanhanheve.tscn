@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://blvxbf872hs4l"]
+
+[ext_resource type="Texture2D" uid="uid://ck6086rrvdoak" path="res://fundo espaço.jpg" id="1_42cch"]
+[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_4aw55"]
+[ext_resource type="PackedScene" uid="uid://c48ayfjabu4st" path="res://Cenas/Enemy.tscn" id="3_1xm3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
+size = Vector2(3004, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
+size = Vector2(81, 639.5)
+
+[node name="Mapa Montanhanheve" type="Node2D"]
+
+[node name="FundoEspaço2" type="Sprite2D" parent="."]
+position = Vector2(1505, 324)
+texture = ExtResource("1_42cch")
+
+[node name="Player" parent="." instance=ExtResource("2_4aw55")]
+position = Vector2(1111, 385)
+scale = Vector2(4, 4)
+
+[node name="Enemy" parent="." instance=ExtResource("3_1xm3f")]
+visible = true
+position = Vector2(1510, 314)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 3.05176e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1510, 663)
+shape = SubResource("RectangleShape2D_ltyrb")
+
+[node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2964, 322)
+shape = SubResource("RectangleShape2D_xwa4g")
+
+[node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(41.5, 321.25)
+shape = SubResource("RectangleShape2D_xwa4g")

@@ -58,7 +58,8 @@ func Enemy_receber_dano(dano):
 	barra_de_vida.receber_dano(dano)
 
 func morrer():
-	queue_free()
+	get_tree().quit()
+
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

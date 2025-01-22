@@ -6,14 +6,22 @@ func _ready():
 	$HBoxContainer/Sair.pressed.connect(_on_sair_pressed)
 
 func _on_controles_pressed():
-	get_tree().change_scene_to_file("res://Cenas/controles.tscn")
+	var loading = load("res://Cenas/loading_screen.tscn").instantiate()
+	loading.next_scene = "res://Cenas/controles.tscn"
+	get_tree().root.add_child(loading)
+	queue_free()
 	
 func _on_campanha_pressed():
-	get_tree().change_scene_to_file("res://Cenas/game.tscn")
+	var loading = load("res://Cenas/loading_screen.tscn").instantiate()
+	loading.next_scene = "res://Cenas/game.tscn"
+	get_tree().root.add_child(loading)
+	queue_free()
 
-
-func _on_multijogador_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/loading_screen.tscn")
+func _on_multijogador_pressed():
+	var loading = load("res://Cenas/loading_screen.tscn").instantiate()
+	loading.next_scene = "res://Cenas/mapa_montanhanheve.tscn"
+	get_tree().root.add_child(loading)
+	queue_free()
 
 func _on_sair_pressed():
 	get_tree().quit()
