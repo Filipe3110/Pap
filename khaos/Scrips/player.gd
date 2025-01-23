@@ -115,6 +115,4 @@ func _on_soco_area_body_entered(body: Node2D) -> void:
 		elif combo[contcombo] == "uppercut":
 			body.call("Enemy_receber_dano", 10)
 			
-			
-			
-adouhfowho
+		
