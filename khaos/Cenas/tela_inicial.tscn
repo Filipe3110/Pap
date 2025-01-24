@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://dodqa0hhxsm5p"]
+[gd_scene load_steps=11 format=4 uid="uid://dodqa0hhxsm5p"]
 
 [ext_resource type="Script" path="res://Scrips/tela_inicial.gd" id="1_csuh1"]
 [ext_resource type="Texture2D" uid="uid://b6he86q1i3hiw" path="res://Sprites/Telas/Jogo Tela inicial1.jpg" id="2_q2yse"]
 [ext_resource type="Texture2D" uid="uid://blc24wqpwock7" path="res://Sprites/Telas/Jogo Tela inicial2.jpg" id="3_2hqka"]
 [ext_resource type="Texture2D" uid="uid://ycfpbdsc2n83" path="res://Sprites/Telas/Jogo Tela inicial3.jpg" id="4_n322b"]
+[ext_resource type="FontFile" uid="uid://cs11cgp5dkcuo" path="res://Sprites/Fontes/KimsBitHand/KimsBitHand.ttf" id="5_3f3h0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yoqlf"]
 animations = [{
@@ -383,33 +384,41 @@ frame_progress = 0.398894
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 795.0
-offset_top = 305.0
-offset_right = 1102.0
-offset_bottom = 553.0
+offset_left = 743.0
+offset_top = 314.0
+offset_right = 1050.0
+offset_bottom = 562.0
 alignment = 1
 
 [node name="Campanha" type="Button" parent="HBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme_override_fonts/font = ExtResource("5_3f3h0")
+theme_override_font_sizes/font_size = 50
 text = "Campanha"
 flat = true
 
 [node name="Multijogador" type="Button" parent="HBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme_override_fonts/font = ExtResource("5_3f3h0")
+theme_override_font_sizes/font_size = 50
 text = "Multijogador"
 flat = true
 
 [node name="Controles" type="Button" parent="HBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme_override_fonts/font = ExtResource("5_3f3h0")
+theme_override_font_sizes/font_size = 50
 text = "Controles"
 flat = true
 
 [node name="Sair" type="Button" parent="HBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
+theme_override_fonts/font = ExtResource("5_3f3h0")
+theme_override_font_sizes/font_size = 50
 text = "Sair"
 flat = true
 
