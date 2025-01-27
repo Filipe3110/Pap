@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://xei37ds2aom3" path="res://Sprites/Players/SS2.png" id="14_jwnk5"]
 [ext_resource type="Texture2D" uid="uid://ob8d722dme4j" path="res://Sprites/Players/SSS2.png" id="15_bjcag"]
 [ext_resource type="Texture2D" uid="uid://dudxurqsybgk4" path="res://Sprites/Players/SSS3.png" id="16_p6uwk"]
-[ext_resource type="Script" path="res://Cenas/Enemybarra_de_vida.gd" id="17_fnlq8"]
+[ext_resource type="Script" path="res://Scrips/Enemybarra_de_vida.gd" id="17_fnlq8"]
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Sprites/Barra de vida/0.png" id="18_rprtf"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Sprites/Barra de vida/1.png" id="19_j4ny2"]
 [ext_resource type="Texture2D" uid="uid://cyl1s7o5e2die" path="res://Sprites/Barra de vida/2.png" id="20_ypq0j"]

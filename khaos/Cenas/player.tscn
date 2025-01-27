@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://di40hisi35iii"]
+[gd_scene load_steps=137 format=3 uid="uid://di40hisi35iii"]
 
 [ext_resource type="Script" path="res://Scrips/player.gd" id="1_1eeiq"]
 [ext_resource type="Texture2D" uid="uid://cjl01rha1u7ss" path="res://Sprites/Players/baixo.png" id="2_cavlt"]
@@ -118,6 +118,7 @@
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Sprites/Barra de vida/0.png" id="106_j3lu3"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Sprites/Barra de vida/1.png" id="107_dp3ii"]
 [ext_resource type="Texture2D" uid="uid://xei37ds2aom3" path="res://Sprites/Players/SS2.png" id="108_7apmt"]
+[ext_resource type="PackedScene" uid="uid://r0yba73ccruf" path="res://Cenas/khaos_botao_de_pausa.tscn" id="119_2y1k1"]
 
 [sub_resource type="Animation" id="Animation_ccnfg"]
 length = 0.001
@@ -128,10 +129,10 @@ tracks/0/path = NodePath("texture:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [&"baixo_soco_direita"]
+"values": [&"idle", &"idle"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -140,10 +141,10 @@ tracks/1/path = NodePath("texture:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 0, 1, 1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -152,10 +153,10 @@ tracks/2/path = NodePath("CollisionPolygon2D:polygon")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [PackedVector2Array(-11, 52, -17, 47, -15, 22, -14, 15, -19, 5, -17, -2, -10, -3, -6, -7, -5, -13, 1, -19, 10, -15, 11, -6, 9, -3, 12, 0, 15, -3, 21, -1, 21, 15, 16, 20, 19, 26, 20, 43, 20, 49, 11, 49, 8, 30, -4, 32, -6, 49)]
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -164,46 +165,22 @@ tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(30, -4)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BlockArea/colisao_do_block:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("BlockArea/colisao_do_block:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(15, 7)]
+"values": [true, true]
 }
 
 [sub_resource type="Animation" id="Animation_e0bti"]
@@ -1433,12 +1410,12 @@ libraries = {
 [node name="texture" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 10)
 sprite_frames = SubResource("SpriteFrames_b1pb1")
-animation = &"baixo_soco_direita"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["Player"]]
 position = Vector2(-3, 0)
-polygon = PackedVector2Array(-11, 52, -17, 47, -15, 22, -14, 15, -19, 5, -17, -2, -10, -3, -6, -7, -5, -13, 1, -19, 10, -15, 11, -6, 9, -3, 12, 0, 15, -3, 21, -1, 21, 15, 16, 20, 19, 26, 20, 43, 20, 49, 11, 49, 8, 30, -4, 32, -6, 49)
+polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
@@ -1470,5 +1447,7 @@ disabled = true
 position = Vector2(15, 7)
 shape = SubResource("CapsuleShape2D_m3e42")
 disabled = true
+
+[node name="Khaos botao de pausa" parent="." instance=ExtResource("119_2y1k1")]
 
 [connection signal="area_entered" from="SocoArea" to="." method="_on_soco_area_area_entered"]

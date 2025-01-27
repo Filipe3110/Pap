@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://r0yba73ccruf"]
+
+[ext_resource type="Script" path="res://Cenas/khaos_botao_de_pausa.gd" id="1_ibefq"]
+[ext_resource type="Texture2D" uid="uid://dayvw74vbf6ld" path="res://khaoslogo-removebg-preview.png" id="1_rsfnv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y366h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icvxh"]
+size = Vector2(400, 400)
+
+[node name="Khaos botao de pausa" type="CanvasLayer"]
+script = ExtResource("1_ibefq")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(478, -18)
+scale = Vector2(0.382, 0.246)
+texture_normal = ExtResource("1_rsfnv")
+texture_pressed = SubResource("ViewportTexture_y366h")
+shape = SubResource("RectangleShape2D_icvxh")

@@ -423,17 +423,11 @@ text = "Sair"
 flat = true
 
 [node name="Feito" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 866.0
-offset_top = 602.0
-offset_right = 1041.0
-offset_bottom = 657.0
-
-[node name="Label" type="Label" parent="Feito"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Feito por "
+offset_left = 1055.0
+offset_top = 607.0
+offset_right = 1230.0
+offset_bottom = 662.0
 
 [node name="Button" type="Button" parent="Feito" groups=["button"]]
 layout_mode = 2

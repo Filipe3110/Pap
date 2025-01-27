@@ -21,6 +21,7 @@ position = Vector2(1111, 385)
 scale = Vector2(4, 4)
 
 [node name="Enemy" parent="." instance=ExtResource("3_sm1yj")]
+visible = true
 position = Vector2(1510, 314)
 scale = Vector2(4, 4)
 
