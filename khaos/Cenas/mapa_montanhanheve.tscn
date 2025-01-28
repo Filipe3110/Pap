@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://blvxbf872hs4l"]
 
-[ext_resource type="Texture2D" uid="uid://ck6086rrvdoak" path="res://fundo espaço.jpg" id="1_42cch"]
+[ext_resource type="Texture2D" uid="uid://ck6086rrvdoak" path="res://fundo montanha.jpg" id="1_42cch"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_4aw55"]
 [ext_resource type="PackedScene" uid="uid://c48ayfjabu4st" path="res://Cenas/Enemy.tscn" id="3_1xm3f"]
 

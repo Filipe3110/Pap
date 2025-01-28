@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://8nnegsu7xa8v"]
+[gd_scene load_steps=5 format=3 uid="uid://8nnegsu7xa8v"]
 
 [ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://Sprites/fundo espaço.jpg" id="1_iblnp"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Cenas/player.tscn" id="2_6aw1m"]
-[ext_resource type="PackedScene" uid="uid://c48ayfjabu4st" path="res://Cenas/Enemy.tscn" id="3_sm1yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -18,11 +17,6 @@ texture = ExtResource("1_iblnp")
 
 [node name="Player" parent="." instance=ExtResource("2_6aw1m")]
 position = Vector2(1111, 385)
-scale = Vector2(4, 4)
-
-[node name="Enemy" parent="." instance=ExtResource("3_sm1yj")]
-visible = true
-position = Vector2(1510, 314)
 scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

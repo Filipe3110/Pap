@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://r0yba73ccruf"]
 
-[ext_resource type="Script" path="res://Cenas/khaos_botao_de_pausa.gd" id="1_ibefq"]
+[ext_resource type="Script" path="res://Scrips/khaos_botao_de_pausa.gd" id="1_ibefq"]
 [ext_resource type="Texture2D" uid="uid://dayvw74vbf6ld" path="res://khaoslogo-removebg-preview.png" id="1_rsfnv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_y366h"]
@@ -17,3 +17,5 @@ scale = Vector2(0.382, 0.246)
 texture_normal = ExtResource("1_rsfnv")
 texture_pressed = SubResource("ViewportTexture_y366h")
 shape = SubResource("RectangleShape2D_icvxh")
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
