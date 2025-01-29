@@ -12,7 +12,7 @@ func _on_campanha_pressed():
 	carregar_cena_com_loading("res://Cenas/game.tscn")
 
 func _on_multijogador_pressed():
-	carregar_cena_com_loading("res://Cenas/mapa_montanhanheve.tscn")
+	carregar_cena_com_loading("res://Cenas/Multimapasepersonagens.tscn")
 
 func _on_sair_pressed():
 	get_tree().quit()

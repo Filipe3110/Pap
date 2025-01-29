@@ -1,68 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=7 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Texture2D" uid="uid://dayvw74vbf6ld" path="res://khaoslogo-removebg-preview.png" id="1_7dg3x"]
+[ext_resource type="Script" path="res://Scrips/multimapasepersonagens.gd" id="1_i6way"]
 [ext_resource type="Texture2D" uid="uid://bxhpisj42gyyq" path="res://Sprites/fundo espaço.jpg" id="2_b2tl2"]
+[ext_resource type="Texture2D" uid="uid://cwtd7611ukfbp" path="res://Sprites/Telas/Jogo_Tela_inicial1.jpg" id="2_bs4l7"]
 [ext_resource type="Texture2D" uid="uid://ck6086rrvdoak" path="res://fundo montanha.jpg" id="3_llft4"]
+[ext_resource type="FontFile" uid="uid://cs11cgp5dkcuo" path="res://Sprites/Fontes/KimsBitHand/KimsBitHand.ttf" id="6_181pn"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_i6way")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1179.0
-offset_bottom = 656.0
-color = Color(0, 0, 0, 1)
+[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325.5)
+scale = Vector2(1.61431, 1.28659)
+texture = ExtResource("2_bs4l7")
 
 [node name="Khaoslogo-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(572, 46)
-scale = Vector2(0.406, 0.256)
+position = Vector2(572, 64.5)
+scale = Vector2(0.406, 0.298)
 texture = ExtResource("1_7dg3x")
 
 [node name="Barrinha" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 435.0
+offset_top = 431.0
 offset_right = 1147.0
-offset_bottom = 442.0
-color = Color(0.437324, 0.530543, 0.180688, 1)
+offset_bottom = 438.0
+color = Color(0, 0, 0, 1)
 
 [node name="Borda" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 127.0
-offset_right = 257.0
-offset_bottom = 247.0
+offset_left = 59.0
+offset_top = 97.0
+offset_right = 259.0
+offset_bottom = 217.0
 
 [node name="FundoEspaço" type="Sprite2D" parent="Borda"]
 position = Vector2(99.625, 60)
 scale = Vector2(0.0655833, 0.178462)
 texture = ExtResource("2_b2tl2")
 
+[node name="Mapa1" type="Button" parent="Borda"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
 [node name="Borda1" type="ColorRect" parent="."]
-offset_left = 311.0
-offset_top = 257.0
-offset_right = 511.0
-offset_bottom = 377.0
+layout_mode = 0
+offset_left = 292.0
+offset_top = 143.0
+offset_right = 492.0
+offset_bottom = 263.0
 
 [node name="Fundomontanha" type="Sprite2D" parent="Borda1"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.0654167, 0.177692)
 texture = ExtResource("3_llft4")
 
-[node name="Borda2" type="ColorRect" parent="."]
-offset_left = 633.0
-offset_top = 257.0
-offset_right = 833.0
-offset_bottom = 377.0
+[node name="Mapa2" type="Button" parent="Borda1"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 199.0
+offset_bottom = 119.0
+focus_mode = 0
+flat = true
 
-[node name="Fundomontanha" type="Sprite2D" parent="Borda2"]
-position = Vector2(99.875, 60.25)
-scale = Vector2(0.0654167, 0.177692)
-texture = ExtResource("3_llft4")
+[node name="Borda2" type="ColorRect" parent="."]
+offset_left = 669.0
+offset_top = 143.0
+offset_right = 869.0
+offset_bottom = 263.0
+
+[node name="Mapa2" type="Button" parent="Borda2"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 199.0
+offset_bottom = 114.0
+focus_mode = 0
+flat = true
 
 [node name="Mapas unlocked" type="ColorRect" parent="Borda2"]
-layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 198.0
@@ -70,10 +91,11 @@ offset_bottom = 118.0
 color = Color(0.207512, 0.207512, 0.207512, 1)
 
 [node name="Borda3" type="ColorRect" parent="."]
-offset_left = 885.0
-offset_top = 127.0
-offset_right = 1085.0
-offset_bottom = 247.0
+layout_mode = 0
+offset_left = 895.0
+offset_top = 96.0
+offset_right = 1095.0
+offset_bottom = 216.0
 
 [node name="FundoEspaço" type="Sprite2D" parent="Borda3"]
 position = Vector2(99.625, 60)
@@ -81,8 +103,49 @@ scale = Vector2(0.0655833, 0.178462)
 texture = ExtResource("2_b2tl2")
 
 [node name="Mapas unlocked" type="ColorRect" parent="Borda3"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 198.0
 offset_bottom = 118.0
 color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Mapa4" type="Button" parent="Borda3"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="Borda4" type="ColorRect" parent="."]
+offset_left = 488.0
+offset_top = 284.0
+offset_right = 688.0
+offset_bottom = 404.0
+
+[node name="FundoEspaço" type="Sprite2D" parent="Borda4"]
+position = Vector2(99.625, 60)
+scale = Vector2(0.0655833, 0.178462)
+texture = ExtResource("2_b2tl2")
+
+[node name="Mapas unlocked" type="ColorRect" parent="Borda4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Mapa4" type="Button" parent="Borda4"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_181pn")
+theme_override_font_sizes/font_size = 40
+text = "?"
+flat = true
+
+[connection signal="pressed" from="Borda/Mapa1" to="." method="_on_mapa_1_pressed"]
+[connection signal="pressed" from="Borda1/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="Borda2/Mapa2" to="." method="_on_mapa_2_pressed"]

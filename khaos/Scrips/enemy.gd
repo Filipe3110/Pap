@@ -58,7 +58,7 @@ func Enemy_receber_dano(dano):
 	barra_de_vida.receber_dano(dano)
 
 func morrer():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Cenas/main.tscn")
 
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
