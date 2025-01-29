@@ -6,7 +6,7 @@ var next_scene = ""
 var is_paused = false
 var pause_timer = null
 var text_timer = null
-var carregando_texto = "Carregando"
+var carregando_texto = "A carregar"
 var pontos = 0
 
 func _ready():
