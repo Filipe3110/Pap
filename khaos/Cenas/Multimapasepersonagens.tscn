@@ -13,8 +13,8 @@ anchors_preset = 0
 script = ExtResource("1_i6way")
 
 [node name="JogoTelaInicial1" type="Sprite2D" parent="."]
-position = Vector2(575.5, 325.5)
-scale = Vector2(1.61431, 1.28659)
+position = Vector2(576.999, 328.499)
+scale = Vector2(1.61852, 1.29878)
 texture = ExtResource("2_bs4l7")
 
 [node name="Khaoslogo-removebg-preview" type="Sprite2D" parent="."]
@@ -99,11 +99,6 @@ offset_top = 96.0
 offset_right = 1095.0
 offset_bottom = 216.0
 
-[node name="FundoEspaço" type="Sprite2D" parent="Borda3"]
-position = Vector2(99.625, 60)
-scale = Vector2(0.0655833, 0.178462)
-texture = ExtResource("2_b2tl2")
-
 [node name="Mapas unlocked" type="ColorRect" parent="Borda3"]
 layout_mode = 0
 offset_left = 2.0
@@ -126,11 +121,6 @@ offset_top = 284.0
 offset_right = 688.0
 offset_bottom = 404.0
 
-[node name="FundoEspaço" type="Sprite2D" parent="Borda4"]
-position = Vector2(99.625, 60)
-scale = Vector2(0.0655833, 0.178462)
-texture = ExtResource("2_b2tl2")
-
 [node name="Mapas unlocked" type="ColorRect" parent="Borda4"]
 layout_mode = 0
 offset_left = 2.0
@@ -139,7 +129,7 @@ offset_right = 198.0
 offset_bottom = 118.0
 color = Color(0.207512, 0.207512, 0.207512, 1)
 
-[node name="Mapa4" type="Button" parent="Borda4"]
+[node name="MapaR" type="Button" parent="Borda4"]
 layout_mode = 0
 offset_right = 199.0
 offset_bottom = 118.0
@@ -152,3 +142,4 @@ flat = true
 [connection signal="pressed" from="Borda/Mapa1" to="." method="_on_mapa_1_pressed"]
 [connection signal="pressed" from="Borda1/Mapa2" to="." method="_on_mapa_2_pressed"]
 [connection signal="pressed" from="Borda2/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="Borda4/MapaR" to="." method="_on_mapa_r_pressed"]

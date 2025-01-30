@@ -411,7 +411,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_3f3h0")
 theme_override_font_sizes/font_size = 50
-text = "Controles"
+text = "Controlos"
 flat = true
 
 [node name="Sair" type="Button" parent="HBoxContainer" groups=["button"]]
