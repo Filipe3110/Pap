@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn5pbtplu5c3u"]
-
-[ext_resource type="PackedScene" uid="uid://8nnegsu7xa8v" path="res://Cenas/mapa_espaço.tscn" id="1_1ytwb"]
-
-[node name="Game" type="Node"]
-
-[node name="Mapa espaço" parent="." instance=ExtResource("1_1ytwb")]

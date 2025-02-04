@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://di40hisi35iii"]
+[gd_scene load_steps=136 format=3 uid="uid://di40hisi35iii"]
 
 [ext_resource type="Script" path="res://Scrips/player.gd" id="1_1eeiq"]
 [ext_resource type="Texture2D" uid="uid://cjl01rha1u7ss" path="res://Sprites/Players/baixo.png" id="2_cavlt"]
@@ -118,7 +118,6 @@
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Sprites/Barra de vida/0.png" id="106_j3lu3"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Sprites/Barra de vida/1.png" id="107_dp3ii"]
 [ext_resource type="Texture2D" uid="uid://xei37ds2aom3" path="res://Sprites/Players/SS2.png" id="108_7apmt"]
-[ext_resource type="PackedScene" uid="uid://r0yba73ccruf" path="res://Cenas/khaos_botao_de_pausa.tscn" id="119_2y1k1"]
 
 [sub_resource type="Animation" id="Animation_ccnfg"]
 length = 0.001
@@ -1447,7 +1446,5 @@ disabled = true
 position = Vector2(15, 7)
 shape = SubResource("CapsuleShape2D_m3e42")
 disabled = true
-
-[node name="Khaos botao de pausa" parent="." instance=ExtResource("119_2y1k1")]
 
 [connection signal="area_entered" from="SocoArea" to="." method="_on_soco_area_area_entered"]

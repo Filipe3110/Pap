@@ -6,7 +6,7 @@ func _ready():
 	randomize()
 
 func _on_mapa_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/game.tscn")
+	get_tree().change_scene_to_file("res://Cenas/gameM.tscn")
 
 func _on_mapa_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/mapa_montanhanheve.tscn")
