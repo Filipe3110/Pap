@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://f5m3a4bejhb1"]
-
-[ext_resource type="Script" path="res://Scrips/main.gd" id="1_mdxp0"]
-[ext_resource type="PackedScene" uid="uid://dodqa0hhxsm5p" path="res://Cenas/tela_inicial.tscn" id="2_oksv7"]
-
-[node name="Main" type="Node"]
-script = ExtResource("1_mdxp0")
-
-[node name="Tela inicial" parent="." instance=ExtResource("2_oksv7")]

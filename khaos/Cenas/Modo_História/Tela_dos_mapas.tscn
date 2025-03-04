@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://o8fosq6s226y"]
+
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
+[ext_resource type="Texture2D" uid="uid://t58ss175xxnd" path="res://Assets/Cenários/khaoslogo.png" id="3_r8mah"]
+[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="4_ehp0k"]
+[ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="5_f5vk0"]
+
+[node name="Tela_dos_mapas" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
+position = Vector2(576.999, 328.499)
+scale = Vector2(1.61852, 1.29878)
+texture = ExtResource("2_xqthu")
+
+[node name="Khaoslogo" type="Sprite2D" parent="."]
+position = Vector2(572, 64.5)
+scale = Vector2(0.406, 0.298)
+texture = ExtResource("3_r8mah")
+
+[node name="Voltar" type="Button" parent="Khaoslogo"]
+offset_left = -158.0
+offset_top = -133.0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="Barrinha" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 431.0
+offset_right = 1147.0
+offset_bottom = 438.0
+color = Color(0, 0, 0, 1)
+
+[node name="1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 97.0
+offset_right = 259.0
+offset_bottom = 217.0
+
+[node name="FundoEspaço" type="Sprite2D" parent="1"]
+position = Vector2(99.625, 60)
+scale = Vector2(0.0655833, 0.178462)
+texture = ExtResource("4_ehp0k")
+
+[node name="Mapa1" type="Button" parent="1"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 143.0
+offset_right = 492.0
+offset_bottom = 263.0
+
+[node name="Fundomontanha" type="Sprite2D" parent="2"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.0654167, 0.177692)
+texture = ExtResource("5_f5vk0")
+
+[node name="Mapa2" type="Button" parent="2"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 199.0
+offset_bottom = 119.0
+focus_mode = 0
+flat = true
+
+[node name="3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 143.0
+offset_right = 869.0
+offset_bottom = 263.0
+
+[node name="Mapa2" type="Button" parent="3"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 199.0
+offset_bottom = 114.0
+focus_mode = 0
+flat = true
+
+[node name="Mapas unlocked" type="ColorRect" parent="3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 96.0
+offset_right = 1095.0
+offset_bottom = 216.0
+
+[node name="Mapas unlocked" type="ColorRect" parent="4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Mapa4" type="Button" parent="4"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Khaoslogo/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="1/Mapa1" to="." method="_on_mapa_1_pressed"]
+[connection signal="pressed" from="2/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="3/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="4/Mapa4" to="." method="_on_mapa_4_pressed"]

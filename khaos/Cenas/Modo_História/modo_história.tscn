@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dofk8tym3fcey"]
+
+[ext_resource type="PackedScene" uid="uid://o8fosq6s226y" path="res://Cenas/Modo_História/Tela_dos_mapas.tscn" id="1_7xtn2"]
+
+[node name="ModoHistória" type="Node2D"]
+
+[node name="Multiplayermapas" parent="." instance=ExtResource("1_7xtn2")]

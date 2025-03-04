@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://p6qe3yqdjq5f"]
+
+[sub_resource type="Resource" id="Resource_xfa0i"]
+metadata/__load_path__ = "res://Scrips/controles.gd"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4s0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_pvlv7"]
+metadata/__load_path__ = "res://Atalhos/P1.jpg"
+
+[sub_resource type="Resource" id="Resource_7ipgm"]
+metadata/__load_path__ = "res://Atalhos/W.jpg"
+
+[sub_resource type="Resource" id="Resource_mw2tm"]
+metadata/__load_path__ = "res://Atalhos/D.jpg"
+
+[sub_resource type="Resource" id="Resource_rxklu"]
+metadata/__load_path__ = "res://Atalhos/A.jpg"
+
+[sub_resource type="Resource" id="Resource_sgh0g"]
+metadata/__load_path__ = "res://Atalhos/S.jpg"
+
+[node name="Controles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("Resource_xfa0i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 2
+offset_left = 460.0
+offset_top = 95.0
+offset_right = 695.0
+offset_bottom = 164.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Controlos"
+
+[node name="controles_khaos" type="AnimatedSprite2D" parent="."]
+position = Vector2(579, 324.5)
+scale = Vector2(1.62132, 1.31504)
+sprite_frames = SubResource("SpriteFrames_p4s0a")
+autoplay = "default"
+frame_progress = 0.138277
+
+[node name="P1" type="Sprite2D" parent="."]
+position = Vector2(496, 192)
+scale = Vector2(2, 2)
+texture = SubResource("Resource_pvlv7")
+
+[node name="W" type="Sprite2D" parent="."]
+position = Vector2(496, 232)
+scale = Vector2(2, 2)
+texture = SubResource("Resource_7ipgm")
+
+[node name="D" type="Sprite2D" parent="."]
+position = Vector2(496, 352)
+scale = Vector2(2, 2)
+texture = SubResource("Resource_mw2tm")
+
+[node name="A" type="Sprite2D" parent="."]
+position = Vector2(492, 272)
+scale = Vector2(2, 2)
+texture = SubResource("Resource_rxklu")
+offset = Vector2(2, 0)
+
+[node name="S" type="Sprite2D" parent="."]
+position = Vector2(496, 312)
+scale = Vector2(2, 2)
+texture = SubResource("Resource_sgh0g")
+
+[node name="Cima_Up" type="Label" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 216.0
+offset_right = 602.0
+offset_bottom = 239.0
+text = "Cima/up
+"
+
+[node name="Esquerda_Left" type="Label" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 264.0
+offset_right = 633.0
+offset_bottom = 287.0
+text = "Esquerda/Left
+"
+
+[node name="Baixo_Down" type="Label" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 304.0
+offset_right = 622.0
+offset_bottom = 327.0
+text = "Baixo/Down"
+
+[node name="Direita_R" type="Label" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 344.0
+offset_right = 627.0
+offset_bottom = 367.0
+text = "Direita/Right"
+
+[node name="Voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 472.0
+offset_right = 656.0
+offset_bottom = 496.0
+focus_mode = 0
+text = "Voltar"
+flat = true

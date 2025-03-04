@@ -1,0 +1,156 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgma4jqnsfj0r"]
+
+[sub_resource type="Resource" id="Resource_82hv1"]
+metadata/__load_path__ = "res://Scrips/multimapasepersonagens.gd"
+
+[sub_resource type="Resource" id="Resource_b5tg0"]
+metadata/__load_path__ = "res://Sprites/Telas/Jogo_Tela_inicial1.jpg"
+
+[sub_resource type="Resource" id="Resource_in4ba"]
+metadata/__load_path__ = "res://khaoslogo-removebg-preview.png"
+
+[sub_resource type="Resource" id="Resource_ye2yb"]
+metadata/__load_path__ = "res://Sprites/fundo espaço.jpg"
+
+[sub_resource type="Resource" id="Resource_s8ke6"]
+metadata/__load_path__ = "res://fundo montanha.jpg"
+
+[sub_resource type="Resource" id="Resource_ufvvv"]
+metadata/__load_path__ = "res://Sprites/Fontes/KimsBitHand/KimsBitHand.ttf"
+
+[node name="Multiplayermapas" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("Resource_82hv1")
+
+[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
+position = Vector2(576.999, 328.499)
+scale = Vector2(1.61852, 1.29878)
+texture = SubResource("Resource_b5tg0")
+
+[node name="Khaoslogo-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(572, 64.5)
+scale = Vector2(0.406, 0.298)
+texture = SubResource("Resource_in4ba")
+
+[node name="Barrinha" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 431.0
+offset_right = 1147.0
+offset_bottom = 438.0
+color = Color(0, 0, 0, 1)
+
+[node name="Borda" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 97.0
+offset_right = 259.0
+offset_bottom = 217.0
+
+[node name="FundoEspaço" type="Sprite2D" parent="Borda"]
+position = Vector2(99.625, 60)
+scale = Vector2(0.0655833, 0.178462)
+texture = SubResource("Resource_ye2yb")
+
+[node name="Mapa1" type="Button" parent="Borda"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="Borda1" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 143.0
+offset_right = 492.0
+offset_bottom = 263.0
+
+[node name="Fundomontanha" type="Sprite2D" parent="Borda1"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.0654167, 0.177692)
+texture = SubResource("Resource_s8ke6")
+
+[node name="Mapa2" type="Button" parent="Borda1"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 199.0
+offset_bottom = 119.0
+focus_mode = 0
+flat = true
+
+[node name="Borda2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 143.0
+offset_right = 869.0
+offset_bottom = 263.0
+
+[node name="Mapa2" type="Button" parent="Borda2"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 199.0
+offset_bottom = 114.0
+focus_mode = 0
+flat = true
+
+[node name="Mapas unlocked" type="ColorRect" parent="Borda2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Borda3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 96.0
+offset_right = 1095.0
+offset_bottom = 216.0
+
+[node name="Mapas unlocked" type="ColorRect" parent="Borda3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Mapa4" type="Button" parent="Borda3"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="Borda4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 284.0
+offset_right = 688.0
+offset_bottom = 404.0
+
+[node name="Mapas unlocked" type="ColorRect" parent="Borda4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="MapaR" type="Button" parent="Borda4"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+theme_override_fonts/font = SubResource("Resource_ufvvv")
+theme_override_font_sizes/font_size = 40
+text = "?"
+flat = true
+
+[connection signal="pressed" from="Borda/Mapa1" to="." method="_on_mapa_1_pressed"]
+[connection signal="pressed" from="Borda1/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="Borda2/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="Borda4/MapaR" to="." method="_on_mapa_r_pressed"]
