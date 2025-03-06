@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xs5o7y2tol7"
-path="res://.godot/imported/baixoblock.png-2cc4a6468592c0249f026e498b259fac.ctex"
+uid="uid://dxecollxfnhx1"
+path="res://.godot/imported/walk1.png-4b145215bec1e39fb8c7183bb3d4f841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/baixoblock.png"
-dest_files=["res://.godot/imported/baixoblock.png-2cc4a6468592c0249f026e498b259fac.ctex"]
+source_file="res://Player/player_sp/walk1.png"
+dest_files=["res://.godot/imported/walk1.png-4b145215bec1e39fb8c7183bb3d4f841.ctex"]
 
 [params]
 

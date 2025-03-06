@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b13ba6ee8xtlt"
-path="res://.godot/imported/baixo.png-6bbceb15bd2980d9b7ced52a3ac9c775.ctex"
+path="res://.godot/imported/baixo.png-d6293785a74a56d493a5477e1d29de9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/baixo.png"
-dest_files=["res://.godot/imported/baixo.png-6bbceb15bd2980d9b7ced52a3ac9c775.ctex"]
+source_file="res://Player/player_sp/baixo.png"
+dest_files=["res://.godot/imported/baixo.png-d6293785a74a56d493a5477e1d29de9f.ctex"]
 
 [params]
 

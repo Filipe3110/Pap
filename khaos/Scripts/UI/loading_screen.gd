@@ -10,7 +10,7 @@ var carregando_texto = "A carregar"
 var pontos = 0
 
 func _ready():
-	var random_speed = randf_range(0.3, 1)
+	var random_speed = randf_range(1, 3)
 	animation_player.speed_scale = random_speed
 	animation_player.play("Barra de load")
 	animation_player.animation_finished.connect(_on_animation_finished)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=6 format=3 uid="uid://o8fosq6s226y"]
 
+[ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Cenas/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
 [ext_resource type="Texture2D" uid="uid://t58ss175xxnd" path="res://Assets/Cenários/khaoslogo.png" id="3_r8mah"]
 [ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="4_ehp0k"]
@@ -8,10 +9,11 @@
 [node name="Tela_dos_mapas" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_8hpvv")
 
 [node name="JogoTelaInicial1" type="Sprite2D" parent="."]
-position = Vector2(576.999, 328.499)
-scale = Vector2(1.61852, 1.29878)
+position = Vector2(576.999, 322.999)
+scale = Vector2(1.61852, 1.32114)
 texture = ExtResource("2_xqthu")
 
 [node name="Khaoslogo" type="Sprite2D" parent="."]
@@ -81,7 +83,7 @@ offset_top = 143.0
 offset_right = 869.0
 offset_bottom = 263.0
 
-[node name="Mapa2" type="Button" parent="3"]
+[node name="Mapa3" type="Button" parent="3"]
 layout_mode = 0
 offset_top = -4.0
 offset_right = 199.0
@@ -122,5 +124,5 @@ flat = true
 [connection signal="pressed" from="Khaoslogo/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="1/Mapa1" to="." method="_on_mapa_1_pressed"]
 [connection signal="pressed" from="2/Mapa2" to="." method="_on_mapa_2_pressed"]
-[connection signal="pressed" from="3/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="3/Mapa3" to="." method="_on_mapa_3_pressed"]
 [connection signal="pressed" from="4/Mapa4" to="." method="_on_mapa_4_pressed"]

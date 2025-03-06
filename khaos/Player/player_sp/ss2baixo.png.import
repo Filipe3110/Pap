@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c51y1ap2deh8i"
-path="res://.godot/imported/salto.png-7b7885b3fc14a80ab45a9f3e692d016f.ctex"
+uid="uid://dwqjc5vqp3wqa"
+path="res://.godot/imported/ss2baixo.png-a9662d9eeec61d7d7933a55ba32eaad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/salto.png"
-dest_files=["res://.godot/imported/salto.png-7b7885b3fc14a80ab45a9f3e692d016f.ctex"]
+source_file="res://Player/player_sp/ss2baixo.png"
+dest_files=["res://.godot/imported/ss2baixo.png-a9662d9eeec61d7d7933a55ba32eaad4.ctex"]
 
 [params]
 

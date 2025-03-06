@@ -1,25 +1,25 @@
-[gd_scene load_steps=10 format=4 uid="uid://dodqa0hhxsm5p"]
+[gd_scene load_steps=10 format=4 uid="uid://dvicjewwkvjaa"]
 
-[ext_resource type="Texture2D" uid="uid://btqhvk2ui2dq1" path="res://Assets/Telas/Jogo Tela inicial1.jpg" id="1_pqygb"]
-[ext_resource type="Script" uid="uid://ceyrfq2fmjgux" path="res://Scripts/UI/tela_inicial.gd" id="1_vcnny"]
-[ext_resource type="Texture2D" uid="uid://dot86dymjsvan" path="res://Assets/Telas/Jogo Tela inicial2.jpg" id="2_u0i0r"]
-[ext_resource type="Texture2D" uid="uid://b0er7g7q26ljf" path="res://Assets/Telas/Jogo Tela inicial3.jpg" id="3_8k0yg"]
+[ext_resource type="Script" uid="uid://ceyrfq2fmjgux" path="res://Scripts/UI/tela_inicial.gd" id="1_lfqg5"]
+[ext_resource type="Texture2D" uid="uid://btqhvk2ui2dq1" path="res://Assets/Telas/Jogo Tela inicial1.jpg" id="2_fy5sx"]
+[ext_resource type="Texture2D" uid="uid://dot86dymjsvan" path="res://Assets/Telas/Jogo Tela inicial2.jpg" id="3_ki7t3"]
+[ext_resource type="Texture2D" uid="uid://b0er7g7q26ljf" path="res://Assets/Telas/Jogo Tela inicial3.jpg" id="4_k1rmo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yoqlf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pqygb")
+"texture": ExtResource("2_fy5sx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_u0i0r")
+"texture": ExtResource("3_ki7t3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8k0yg")
+"texture": ExtResource("4_k1rmo")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 0.5
 }]
 
 [sub_resource type="Image" id="Image_ymnh6"]
@@ -359,14 +359,14 @@ cache/0/25/0/glyphs/3/size = Vector2(0, 0)
 cache/0/25/0/glyphs/3/uv_rect = Rect2(0, 0, 0, 0)
 cache/0/25/0/glyphs/3/texture_idx = -1
 
-[node name="Tela inicial" type="Control"]
+[node name="Tela do logout" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vcnny")
+script = ExtResource("1_lfqg5")
 
 [node name="khaos" type="AnimatedSprite2D" parent="."]
 position = Vector2(576.001, 324.5)
@@ -374,43 +374,6 @@ scale = Vector2(1.61571, 1.31911)
 sprite_frames = SubResource("SpriteFrames_yoqlf")
 autoplay = "default"
 frame_progress = 0.972938
-
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 743.0
-offset_top = 314.0
-offset_right = 1050.0
-offset_bottom = 562.0
-alignment = 1
-
-[node name="Modo História" type="Button" parent="HBoxContainer" groups=["button"]]
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Story Mode"
-flat = true
-
-[node name="Multijogador" type="Button" parent="HBoxContainer" groups=["button"]]
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Multiplayer"
-flat = true
-
-[node name="Opções" type="Button" parent="HBoxContainer" groups=["button"]]
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Options
-"
-flat = true
-
-[node name="Sair" type="Button" parent="HBoxContainer" groups=["button"]]
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Leave"
-flat = true
 
 [node name="Feito" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -426,8 +389,3 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_8juko")
 text = "Filipe Nunes"
 flat = true
-
-[connection signal="pressed" from="HBoxContainer/Modo História" to="." method="_on_modo_história_pressed"]
-[connection signal="pressed" from="HBoxContainer/Multijogador" to="." method="_on_multijogador_pressed"]
-[connection signal="pressed" from="HBoxContainer/Opções" to="." method="_on_opções_pressed"]
-[connection signal="pressed" from="HBoxContainer/Sair" to="." method="_on_sair_pressed"]
