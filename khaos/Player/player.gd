@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const VELOCIDADE = 300.0
 const FORCA_PULO = -400.0
-const GRAVIDADE = 900.0  # Adicionado valor fixo para gravidade
+const GRAVIDADE = 900.0
 
 var esta_pulando := false
 var esta_atacando := false
@@ -109,5 +109,14 @@ func _quando_animacao_finalizar(anim_name):
 
 func _on_soco_area_body_entered(body):
 	if body.is_in_group("inimigo"):
-		body.take_damage(10)  
-		print("Inimigo atingido!")
+		if not body.esta_bloqueando:
+			body.take_damage(10)  
+			print("Inimigo atingido!")
+		else:
+			print("Inimigo bloqueou o ataque!")
+
+func take_damage(dano: int):
+	if esta_bloqueando:
+		dano = dano / 2  # Reduz o dano pela metade se estiver bloqueando
+	barra_de_vida.receber_dano(dano)
+	animation_player.play("hurt")  # Animação de receber dano

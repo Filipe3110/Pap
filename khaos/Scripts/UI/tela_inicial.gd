@@ -1,23 +1,19 @@
 extends Control
 
-func _ready():
-	$"HBoxContainer/Modo História".pressed.connect(_on_modo_história_pressed)
-	$"HBoxContainer/Multijogador".pressed.connect(_on_multijogador_pressed)
-	$"HBoxContainer/Opções".pressed.connect(_on_opções_pressed)
-	$HBoxContainer/Sair.pressed.connect(_on_sair_pressed)
+
 
 func _on_modo_história_pressed():
-	carregar_cena_com_loading("res://Cenas/Modo_História/Tela_dos_mapas.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Modo_História/Tela_dos_mapas.tscn")
 
 func _on_multijogador_pressed():
-	carregar_cena_com_loading("res://Cenas/game.tscn")
+	get_tree().change_scene_to_file("res://")
 
 func _on_opções_pressed():
 	get_tree().change_scene_to_file("res://Cenas/controles.tscn")
 
 func _on_sair_pressed():
-	Firebase.Auth.logout()
-	get_tree().change_scene_to_file("res://Cenas/UI/Authentication.tscn")
+	#Firebase.Auth.logout()
+	get_tree().quit()
 
 
 func carregar_cena_com_loading(caminho_da_proxima_cena):
