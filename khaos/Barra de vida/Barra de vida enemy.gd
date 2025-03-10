@@ -8,7 +8,7 @@ var vida_maxima = 100
 func _ready():
 	update_barra()
 	
-func take_damage(dano):
+func receber_dano(dano):
 	vida_atual -= dano
 	vida_atual = clamp(vida_atual, 0, vida_maxima)  
 

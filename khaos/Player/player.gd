@@ -8,7 +8,7 @@ var esta_pulando := false
 var esta_atacando := false
 var esta_abaixando := false
 var esta_bloqueando := false
-var direcao_atual := 1  # 1 para direita, -1 para esquerda
+var direcao_atual := 1 
 
 @onready var animation_player = $AnimationPlayer
 @onready var barra_de_vida = $BarraDeVida
@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 	# Abaixar
 	if Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando:
 		esta_abaixando = true
-		animation_player.play("crouch")  # Corrigido nome da animação
+		animation_player.play("crouch") 
 	else:
 		esta_abaixando = false
 
@@ -107,16 +107,20 @@ func _quando_animacao_finalizar(anim_name):
 	if anim_name in combo or anim_name in baixo_combo:
 		esta_atacando = false
 
-func _on_soco_area_body_entered(body):
+func _on_soco_area_body_entered(body: Node2D) -> void:
+	print("Área de ataque detectou corpo: ", body.name)
 	if body.is_in_group("inimigo"):
-		if not body.esta_bloqueando:
-			body.take_damage(10)  
-			print("Inimigo atingido!")
-		else:
-			print("Inimigo bloqueou o ataque!")
+		print("Corpo detectado pertence ao grupo 'inimigos'.")
+		if combo[contcombo] == "soco_direita" or combo[contcombo] == "soco_esquerda":
+			print("Ataque básico detectado. Causando 5 de dano.")
+			body.call("Enemy_receber_dano", 5)  
+		elif combo[contcombo] == "uppercut":
+			print("Uppercut detectado. Causando 10 de dano.")
+			body.call("Enemy_receber_dano", 10)
+	else:
+		print("Corpo detectado NÃO pertence ao grupo 'inimigos'.")
 
 func take_damage(dano: int):
 	if esta_bloqueando:
-		dano = dano / 2  # Reduz o dano pela metade se estiver bloqueando
+		dano = dano / 2  
 	barra_de_vida.receber_dano(dano)
-	animation_player.play("hurt")  # Animação de receber dano

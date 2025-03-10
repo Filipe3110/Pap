@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cfg701xph710e"]
+[gd_scene load_steps=36 format=3 uid="uid://cfg701xph710e"]
 
 [ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Player/player_sp/baixo.png" id="1_5hcft"]
 [ext_resource type="Script" uid="uid://qva0wt2v5jwx" path="res://Enemy/enemy.gd" id="1_mqp78"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Player/player_sp/SS2.png" id="13_l1fjw"]
 [ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Player/player_sp/SSS2.png" id="14_b5wqg"]
 [ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Player/player_sp/SSS3.png" id="15_hgro5"]
+[ext_resource type="Script" uid="uid://cdgxt8sh753jf" path="res://Barra de vida/Barra de vida enemy.gd" id="17_sbh3k"]
 
 [sub_resource type="Animation" id="Animation_ccnfg"]
 length = 0.001
@@ -1299,7 +1300,7 @@ height = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqp78"]
 size = Vector2(66, 79)
 
-[node name="Enemy" type="CharacterBody2D" groups=["Player"]]
+[node name="Enemy" type="CharacterBody2D" groups=["inimigo"]]
 script = ExtResource("1_mqp78")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1313,7 +1314,7 @@ sprite_frames = SubResource("SpriteFrames_b1pb1")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["Player"]]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["inimigo"]]
 position = Vector2(-3, 0)
 polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)
 
@@ -1324,6 +1325,7 @@ limit_right = 3000
 limit_bottom = 650
 
 [node name="BarraDeVida" type="CanvasLayer" parent="."]
+script = ExtResource("17_sbh3k")
 
 [node name="BarraSprite" type="AnimatedSprite2D" parent="BarraDeVida"]
 position = Vector2(250.5, 42.25)
