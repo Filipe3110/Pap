@@ -4,9 +4,3 @@
 
 [node name="VitouDerr" type="CanvasLayer"]
 script = ExtResource("1_1t0lu")
-
-[node name="VDLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(21.9625, 22.4436)
-text = "Vitória"
