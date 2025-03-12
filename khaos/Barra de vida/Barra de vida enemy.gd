@@ -4,11 +4,15 @@ extends CanvasLayer
 
 var vida_atual = 100 
 var vida_maxima = 100  
+var esta_bloqueando = false 
 
 func _ready():
 	update_barra()
 	
 func receber_dano(dano):
+	if esta_bloqueando: 
+		dano = dano / 2 
+
 	vida_atual -= dano
 	vida_atual = clamp(vida_atual, 0, vida_maxima)  
 

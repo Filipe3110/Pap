@@ -108,19 +108,24 @@ func _quando_animacao_finalizar(anim_name):
 		esta_atacando = false
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
-	print("Área de ataque detectou corpo: ", body.name)
 	if body.is_in_group("inimigo"):
-		print("Corpo detectado pertence ao grupo 'inimigos'.")
 		if combo[contcombo] == "soco_direita" or combo[contcombo] == "soco_esquerda":
-			print("Ataque básico detectado. Causando 5 de dano.")
 			body.call("Enemy_receber_dano", 5)  
 		elif combo[contcombo] == "uppercut":
-			print("Uppercut detectado. Causando 10 de dano.")
 			body.call("Enemy_receber_dano", 10)
-	else:
-		print("Corpo detectado NÃO pertence ao grupo 'inimigos'.")
-
-func take_damage(dano: int):
+			
+func Player_receber_dano(dano):
+	if barra_de_vida == null:
+		print("Erro: Barra de vida não encontrada no nó Player!")
+		return
+	if not barra_de_vida.has_method("receber_dano"):
+		print("Erro: Método 'receber_dano' não encontrado na barra de vida!")
+		return
+	
+	# Verifica se o jogador está bloqueando
 	if esta_bloqueando:
-		dano = dano / 2  
-	barra_de_vida.receber_dano(dano)
+		dano = dano / 2  # Reduz o dano pela metade se estiver bloqueando
+		print("Jogador bloqueou! Dano reduzido para:", dano)
+	
+	barra_de_vida.receber_dano(dano) 
+	print("Jogador recebeu", dano, "de dano! Vida restante:", barra_de_vida.vida_atual)
