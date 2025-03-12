@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce6vd4lykf81q"]
+[gd_scene load_steps=6 format=3 uid="uid://ce6vd4lykf81q"]
 
 [ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="1_y5nrm"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Player2/player_2.tscn" id="3_y5nrm"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Player1/player_1.tscn" id="3_ybgde"]
-[ext_resource type="PackedScene" path="res://Cenas/UI/menu_pausa.tscn" id="4_ybgde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -39,6 +38,3 @@ shape = SubResource("RectangleShape2D_xwa4g")
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(41.5, 321.25)
 shape = SubResource("RectangleShape2D_xwa4g")
-
-[node name="MenuPausa" parent="." instance=ExtResource("4_ybgde")]
-script = null

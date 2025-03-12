@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://diq54slofuygh"]
 
-[ext_resource type="Script" path="res://Scripts/UI/khaos_botao_de_pausa.gd" id="1_s8nnc"]
+[ext_resource type="Script" uid="uid://yw7hfywun8en" path="res://Scripts/UI/khaos_botao_de_pausa.gd" id="1_s8nnc"]
 
 [node name="MenuPausa" type="CanvasLayer"]
 script = ExtResource("1_s8nnc")
