@@ -74,12 +74,12 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
 		
 		# Animação de movimento
-		if esta_pulando:
-			animation_player.play("jump")
+		if esta_pulando and animation_player.current_animation:
+			animation_player.current_animation = "jump"
 		elif direcao != 0:
-			animation_player.play("run")
+			animation_player.current_animation = "run"
 		else:
-			animation_player.play("idle")
+			animation_player.current_animation = "idle"
 
 	move_and_slide()
 
@@ -113,19 +113,22 @@ func _on_soco_area_body_entered(body: Node2D) -> void:
 			body.call("Enemy_receber_dano", 5)  
 		elif combo[contcombo] == "uppercut":
 			body.call("Enemy_receber_dano", 10)
-			
+
+var in_hit_cooldown = false
+
 func Player_receber_dano(dano):
+	if (in_hit_cooldown): return
+	in_hit_cooldown = true
+	
 	if barra_de_vida == null:
-		print("Erro: Barra de vida não encontrada no nó Player!")
 		return
 	if not barra_de_vida.has_method("receber_dano"):
-		print("Erro: Método 'receber_dano' não encontrado na barra de vida!")
 		return
-	
-	# Verifica se o jogador está bloqueando
+	print(esta_bloqueando)
 	if esta_bloqueando:
-		dano = dano / 2  # Reduz o dano pela metade se estiver bloqueando
-		print("Jogador bloqueou! Dano reduzido para:", dano)
+		dano = dano / 2  
 	
 	barra_de_vida.receber_dano(dano) 
-	print("Jogador recebeu", dano, "de dano! Vida restante:", barra_de_vida.vida_atual)
+	
+	await get_tree().create_timer(.5).timeout
+	in_hit_cooldown = false

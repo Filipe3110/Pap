@@ -6,13 +6,13 @@ func _on_modo_história_pressed():
 	get_tree().change_scene_to_file("res://Cenas/Modo_História/Tela_dos_mapas.tscn")
 
 func _on_multijogador_pressed():
-	get_tree().change_scene_to_file("res://")
+	get_tree().change_scene_to_file("res://Cenas/Multijogador/multijogador.tscn")
 
 func _on_opções_pressed():
 	get_tree().change_scene_to_file("res://Cenas/controles.tscn")
 
 func _on_sair_pressed():
-	#Firebase.Auth.logout()
+	Firebase.Auth.logout()
 	get_tree().quit()
 
 

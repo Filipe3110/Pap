@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0drclnjt7fdc"]
+[gd_scene load_steps=6 format=3 uid="uid://dtwp64gs1usv"]
 
-[ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="1_k0lpc"]
-[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Player/player.tscn" id="2_4aw55"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Enemy/enemy.tscn" id="3_yobii"]
+[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="2_h6sy4"]
+[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Player/player.tscn" id="3_hx8d7"]
+[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Enemy/enemy.tscn" id="4_gi46f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -10,17 +10,17 @@ size = Vector2(3004, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
 size = Vector2(81, 639.5)
 
-[node name="Mapa Montanhanheve" type="Node2D"]
+[node name="Mapa Espço" type="Node2D"]
 
-[node name="Fundo montanha" type="Sprite2D" parent="."]
+[node name="Fundo  espaço" type="Sprite2D" parent="."]
 position = Vector2(1505, 324)
-texture = ExtResource("1_k0lpc")
+texture = ExtResource("2_h6sy4")
 
-[node name="Player" parent="." instance=ExtResource("2_4aw55")]
+[node name="Player" parent="." instance=ExtResource("3_hx8d7")]
 position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("3_yobii")]
+[node name="Enemy" parent="." instance=ExtResource("4_gi46f")]
 position = Vector2(1324, 410)
 scale = Vector2(4, 4)
 

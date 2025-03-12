@@ -1,13 +1,12 @@
 extends Control
 
-func _ready() -> void:
-	pass
 
 func _on_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
 func _on_mapa_1_pressed() -> void:
-	carregar_cena_com_loading("")
+	carregar_cena_com_loading("res://Mapas/mapa_espço.tscn")
+
 
 func _on_mapa_2_pressed() -> void:
 	carregar_cena_com_loading("res://Mapas/mapa_montanhanheve.tscn")

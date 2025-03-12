@@ -1,37 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgma4jqnsfj0r"]
+[gd_scene load_steps=6 format=3 uid="uid://bgma4jqnsfj0r"]
 
-[sub_resource type="Resource" id="Resource_82hv1"]
-metadata/__load_path__ = "res://Scrips/multimapasepersonagens.gd"
-
-[sub_resource type="Resource" id="Resource_b5tg0"]
-metadata/__load_path__ = "res://Sprites/Telas/Jogo_Tela_inicial1.jpg"
-
-[sub_resource type="Resource" id="Resource_in4ba"]
-metadata/__load_path__ = "res://khaoslogo-removebg-preview.png"
-
-[sub_resource type="Resource" id="Resource_ye2yb"]
-metadata/__load_path__ = "res://Sprites/fundo espaço.jpg"
-
-[sub_resource type="Resource" id="Resource_s8ke6"]
-metadata/__load_path__ = "res://fundo montanha.jpg"
-
-[sub_resource type="Resource" id="Resource_ufvvv"]
-metadata/__load_path__ = "res://Sprites/Fontes/KimsBitHand/KimsBitHand.ttf"
+[ext_resource type="Script" uid="uid://bng7coayd3y85" path="res://Scripts/Multijogador/Mapas_Modo_História.gd" id="1_2l8wv"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_tqfpy"]
+[ext_resource type="Texture2D" uid="uid://t58ss175xxnd" path="res://Assets/Cenários/khaoslogo.png" id="2_2l8wv"]
+[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="3_t7vir"]
+[ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="4_5ycn8"]
 
 [node name="Multiplayermapas" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = SubResource("Resource_82hv1")
+script = ExtResource("1_2l8wv")
 
-[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
-position = Vector2(576.999, 328.499)
-scale = Vector2(1.61852, 1.29878)
-texture = SubResource("Resource_b5tg0")
+[node name="Tela" type="Sprite2D" parent="."]
+position = Vector2(576.999, 323.999)
+scale = Vector2(1.61852, 1.31707)
+texture = ExtResource("1_tqfpy")
 
-[node name="Khaoslogo-removebg-preview" type="Sprite2D" parent="."]
+[node name="Khaoslogo" type="Sprite2D" parent="."]
 position = Vector2(572, 64.5)
 scale = Vector2(0.406, 0.298)
-texture = SubResource("Resource_in4ba")
+texture = ExtResource("2_2l8wv")
 
 [node name="Barrinha" type="ColorRect" parent="."]
 layout_mode = 0
@@ -51,7 +39,7 @@ offset_bottom = 217.0
 [node name="FundoEspaço" type="Sprite2D" parent="Borda"]
 position = Vector2(99.625, 60)
 scale = Vector2(0.0655833, 0.178462)
-texture = SubResource("Resource_ye2yb")
+texture = ExtResource("3_t7vir")
 
 [node name="Mapa1" type="Button" parent="Borda"]
 layout_mode = 0
@@ -70,7 +58,7 @@ offset_bottom = 263.0
 [node name="Fundomontanha" type="Sprite2D" parent="Borda1"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.0654167, 0.177692)
-texture = SubResource("Resource_s8ke6")
+texture = ExtResource("4_5ycn8")
 
 [node name="Mapa2" type="Button" parent="Borda1"]
 layout_mode = 0
@@ -145,7 +133,6 @@ layout_mode = 0
 offset_right = 199.0
 offset_bottom = 118.0
 focus_mode = 0
-theme_override_fonts/font = SubResource("Resource_ufvvv")
 theme_override_font_sizes/font_size = 40
 text = "?"
 flat = true
