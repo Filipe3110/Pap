@@ -23,3 +23,6 @@ func receber_dano(dano):
 
 func update_barra():
 	barra_sprite.frame = vida_atual
+
+func _morrer():
+	print("aaaaaaaaaaaaaaaaa")

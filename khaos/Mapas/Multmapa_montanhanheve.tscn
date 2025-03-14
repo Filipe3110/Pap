@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://w7cl6m1e2u16"]
 
 [ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="1_bo5vk"]
-[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Player/player.tscn" id="2_j3l8p"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Enemy/enemy.tscn" id="3_ty1xd"]
+[ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Player2/player_2.tscn" id="2_bo5vk"]
+[ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Player1/player_1.tscn" id="3_j3l8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -16,12 +16,12 @@ size = Vector2(81, 639.5)
 position = Vector2(1505, 324)
 texture = ExtResource("1_bo5vk")
 
-[node name="Player" parent="." instance=ExtResource("2_j3l8p")]
-position = Vector2(906, 418)
+[node name="Player2" parent="." instance=ExtResource("2_bo5vk")]
+position = Vector2(1352, 421)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("3_ty1xd")]
-position = Vector2(1324, 410)
+[node name="Player1" parent="." instance=ExtResource("3_j3l8p")]
+position = Vector2(921, 430)
 scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
