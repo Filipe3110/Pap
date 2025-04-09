@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t58ss175xxnd"
-path="res://.godot/imported/khaoslogo.png-85e166ce8ea62b2284e52ea527d644a5.ctex"
+uid="uid://b1stdee72g4e2"
+path="res://.godot/imported/Fundo do login.png-32464a17f33a1f55c0c54b33b7b14a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cenários/khaoslogo.png"
-dest_files=["res://.godot/imported/khaoslogo.png-85e166ce8ea62b2284e52ea527d644a5.ctex"]
+source_file="res://Assets/Fundo do login.png"
+dest_files=["res://.godot/imported/Fundo do login.png-32464a17f33a1f55c0c54b33b7b14a2a.ctex"]
 
 [params]
 
