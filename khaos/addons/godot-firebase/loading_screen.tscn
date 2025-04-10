@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkmbr4dopoe02"]
+
+[sub_resource type="Resource" id="Resource_yroqx"]
+metadata/__load_path__ = "res://Scrips/loading_screen.gd"
+
+[sub_resource type="Animation" id="Animation_g6at1"]
+resource_name = "Barra de load"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 36), Vector2(512, 36)]
+}
+
+[sub_resource type="Animation" id="Animation_5qvk2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(512, 36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0xeg"]
+_data = {
+&"Barra de load": SubResource("Animation_g6at1"),
+&"RESET": SubResource("Animation_5qvk2")
+}
+
+[sub_resource type="Resource" id="Resource_y1mmj"]
+metadata/__load_path__ = "res://Sprites/Telas/Jogo_Tela_inicial1.jpg"
+
+[sub_resource type="Resource" id="Resource_wlxbq"]
+metadata/__load_path__ = "res://khaoslogo-removebg-preview.png"
+
+[sub_resource type="Resource" id="Resource_6i564"]
+metadata/__load_path__ = "res://Sprites/Fontes/KimsBitHand/KimsBitHand.ttf"
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 646.0
+script = SubResource("Resource_yroqx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k0xeg")
+}
+
+[node name="JogoTelaInicial1" type="Sprite2D" parent="."]
+position = Vector2(576.25, 323)
+scale = Vector2(1.61501, 1.31707)
+texture = SubResource("Resource_y1mmj")
+
+[node name="Borda" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.554
+anchor_bottom = 0.434
+offset_left = 319.0
+offset_top = 546.0
+offset_right = 197.9
+offset_bottom = 305.636
+color = Color(0, 0, 0, 1)
+
+[node name="Interior" type="ColorRect" parent="Borda"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 514.0
+offset_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_top = 548.0
+offset_right = -317.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.326214, 0.392721, 0.0587097, 1)
+
+[node name="Khaoslogo-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(579.5, 337)
+scale = Vector2(1.026, 1)
+texture = SubResource("Resource_wlxbq")
+
+[node name="Carregar" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 231.5
+offset_right = 47.5
+offset_bottom = 254.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("Resource_6i564")
+theme_override_font_sizes/font_size = 25
+text = "A carregar"

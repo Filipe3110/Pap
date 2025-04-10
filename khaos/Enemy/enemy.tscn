@@ -1399,8 +1399,6 @@ radius = 7.0
 height = 24.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["inimigo"]]
-collision_layer = 4
-collision_mask = 9
 script = ExtResource("1_mqp78")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1439,8 +1437,6 @@ flip_h = true
 [node name="ComboTimer" type="Timer" parent="."]
 
 [node name="SocoArea" type="Area2D" parent="." groups=["soco_area"]]
-collision_layer = 16
-collision_mask = 2
 
 [node name="colisao_do_soco" type="CollisionShape2D" parent="SocoArea"]
 position = Vector2(31, 2)

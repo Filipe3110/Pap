@@ -1,13 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtwp64gs1usv"]
+[gd_scene load_steps=6 format=3 uid="uid://dtwp64gs1usv"]
 
 [ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="2_h6sy4"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Player/player.tscn" id="3_hx8d7"]
 [ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Enemy/enemy.tscn" id="4_gi46f"]
-[ext_resource type="Script" path="res://Mapas/Menupausa.gd" id="4_jjjlg"]
-[ext_resource type="Texture2D" path="res://Assets/Telas/MenuPausa.png" id="5_jf5l4"]
-[ext_resource type="Script" path="res://Scripts/Modo_História/win_or_lose.gd" id="6_gi46f"]
-[ext_resource type="Texture2D" path="res://Assets/Telas/Fundo1.jpg" id="7_faiew"]
-[ext_resource type="Texture2D" path="res://Assets/Telas/Fundo2.jpg" id="8_360m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -43,67 +38,3 @@ shape = SubResource("RectangleShape2D_xwa4g")
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(41.5, 321.25)
 shape = SubResource("RectangleShape2D_xwa4g")
-
-[node name="Menu pausa" type="CanvasLayer" parent="."]
-process_mode = 3
-visible = false
-script = ExtResource("4_jjjlg")
-
-[node name="ColorRect" type="ColorRect" parent="Menu pausa"]
-offset_right = 1152.0
-offset_bottom = 653.0
-color = Color(0, 0, 0, 0.631373)
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuPausa" type="Sprite2D" parent="Menu pausa"]
-position = Vector2(573, 328)
-scale = Vector2(3.47101, 3.45669)
-texture = ExtResource("5_jf5l4")
-
-[node name="Resume" type="Button" parent="Menu pausa"]
-anchors_preset = -1
-anchor_left = 0.105035
-anchor_top = 0.151235
-anchor_right = 0.223958
-anchor_bottom = 0.243827
-offset_left = 376.0
-offset_top = 330.0
-offset_right = 384.0
-offset_bottom = 338.0
-text = "Resume"
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="Button" parent="Menu pausa"]
-anchors_preset = -1
-anchor_right = 0.130208
-anchor_bottom = 0.0354938
-offset_left = 492.0
-offset_top = 275.0
-offset_right = 500.0
-offset_bottom = 283.0
-text = "Menu"
-metadata/_edit_use_anchors_ = true
-
-[node name="Change_map" type="Button" parent="Menu pausa"]
-offset_left = 512.0
-offset_top = 344.0
-offset_right = 617.0
-offset_bottom = 375.0
-text = "Change Map
-"
-
-[node name="Win_or_Lose" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("6_gi46f")
-
-[node name="Fundo1" type="Sprite2D" parent="Win_or_Lose"]
-position = Vector2(419, 419)
-texture = ExtResource("7_faiew")
-
-[node name="Fundo2" type="Sprite2D" parent="Win_or_Lose"]
-position = Vector2(1318, 432)
-texture = ExtResource("8_360m2")
-
-[connection signal="pressed" from="Menu pausa/Resume" to="Menu pausa" method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu pausa/Back" to="Menu pausa" method="_on_back_pressed"]
-[connection signal="pressed" from="Menu pausa/Change_map" to="Menu pausa" method="_on_change_map_pressed"]

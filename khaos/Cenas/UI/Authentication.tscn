@@ -1,10 +1,26 @@
 [gd_scene load_steps=6 format=3 uid="uid://dskytrqkaie4j"]
 
 [ext_resource type="Script" uid="uid://bih575o7lm0n6" path="res://Scripts/UI/Authentication.gd" id="1_il6so"]
-[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_fungm"]
-[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_kicmd"]
-[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/Fundo do login.png" id="4_fungm"]
-[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_kicmd"]
+[ext_resource type="Texture2D" uid="uid://btqhvk2ui2dq1" path="res://Assets/Telas/Jogo Tela inicial1.jpg" id="2_3sreo"]
+[ext_resource type="Texture2D" uid="uid://dot86dymjsvan" path="res://Assets/Telas/Jogo Tela inicial2.jpg" id="3_aidsv"]
+[ext_resource type="Texture2D" uid="uid://b0er7g7q26ljf" path="res://Assets/Telas/Jogo Tela inicial3.jpg" id="4_vvlkb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpvmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3sreo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aidsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vvlkb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Authentication" type="Control"]
 layout_mode = 3
@@ -15,14 +31,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_il6so")
 
-[node name="TelaSemNada" type="Sprite2D" parent="."]
-position = Vector2(576.75, 350)
-scale = Vector2(1.61921, 1.42276)
-texture = ExtResource("2_fungm")
-
-[node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(776, 188)
-texture = ExtResource("3_kicmd")
+[node name="khaos" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(1.62132, 1.3252)
+sprite_frames = SubResource("SpriteFrames_jpvmp")
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -30,93 +43,44 @@ offset_right = 1152.0
 offset_bottom = 692.0
 color = Color(0, 0, 0, 0.631373)
 
-[node name="FundoDoLogin" type="Sprite2D" parent="."]
-position = Vector2(787, 427.25)
-scale = Vector2(1, 1.19329)
-texture = ExtResource("4_fungm")
-
-[node name="Logo2" type="Sprite2D" parent="FundoDoLogin"]
-position = Vector2(0, -124.237)
-scale = Vector2(0.224398, 0.147099)
-texture = ExtResource("3_kicmd")
-
-[node name="StateLabel" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = 647.0
-offset_top = 303.0
-offset_right = 928.0
-offset_bottom = 326.0
-theme_override_fonts/font = ExtResource("5_kicmd")
-
-[node name="Create account" type="Button" parent="."]
-layout_mode = 2
-offset_left = 648.0
-offset_top = 584.0
-offset_right = 928.0
-offset_bottom = 608.0
-focus_mode = 0
-theme_override_fonts/font = ExtResource("5_kicmd")
-text = "Create acount
-"
-flat = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = 10.0
-offset_right = 352.0
-offset_bottom = 242.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
+[node name="StateLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="EmailLineEdit" type="LineEdit" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_kicmd")
-placeholder_text = "Username/Email"
+placeholder_text = "Email"
 
 [node name="PasswordLineEdit" type="LineEdit" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_kicmd")
 placeholder_text = "Password"
 secret = true
 
 [node name="LoginButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_kicmd")
 text = "Log in"
-icon_alignment = 1
 
-[node name="or" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="SignupButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_kicmd")
-text = "----------------------or----------------------"
+text = "Sign up"
 
-[node name="FundoDoBt" type="Sprite2D" parent="."]
-position = Vector2(1105.25, 621.375)
-scale = Vector2(0.234007, 0.10623)
-texture = ExtResource("4_fungm")
-
-[node name="Quit" type="Button" parent="."]
-offset_left = 1071.0
-offset_top = 606.0
-offset_right = 1140.0
-offset_bottom = 637.0
-focus_mode = 0
-theme_override_fonts/font = ExtResource("5_kicmd")
-text = "Quit
-"
-flat = true
-
-[connection signal="pressed" from="Create account" to="." method="_on_create_account_pressed"]
 [connection signal="pressed" from="VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/SignupButton" to="." method="_on_signup_button_pressed"]

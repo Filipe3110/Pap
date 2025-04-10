@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvb26atjckwlq"]
+[gd_scene load_steps=9 format=3 uid="uid://cvb26atjckwlq"]
 
-[ext_resource type="Script" uid="uid://b7u22fcbv6nuc" path="res://addons/godot-firebase/database/database.gd" id="1"]
-[ext_resource type="Script" uid="uid://dkktkndkyoc25" path="res://addons/godot-firebase/firestore/firestore.gd" id="2"]
-[ext_resource type="Script" uid="uid://dt10aenn86bhw" path="res://addons/godot-firebase/firebase/firebase.gd" id="3"]
-[ext_resource type="Script" uid="uid://brpmg1h8rxnlu" path="res://addons/godot-firebase/auth/auth.gd" id="4"]
-[ext_resource type="Script" uid="uid://dxc5og5eibdvx" path="res://addons/godot-firebase/storage/storage.gd" id="5"]
-[ext_resource type="Script" uid="uid://domdl6ubpfxe1" path="res://addons/godot-firebase/dynamiclinks/dynamiclinks.gd" id="6"]
-[ext_resource type="Script" uid="uid://s4ths8bf4idt" path="res://addons/godot-firebase/functions/functions.gd" id="7"]
+[ext_resource type="Script" uid="uid://c07k2xg582dp2" path="res://addons/godot-firebase/database/database.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1rn44meosidl" path="res://addons/godot-firebase/firestore/firestore.gd" id="2"]
+[ext_resource type="Script" uid="uid://m07y6anucu3o" path="res://addons/godot-firebase/firebase/firebase.gd" id="3"]
+[ext_resource type="Script" uid="uid://cq700c4tqw17p" path="res://addons/godot-firebase/auth/auth.gd" id="4"]
+[ext_resource type="Script" uid="uid://cot1mondi4y31" path="res://addons/godot-firebase/storage/storage.gd" id="5"]
+[ext_resource type="Script" uid="uid://dlw76axkhqdno" path="res://addons/godot-firebase/dynamiclinks/dynamiclinks.gd" id="6"]
+[ext_resource type="Script" uid="uid://dbo462l4s385" path="res://addons/godot-firebase/functions/functions.gd" id="7"]
+[ext_resource type="PackedScene" uid="uid://5xa6ulbllkjk" path="res://addons/godot-firebase/remote_config/firebase_remote_config.tscn" id="8_mvdf4"]
 
 [node name="Firebase" type="Node"]
 script = ExtResource("3")
@@ -30,3 +31,6 @@ script = ExtResource("6")
 
 [node name="Functions" type="Node" parent="."]
 script = ExtResource("7")
+
+[node name="RemoteConfig" parent="." instance=ExtResource("8_mvdf4")]
+accept_gzip = false
