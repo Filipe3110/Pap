@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://p6qe3yqdjq5f"]
+[gd_scene load_steps=21 format=3 uid="uid://p6qe3yqdjq5f"]
 
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_7ipgm"]
 [ext_resource type="Script" uid="uid://phtiy3upften" path="res://Scripts/UI/options.gd" id="1_sgh0g"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://cadsy78pu1gfc" path="res://Assets/icons/music1.png" id="9_cy3gw"]
 [ext_resource type="Texture2D" uid="uid://b8wrrgxsnn2gs" path="res://Assets/icons/Player 4.png" id="10_y8hnm"]
 [ext_resource type="Texture2D" uid="uid://d4r800hb4lri" path="res://Assets/icons/music2.png" id="11_ghi65"]
+[ext_resource type="Texture2D" uid="uid://c0xmbcg6eyidl" path="res://Assets/icons/Conta2.png" id="12_xlljf"]
+[ext_resource type="Texture2D" uid="uid://bqkbr5gybvgyt" path="res://Assets/icons/Conta1.png" id="13_cy3gw"]
+[ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_cy3gw"]
+[ext_resource type="Texture2D" uid="uid://ps10a4n37a7n" path="res://Assets/BtFundos/Letras.png" id="14_y8hnm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nxuc1"]
 animations = [{
@@ -36,9 +40,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_xlljf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_cy3gw")
 }],
 "loop": true,
 "name": &"idle",
@@ -72,6 +73,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8hnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xlljf")
+}],
+"loop": true,
+"name": &"conta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cy3gw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghi65"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -80,6 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sgh0g")
+metadata/_edit_lock_ = true
 
 [node name="TelaSemNada" type="Sprite2D" parent="."]
 position = Vector2(576.75, 350)
@@ -88,35 +112,19 @@ texture = ExtResource("1_7ipgm")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 692.0
 color = Color(0, 0, 0, 0.631373)
 metadata/_edit_lock_ = true
 
-[node name="Khaoslogo" type="Sprite2D" parent="ColorRect"]
+[node name="Khaoslogo" type="Sprite2D" parent="."]
 position = Vector2(572, 64.5)
 scale = Vector2(0.406, 0.298)
 texture = ExtResource("3_523gn")
 
-[node name="FundoOpt" type="Sprite2D" parent="."]
-position = Vector2(578, 324)
-texture = ExtResource("2_mw2tm")
-metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 114.0
-offset_right = 1043.0
-offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("5_j8ysl")
-theme_override_font_sizes/font_size = 50
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="Voltar" type="Button" parent="."]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 611.0
 offset_right = 82.0
@@ -128,7 +136,14 @@ text = "Back"
 flat = true
 metadata/_edit_lock_ = true
 
-[node name="Player" type="AnimatedSprite2D" parent="."]
+[node name="FundoOpt" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+texture = ExtResource("2_mw2tm")
+metadata/_edit_lock_ = true
+
+[node name="Butões" type="Node2D" parent="."]
+
+[node name="Player" type="AnimatedSprite2D" parent="Butões"]
 position = Vector2(210, 137)
 scale = Vector2(0.391304, 0.3125)
 sprite_frames = SubResource("SpriteFrames_nxuc1")
@@ -136,62 +151,219 @@ animation = &"idle"
 autoplay = "idle"
 metadata/_edit_lock_ = true
 
-[node name="Player1" type="Button" parent="."]
+[node name="Player1" type="Button" parent="Butões"]
 offset_left = 168.0
-offset_top = 151.0
+offset_top = 110.0
 offset_right = 256.0
 offset_bottom = 203.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 20
-text = "Player 1"
-flat = true
-metadata/_edit_lock_ = true
+text = "
 
-[node name="Player2" type="AnimatedSprite2D" parent="."]
+
+Player 1"
+flat = true
+
+[node name="Player2" type="AnimatedSprite2D" parent="Butões"]
 position = Vector2(367.973, 135.859)
 scale = Vector2(0.322216, 0.242759)
 sprite_frames = SubResource("SpriteFrames_xtoph")
-animation = &"idle"
+animation = &"player2"
 autoplay = "idle"
 metadata/_edit_lock_ = true
 
-[node name="Player3" type="Button" parent="."]
-offset_left = 327.0
-offset_top = 151.0
-offset_right = 415.0
-offset_bottom = 203.0
+[node name="Player3" type="Button" parent="Butões"]
+offset_left = 325.0
+offset_top = 108.0
+offset_right = 413.0
+offset_bottom = 205.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 20
-text = "Player 2"
-flat = true
-metadata/_edit_lock_ = true
+text = "
 
-[node name="Sounds2" type="AnimatedSprite2D" parent="."]
+
+Player 2"
+flat = true
+
+[node name="Sounds2" type="AnimatedSprite2D" parent="Butões"]
 position = Vector2(789.025, 136)
 scale = Vector2(0.164105, 0.160858)
 sprite_frames = SubResource("SpriteFrames_txlel")
 animation = &"idle"
 autoplay = "idle"
+metadata/_edit_lock_ = true
 
-[node name="Sounds" type="Button" parent="."]
+[node name="Sounds" type="Button" parent="Butões"]
 offset_left = 747.0
-offset_top = 151.0
+offset_top = 108.0
 offset_right = 835.0
-offset_bottom = 203.0
+offset_bottom = 205.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 20
-text = "Sounds"
+text = "
+
+
+Sounds"
+flat = true
+
+[node name="account" type="AnimatedSprite2D" parent="Butões"]
+position = Vector2(945.025, 136)
+scale = Vector2(0.164105, 0.160858)
+sprite_frames = SubResource("SpriteFrames_y8hnm")
+animation = &"conta"
+autoplay = "idle"
+metadata/_edit_lock_ = true
+
+[node name="account2" type="Button" parent="Butões"]
+offset_left = 902.0
+offset_top = 107.0
+offset_right = 990.0
+offset_bottom = 205.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 20
+text = "
+
+
+Account"
+flat = true
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 114.0
+offset_right = 675.0
+offset_bottom = 173.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 50
+text = "Options"
 flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 120.0
-offset_top = 165.0
+offset_left = 126.0
+offset_top = 207.0
 offset_right = 1031.0
-offset_bottom = 532.0
+offset_bottom = 518.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
+[node name="P1" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 40
+text = "|----------------------- Player 1 -----------------------|"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mov" type="Label" parent="ScrollContainer/VBoxContainer/P1"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 27.0
+offset_right = 136.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 25
+text = "Moviment"
+
+[node name="Container" type="PanelContainer" parent="ScrollContainer/VBoxContainer/P1/Mov"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 746.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ghi65")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/P1/Mov/Container"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Letras" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer"]
+position = Vector2(820, 3)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
+[node name="Letras2" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer"]
+position = Vector2(820, 51)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton2" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
+[node name="Letras3" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer"]
+position = Vector2(820, 99)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton3" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
+[node name="Letras4" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer"]
+position = Vector2(820, 147)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton4" parent="ScrollContainer/VBoxContainer/P1/Mov/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
+[node name="Comb" type="Label" parent="ScrollContainer/VBoxContainer/P1"]
+offset_left = 26.0
+offset_top = 243.0
+offset_right = 142.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 25
+text = "Combat"
+
+[node name="Container" type="PanelContainer" parent="ScrollContainer/VBoxContainer/P1/Comb"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 746.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ghi65")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/P1/Comb/Container"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Letras" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Comb/Container/VBoxContainer"]
+position = Vector2(820, 3)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton" parent="ScrollContainer/VBoxContainer/P1/Comb/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
+[node name="Letras2" type="Sprite2D" parent="ScrollContainer/VBoxContainer/P1/Comb/Container/VBoxContainer"]
+position = Vector2(820, 51)
+texture = ExtResource("14_y8hnm")
+
+[node name="InputButton2" parent="ScrollContainer/VBoxContainer/P1/Comb/Container/VBoxContainer" instance=ExtResource("14_cy3gw")]
+layout_mode = 2
+
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="mouse_entered" from="Butões/Player1" to="." method="_on_player_1_mouse_entered"]
+[connection signal="mouse_exited" from="Butões/Player1" to="." method="_on_player_1_mouse_exited"]
+[connection signal="pressed" from="Butões/Player1" to="." method="_on_player_1_pressed"]
+[connection signal="mouse_entered" from="Butões/Player3" to="." method="_on_player_3_mouse_entered"]
+[connection signal="mouse_exited" from="Butões/Player3" to="." method="_on_player_3_mouse_exited"]
+[connection signal="mouse_entered" from="Butões/Sounds" to="." method="_on_sounds_mouse_entered"]
+[connection signal="mouse_exited" from="Butões/Sounds" to="." method="_on_sounds_mouse_exited"]
+[connection signal="mouse_entered" from="Butões/account2" to="." method="_on_account_2_mouse_entered"]
+[connection signal="mouse_exited" from="Butões/account2" to="." method="_on_account_2_mouse_exited"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
