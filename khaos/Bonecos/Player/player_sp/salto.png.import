@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1stdee72g4e2"
-path="res://.godot/imported/Fundo do login.png-32464a17f33a1f55c0c54b33b7b14a2a.ctex"
+uid="uid://c51y1ap2deh8i"
+path="res://.godot/imported/salto.png-240793b129b207a0cda7abe4cc7de68e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fundo do login.png"
-dest_files=["res://.godot/imported/Fundo do login.png-32464a17f33a1f55c0c54b33b7b14a2a.ctex"]
+source_file="res://Bonecos/Player/player_sp/salto.png"
+dest_files=["res://.godot/imported/salto.png-240793b129b207a0cda7abe4cc7de68e.ctex"]
 
 [params]
 

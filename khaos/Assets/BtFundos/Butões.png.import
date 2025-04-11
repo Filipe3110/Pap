@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxi7622pc8m4x"
-path="res://.godot/imported/SSS3.png-0fc1fbc28baa0009f437bc582ae4cd5a.ctex"
+uid="uid://c2k6l1r1ho7ws"
+path="res://.godot/imported/Butões.png-cf25f15a0452b93800a3cf1101607343.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/player_sp/SSS3.png"
-dest_files=["res://.godot/imported/SSS3.png-0fc1fbc28baa0009f437bc582ae4cd5a.ctex"]
+source_file="res://Assets/BtFundos/Butões.png"
+dest_files=["res://.godot/imported/Butões.png-cf25f15a0452b93800a3cf1101607343.ctex"]
 
 [params]
 

@@ -10,8 +10,6 @@ func _ready():
 		get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
 
-
-
 func _on_login_button_pressed():
 	var email = %EmailLineEdit.text
 	var password = %PasswordLineEdit.text

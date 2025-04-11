@@ -25,3 +25,7 @@ func carregar_cena_com_loading(caminho_da_proxima_cena):
 	get_tree().root.add_child(loading)
 	queue_free()
 	
+
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")

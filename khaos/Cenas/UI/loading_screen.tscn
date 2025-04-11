@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkmbr4dopoe02"]
 
-[ext_resource type="Script" uid="uid://dpqyc2wdg2aje" path="res://Scripts/UI/loading_screen.gd" id="1_8pgj6"]
+[ext_resource type="Script" uid="uid://m5krqg8jghys" path="res://Scripts/UI/loading_screen.gd" id="1_8pgj6"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_24rx3"]
-[ext_resource type="Texture2D" uid="uid://t58ss175xxnd" path="res://Assets/Cenários/khaoslogo.png" id="2_bttu8"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_bfwdf"]
 
 [sub_resource type="Animation" id="Animation_g6at1"]
 resource_name = "Barra de load"
@@ -54,8 +54,8 @@ libraries = {
 }
 
 [node name="JogoTelaInicial1" type="Sprite2D" parent="."]
-position = Vector2(576.25, 323)
-scale = Vector2(1.61501, 1.31707)
+position = Vector2(576.25, 347.5)
+scale = Vector2(1.61501, 1.41667)
 texture = ExtResource("1_24rx3")
 
 [node name="Borda" type="ColorRect" parent="."]
@@ -92,7 +92,7 @@ color = Color(0.326214, 0.392721, 0.0587097, 1)
 [node name="Khaoslogo" type="Sprite2D" parent="."]
 position = Vector2(579.5, 337)
 scale = Vector2(1.026, 1)
-texture = ExtResource("2_bttu8")
+texture = ExtResource("3_bfwdf")
 
 [node name="Carregar" type="Label" parent="."]
 layout_mode = 1
@@ -109,4 +109,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "A carregar"
+text = "Loading"

@@ -1,140 +1,60 @@
-[gd_scene load_steps=8 format=3 uid="uid://p6qe3yqdjq5f"]
+[gd_scene load_steps=6 format=3 uid="uid://p6qe3yqdjq5f"]
 
-[sub_resource type="Resource" id="Resource_xfa0i"]
-metadata/__load_path__ = "res://Scrips/controles.gd"
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_7ipgm"]
+[ext_resource type="Script" uid="uid://phtiy3upften" path="res://Scripts/UI/options.gd" id="1_sgh0g"]
+[ext_resource type="Texture2D" uid="uid://ii2ohnsq6ic5" path="res://Assets/BtFundos/Fundo opt.png" id="2_mw2tm"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_523gn"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_j8ysl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p4s0a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Resource" id="Resource_pvlv7"]
-metadata/__load_path__ = "res://Atalhos/P1.jpg"
-
-[sub_resource type="Resource" id="Resource_7ipgm"]
-metadata/__load_path__ = "res://Atalhos/W.jpg"
-
-[sub_resource type="Resource" id="Resource_mw2tm"]
-metadata/__load_path__ = "res://Atalhos/D.jpg"
-
-[sub_resource type="Resource" id="Resource_rxklu"]
-metadata/__load_path__ = "res://Atalhos/A.jpg"
-
-[sub_resource type="Resource" id="Resource_sgh0g"]
-metadata/__load_path__ = "res://Atalhos/S.jpg"
-
-[node name="Controles" type="Control"]
+[node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("Resource_xfa0i")
-metadata/_edit_use_anchors_ = true
+script = ExtResource("1_sgh0g")
+
+[node name="TelaSemNada" type="Sprite2D" parent="."]
+position = Vector2(576.75, 350)
+scale = Vector2(1.61921, 1.42276)
+texture = ExtResource("1_7ipgm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 692.0
+color = Color(0, 0, 0, 0.631373)
+
+[node name="Khaoslogo" type="Sprite2D" parent="ColorRect"]
+position = Vector2(572, 64.5)
+scale = Vector2(0.406, 0.298)
+texture = ExtResource("3_523gn")
+
+[node name="FundoOpt" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+texture = ExtResource("2_mw2tm")
 
 [node name="Label" type="Label" parent="."]
-z_index = 1
-layout_mode = 2
-offset_left = 460.0
-offset_top = 95.0
-offset_right = 695.0
-offset_bottom = 164.0
-size_flags_horizontal = 4
+layout_mode = 0
+offset_left = 116.0
+offset_top = 107.0
+offset_right = 1043.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 50
-text = "Controlos"
-
-[node name="controles_khaos" type="AnimatedSprite2D" parent="."]
-position = Vector2(579, 324.5)
-scale = Vector2(1.62132, 1.31504)
-sprite_frames = SubResource("SpriteFrames_p4s0a")
-autoplay = "default"
-frame_progress = 0.138277
-
-[node name="P1" type="Sprite2D" parent="."]
-position = Vector2(496, 192)
-scale = Vector2(2, 2)
-texture = SubResource("Resource_pvlv7")
-
-[node name="W" type="Sprite2D" parent="."]
-position = Vector2(496, 232)
-scale = Vector2(2, 2)
-texture = SubResource("Resource_7ipgm")
-
-[node name="D" type="Sprite2D" parent="."]
-position = Vector2(496, 352)
-scale = Vector2(2, 2)
-texture = SubResource("Resource_mw2tm")
-
-[node name="A" type="Sprite2D" parent="."]
-position = Vector2(492, 272)
-scale = Vector2(2, 2)
-texture = SubResource("Resource_rxklu")
-offset = Vector2(2, 0)
-
-[node name="S" type="Sprite2D" parent="."]
-position = Vector2(496, 312)
-scale = Vector2(2, 2)
-texture = SubResource("Resource_sgh0g")
-
-[node name="Cima_Up" type="Label" parent="."]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 216.0
-offset_right = 602.0
-offset_bottom = 239.0
-text = "Cima/up
-"
-
-[node name="Esquerda_Left" type="Label" parent="."]
-layout_mode = 0
-offset_left = 524.0
-offset_top = 264.0
-offset_right = 633.0
-offset_bottom = 287.0
-text = "Esquerda/Left
-"
-
-[node name="Baixo_Down" type="Label" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 304.0
-offset_right = 622.0
-offset_bottom = 327.0
-text = "Baixo/Down"
-
-[node name="Direita_R" type="Label" parent="."]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 344.0
-offset_right = 627.0
-offset_bottom = 367.0
-text = "Direita/Right"
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Voltar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 472.0
-offset_right = 656.0
-offset_bottom = 496.0
+offset_left = 3.0
+offset_top = 611.0
+offset_right = 82.0
+offset_bottom = 650.0
 focus_mode = 0
-text = "Voltar"
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 30
+text = "Back"
 flat = true
+
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

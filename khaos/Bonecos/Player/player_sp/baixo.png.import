@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbgts0dcl7p56"
-path="res://.godot/imported/Butõespequeno.png-eeb4117b24e206a91a0661fd7bc2b2a5.ctex"
+uid="uid://b13ba6ee8xtlt"
+path="res://.godot/imported/baixo.png-82f9ab5205c4ff7a2a39052107c9a8b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Butõespequeno.png"
-dest_files=["res://.godot/imported/Butõespequeno.png-eeb4117b24e206a91a0661fd7bc2b2a5.ctex"]
+source_file="res://Bonecos/Player/player_sp/baixo.png"
+dest_files=["res://.godot/imported/baixo.png-82f9ab5205c4ff7a2a39052107c9a8b5.ctex"]
 
 [params]
 

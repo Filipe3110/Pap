@@ -31,7 +31,7 @@ func _on_multijogador_pressed():
 	get_tree().change_scene_to_file("res://Cenas/Multijogador/multijogador.tscn")
 
 func _on_opções_pressed():
-	get_tree().change_scene_to_file("res://Cenas/controles.tscn")
+	get_tree().change_scene_to_file("res://Cenas/UI/options.tscn")
 
 func _on_sair_pressed():
 	get_tree().quit()

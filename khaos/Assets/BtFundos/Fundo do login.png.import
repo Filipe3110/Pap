@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2k6l1r1ho7ws"
-path="res://.godot/imported/Butões.png-c2ee6029aa8d11444d1ef1b581c49e71.ctex"
+uid="uid://b1stdee72g4e2"
+path="res://.godot/imported/Fundo do login.png-1899328c30be079e8c8261e22d6cc8a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Butões.png"
-dest_files=["res://.godot/imported/Butões.png-c2ee6029aa8d11444d1ef1b581c49e71.ctex"]
+source_file="res://Assets/BtFundos/Fundo do login.png"
+dest_files=["res://.godot/imported/Fundo do login.png-1899328c30be079e8c8261e22d6cc8a0.ctex"]
 
 [params]
 

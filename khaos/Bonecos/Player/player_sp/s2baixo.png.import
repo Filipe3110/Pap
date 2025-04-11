@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyi8i7pom25np"
-path="res://.godot/imported/Player id2.png-97d99fed75e809d016f718c3ee7154cb.ctex"
+uid="uid://vl7ofg3cd62y"
+path="res://.godot/imported/s2baixo.png-d6ce7b742e825d932945d787899531e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/player_sp/Player id2.png"
-dest_files=["res://.godot/imported/Player id2.png-97d99fed75e809d016f718c3ee7154cb.ctex"]
+source_file="res://Bonecos/Player/player_sp/s2baixo.png"
+dest_files=["res://.godot/imported/s2baixo.png-d6ce7b742e825d932945d787899531e0.ctex"]
 
 [params]
 

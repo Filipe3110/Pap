@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ceyrfq2fmjgux" path="res://Scripts/UI/tela_inicial.gd" id="1_vcnny"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_vt6gu"]
-[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/Fundo do login.png" id="3_bc6dj"]
+[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="3_bc6dj"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="4_t0id6"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_eqttr"]
-[ext_resource type="Texture2D" uid="uid://c2k6l1r1ho7ws" path="res://Assets/Butões.png" id="6_bc6dj"]
+[ext_resource type="Texture2D" uid="uid://c2k6l1r1ho7ws" path="res://Assets/BtFundos/Butões.png" id="6_bc6dj"]
 
 [node name="Tela inicial" type="Control"]
 layout_mode = 3
@@ -33,7 +33,7 @@ texture = ExtResource("5_eqttr")
 layout_mode = 0
 offset_left = 639.0
 offset_top = 289.0
-offset_right = 946.0
+offset_right = 937.0
 offset_bottom = 673.0
 alignment = 1
 
@@ -85,6 +85,7 @@ text = "Loading..."
 flat = true
 
 [node name="LogoutScrn" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="LogoutScrn"]
 offset_right = 1152.0
@@ -92,6 +93,7 @@ offset_bottom = 692.0
 color = Color(0, 0, 0, 0.631373)
 
 [node name="Label" type="Label" parent="LogoutScrn/ColorRect"]
+layout_mode = 0
 offset_left = 282.0
 offset_top = 188.0
 offset_right = 880.0
