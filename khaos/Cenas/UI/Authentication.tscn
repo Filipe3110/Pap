@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dskytrqkaie4j"]
+[gd_scene load_steps=7 format=3 uid="uid://dskytrqkaie4j"]
 
 [ext_resource type="Script" uid="uid://bih575o7lm0n6" path="res://Scripts/UI/Authentication.gd" id="1_il6so"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_fungm"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_kicmd"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/Fundo do login.png" id="4_fungm"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_kicmd"]
+[ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/Butõespequeno.png" id="6_sbonf"]
 
 [node name="Authentication" type="Control"]
 layout_mode = 3
@@ -101,19 +102,19 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_kicmd")
 text = "----------------------or----------------------"
 
-[node name="FundoDoBt" type="Sprite2D" parent="."]
-position = Vector2(1105.25, 621.375)
-scale = Vector2(0.234007, 0.10623)
-texture = ExtResource("4_fungm")
+[node name="Butõespequeno" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(457, 265)
+texture = ExtResource("6_sbonf")
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1071.0
-offset_top = 606.0
-offset_right = 1140.0
-offset_bottom = 637.0
+offset_left = 1067.0
+offset_top = 573.0
+offset_right = 1145.0
+offset_bottom = 626.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_kicmd")
+theme_override_font_sizes/font_size = 20
 text = "Quit
 "
 flat = true
