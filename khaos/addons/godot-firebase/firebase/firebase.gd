@@ -1,12 +1,11 @@
 ## @meta-authors Kyle Szklenski
-## @meta-version 2.6
+## @meta-version 2.5
 ## The Firebase Godot API.
 ## This singleton gives you access to your Firebase project and its capabilities. Using this requires you to fill out some Firebase configuration settings. It currently comes with four modules.
 ## 	- [code]Auth[/code]: Manages user authentication (logging and out, etc...)
 ## 	- [code]Database[/code]: A NonSQL realtime database for managing data in JSON structures.
 ## 	- [code]Firestore[/code]: Similar to Database, but stores data in collections and documents, among other things.
 ## 	- [code]Storage[/code]: Gives access to Cloud Storage; perfect for storing files like images and other assets.
-## 	- [code]RemoteConfig[/code]: Gives access to Remote Config functionality; allows you to download your app's configuration from Firebase, do A/B testing, and more.
 ##
 ## @tutorial https://github.com/GodotNuts/GodotFirebase/wiki
 @tool
@@ -18,31 +17,27 @@ const _AUTH_PROVIDERS : String = "firebase/auth_providers"
 
 ## @type FirebaseAuth
 ## The Firebase Authentication API.
-@onready var Auth := $Auth
+@onready var Auth : FirebaseAuth = $Auth
 
 ## @type FirebaseFirestore
 ## The Firebase Firestore API.
-@onready var Firestore := $Firestore
+@onready var Firestore : FirebaseFirestore = $Firestore
 
 ## @type FirebaseDatabase
 ## The Firebase Realtime Database API.
-@onready var Database := $Database
+@onready var Database : FirebaseDatabase = $Database
 
 ## @type FirebaseStorage
 ## The Firebase Storage API.
-@onready var Storage := $Storage
+@onready var Storage : FirebaseStorage = $Storage
 
 ## @type FirebaseDynamicLinks
 ## The Firebase Dynamic Links API.
-@onready var DynamicLinks := $DynamicLinks
+@onready var DynamicLinks : FirebaseDynamicLinks = $DynamicLinks
 
 ## @type FirebaseFunctions
 ## The Firebase Cloud Functions API
-@onready var Functions := $Functions
-
-## @type FirebaseRemoteConfig
-## The Firebase Remote Config API
-@onready var RemoteConfigAPI := $RemoteConfig
+@onready var Functions : FirebaseFunctions = $Functions
 
 @export var emulating : bool = false
 
@@ -62,7 +57,7 @@ var _config : Dictionary = {
 	"clientSecret" : "",
 	"domainUriPrefix" : "",
 	"functionsGeoZone" : "",
-	"cacheLocation":"",
+	"cacheLocation":"user://.firebase_cache",
 	"emulators": {
 		"ports" : {
 			"authentication" : "",
@@ -135,10 +130,11 @@ func _setup_modules() -> void:
 		Auth.token_refresh_succeeded.connect(module._on_FirebaseAuth_token_refresh_succeeded)
 		Auth.logged_out.connect(module._on_FirebaseAuth_logout)
 
+
 # -------------
 
 func _printerr(error : String) -> void:
-	printerr("[Firebase Error] >> " + error)
+	printerr("[Firebase Error] >> "+error)
 
 func _print(msg : String) -> void:
-	print("[Firebase] >> " + str(msg))
+	print("[Firebase] >> "+msg)
