@@ -1,27 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://w7cl6m1e2u16"]
+[gd_scene load_steps=11 format=3 uid="uid://w7cl6m1e2u16"]
 
 [ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="1_bo5vk"]
-[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Player/player.tscn" id="2_j3l8p"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Enemy/enemy.tscn" id="3_ty1xd"]
+[ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_f0q1r"]
+[ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_f0q1r"]
+[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="4_1r8b7"]
+[ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="4_he15w"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_f0q1r"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="6_he15w"]
+[ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_1yph6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0q1r"]
 size = Vector2(3004, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
-size = Vector2(81, 639.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he15w"]
+size = Vector2(81, 658.75)
 
 [node name="Mapa Montanhanheve" type="Node2D"]
+script = ExtResource("1_f0q1r")
 
 [node name="Fundo montanha" type="Sprite2D" parent="."]
 position = Vector2(1505, 324)
 texture = ExtResource("1_bo5vk")
 
-[node name="Player" parent="." instance=ExtResource("2_j3l8p")]
-position = Vector2(906, 418)
+[node name="Player2" parent="." instance=ExtResource("3_f0q1r")]
+position = Vector2(1352, 421)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("3_ty1xd")]
-position = Vector2(1324, 410)
+[node name="Player1" parent="." instance=ExtResource("4_he15w")]
+position = Vector2(921, 430)
 scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -29,12 +35,91 @@ position = Vector2(0, 3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1510, 663)
-shape = SubResource("RectangleShape2D_ltyrb")
+shape = SubResource("RectangleShape2D_f0q1r")
 
 [node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2964, 322)
-shape = SubResource("RectangleShape2D_xwa4g")
+position = Vector2(1911, 331.625)
+shape = SubResource("RectangleShape2D_he15w")
 
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(41.5, 321.25)
-shape = SubResource("RectangleShape2D_xwa4g")
+position = Vector2(-22, 329)
+shape = SubResource("RectangleShape2D_he15w")
+
+[node name="Menu_pausa" type="CanvasLayer" parent="."]
+process_mode = 3
+physics_interpolation_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Menu_pausa"]
+offset_right = 1152.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 0.631373)
+metadata/_edit_use_anchors_ = true
+
+[node name="FundoDoLogin" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(573, 365)
+texture = ExtResource("4_1r8b7")
+
+[node name="Logo" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(572, 244)
+scale = Vector2(0.224398, 0.147099)
+texture = ExtResource("5_f0q1r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
+offset_left = 430.0
+offset_top = 335.0
+offset_right = 573.0
+offset_bottom = 550.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = -1
+
+[node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_he15w")
+text = "Menu"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_he15w")
+text = "Options"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Change_map" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_he15w")
+text = "Change Map
+"
+flat = true
+
+[node name="Resume" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_he15w")
+text = "Resume"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu_pausa"]
+offset_left = 430.0
+offset_top = 270.0
+offset_right = 713.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("6_he15w")
+theme_override_font_sizes/font_size = 40
+text = "Paused
+-----------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options_ingame" parent="." instance=ExtResource("7_1yph6")]
+visible = false
+
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

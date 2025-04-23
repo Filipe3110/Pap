@@ -1,21 +1,21 @@
 [gd_scene load_steps=136 format=3 uid="uid://cva260e8t263d"]
 
-[ext_resource type="Script" uid="uid://cr8wblqshtc4e" path="res://Player1/player_1.gd" id="1_afskf"]
-[ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Player/player_sp/baixo.png" id="2_4pfgk"]
-[ext_resource type="Texture2D" uid="uid://vl7ofg3cd62y" path="res://Player/player_sp/s2baixo.png" id="3_qqskw"]
-[ext_resource type="Texture2D" uid="uid://dwqjc5vqp3wqa" path="res://Player/player_sp/ss2baixo.png" id="4_htkt6"]
-[ext_resource type="Texture2D" uid="uid://xs5o7y2tol7" path="res://Player/player_sp/baixoblock.png" id="5_wk27b"]
-[ext_resource type="Texture2D" uid="uid://dgoblcjv53kgo" path="res://Player/player_sp/block.png" id="6_motoa"]
-[ext_resource type="Texture2D" uid="uid://bewkcj4gpwkkc" path="res://Player/player_sp/Player id1.png" id="7_oavuc"]
-[ext_resource type="Texture2D" uid="uid://cyi8i7pom25np" path="res://Player/player_sp/Player id2.png" id="8_q5sjr"]
-[ext_resource type="Texture2D" uid="uid://c51y1ap2deh8i" path="res://Player/player_sp/salto.png" id="9_llkii"]
-[ext_resource type="Texture2D" uid="uid://dxecollxfnhx1" path="res://Player/player_sp/walk1.png" id="10_sel5o"]
-[ext_resource type="Texture2D" uid="uid://wxbyk1gr1x8a" path="res://Player/player_sp/walk2.png" id="11_2rt5f"]
-[ext_resource type="Texture2D" uid="uid://tsu8anl5i6nk" path="res://Player/player_sp/walk3.png" id="12_6nho4"]
-[ext_resource type="Texture2D" uid="uid://trxncfxhtjwq" path="res://Player/player_sp/S2.png" id="13_k63ul"]
-[ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Player/player_sp/SS2.png" id="14_wer3c"]
-[ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Player/player_sp/SSS2.png" id="15_3trrf"]
-[ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Player/player_sp/SSS3.png" id="16_7e6wb"]
+[ext_resource type="Script" uid="uid://cr8wblqshtc4e" path="res://Bonecos/Player1/player_1.gd" id="1_afskf"]
+[ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Bonecos/Player/player_sp/baixo.png" id="2_4pfgk"]
+[ext_resource type="Texture2D" uid="uid://vl7ofg3cd62y" path="res://Bonecos/Player/player_sp/s2baixo.png" id="3_qqskw"]
+[ext_resource type="Texture2D" uid="uid://dwqjc5vqp3wqa" path="res://Bonecos/Player/player_sp/ss2baixo.png" id="4_htkt6"]
+[ext_resource type="Texture2D" uid="uid://xs5o7y2tol7" path="res://Bonecos/Player/player_sp/baixoblock.png" id="5_wk27b"]
+[ext_resource type="Texture2D" uid="uid://dgoblcjv53kgo" path="res://Bonecos/Player/player_sp/block.png" id="6_motoa"]
+[ext_resource type="Texture2D" uid="uid://bewkcj4gpwkkc" path="res://Bonecos/Player/player_sp/Player id1.png" id="7_oavuc"]
+[ext_resource type="Texture2D" uid="uid://cyi8i7pom25np" path="res://Bonecos/Player/player_sp/Player id2.png" id="8_q5sjr"]
+[ext_resource type="Texture2D" uid="uid://c51y1ap2deh8i" path="res://Bonecos/Player/player_sp/salto.png" id="9_llkii"]
+[ext_resource type="Texture2D" uid="uid://dxecollxfnhx1" path="res://Bonecos/Player/player_sp/walk1.png" id="10_sel5o"]
+[ext_resource type="Texture2D" uid="uid://wxbyk1gr1x8a" path="res://Bonecos/Player/player_sp/walk2.png" id="11_2rt5f"]
+[ext_resource type="Texture2D" uid="uid://tsu8anl5i6nk" path="res://Bonecos/Player/player_sp/walk3.png" id="12_6nho4"]
+[ext_resource type="Texture2D" uid="uid://trxncfxhtjwq" path="res://Bonecos/Player/player_sp/S2.png" id="13_k63ul"]
+[ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Bonecos/Player/player_sp/SS2.png" id="14_wer3c"]
+[ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Bonecos/Player/player_sp/SSS2.png" id="15_3trrf"]
+[ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Bonecos/Player/player_sp/SSS3.png" id="16_7e6wb"]
 [ext_resource type="Script" uid="uid://bqffk61cjxkhu" path="res://Barra de vida/Barradevida.gd" id="17_3qks5"]
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Barra de vida/Barra de vidaSP/0.png" id="18_85hph"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Barra de vida/Barra de vidaSP/1.png" id="19_m51cg"]
@@ -1399,6 +1399,7 @@ radius = 7.0
 height = 24.0
 
 [node name="Player1" type="CharacterBody2D" groups=["p1"]]
+collision_layer = 2
 script = ExtResource("1_afskf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1420,7 +1421,7 @@ polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2,
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 3000
+limit_right = 1890
 limit_bottom = 650
 
 [node name="BarraDeVida" type="CanvasLayer" parent="."]
@@ -1437,6 +1438,8 @@ frame_progress = 0.963966
 [node name="ComboTimer" type="Timer" parent="."]
 
 [node name="SocoArea" type="Area2D" parent="." groups=["soco_area"]]
+collision_layer = 8
+collision_mask = 4
 
 [node name="colisao_do_soco" type="CollisionShape2D" parent="SocoArea"]
 position = Vector2(31, 2)

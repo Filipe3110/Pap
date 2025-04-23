@@ -1,21 +1,21 @@
 [gd_scene load_steps=136 format=3 uid="uid://di40hisi35iii"]
 
-[ext_resource type="Script" uid="uid://bxq1iuxeu7dhg" path="res://Player/player.gd" id="1_l8h54"]
-[ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Player/player_sp/baixo.png" id="2_lfmf2"]
-[ext_resource type="Texture2D" uid="uid://vl7ofg3cd62y" path="res://Player/player_sp/s2baixo.png" id="3_pisgm"]
-[ext_resource type="Texture2D" uid="uid://dwqjc5vqp3wqa" path="res://Player/player_sp/ss2baixo.png" id="4_b1ygp"]
-[ext_resource type="Texture2D" uid="uid://xs5o7y2tol7" path="res://Player/player_sp/baixoblock.png" id="5_o28un"]
-[ext_resource type="Texture2D" uid="uid://dgoblcjv53kgo" path="res://Player/player_sp/block.png" id="6_n471f"]
-[ext_resource type="Texture2D" uid="uid://bewkcj4gpwkkc" path="res://Player/player_sp/Player id1.png" id="7_7emwf"]
-[ext_resource type="Texture2D" uid="uid://cyi8i7pom25np" path="res://Player/player_sp/Player id2.png" id="8_hshwv"]
-[ext_resource type="Texture2D" uid="uid://c51y1ap2deh8i" path="res://Player/player_sp/salto.png" id="9_gpjlu"]
-[ext_resource type="Texture2D" uid="uid://dxecollxfnhx1" path="res://Player/player_sp/walk1.png" id="10_8mwp6"]
-[ext_resource type="Texture2D" uid="uid://wxbyk1gr1x8a" path="res://Player/player_sp/walk2.png" id="11_qemgg"]
-[ext_resource type="Texture2D" uid="uid://tsu8anl5i6nk" path="res://Player/player_sp/walk3.png" id="12_8viyr"]
-[ext_resource type="Texture2D" uid="uid://trxncfxhtjwq" path="res://Player/player_sp/S2.png" id="13_sm0op"]
-[ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Player/player_sp/SS2.png" id="14_76lrf"]
-[ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Player/player_sp/SSS2.png" id="15_efx54"]
-[ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Player/player_sp/SSS3.png" id="16_755ss"]
+[ext_resource type="Script" uid="uid://bxq1iuxeu7dhg" path="res://Bonecos/Player/player.gd" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Bonecos/Player/player_sp/baixo.png" id="2_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://vl7ofg3cd62y" path="res://Bonecos/Player/player_sp/s2baixo.png" id="3_pisgm"]
+[ext_resource type="Texture2D" uid="uid://dwqjc5vqp3wqa" path="res://Bonecos/Player/player_sp/ss2baixo.png" id="4_b1ygp"]
+[ext_resource type="Texture2D" uid="uid://xs5o7y2tol7" path="res://Bonecos/Player/player_sp/baixoblock.png" id="5_o28un"]
+[ext_resource type="Texture2D" uid="uid://dgoblcjv53kgo" path="res://Bonecos/Player/player_sp/block.png" id="6_n471f"]
+[ext_resource type="Texture2D" uid="uid://bewkcj4gpwkkc" path="res://Bonecos/Player/player_sp/Player id1.png" id="7_7emwf"]
+[ext_resource type="Texture2D" uid="uid://cyi8i7pom25np" path="res://Bonecos/Player/player_sp/Player id2.png" id="8_hshwv"]
+[ext_resource type="Texture2D" uid="uid://c51y1ap2deh8i" path="res://Bonecos/Player/player_sp/salto.png" id="9_gpjlu"]
+[ext_resource type="Texture2D" uid="uid://dxecollxfnhx1" path="res://Bonecos/Player/player_sp/walk1.png" id="10_8mwp6"]
+[ext_resource type="Texture2D" uid="uid://wxbyk1gr1x8a" path="res://Bonecos/Player/player_sp/walk2.png" id="11_qemgg"]
+[ext_resource type="Texture2D" uid="uid://tsu8anl5i6nk" path="res://Bonecos/Player/player_sp/walk3.png" id="12_8viyr"]
+[ext_resource type="Texture2D" uid="uid://trxncfxhtjwq" path="res://Bonecos/Player/player_sp/S2.png" id="13_sm0op"]
+[ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Bonecos/Player/player_sp/SS2.png" id="14_76lrf"]
+[ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Bonecos/Player/player_sp/SSS2.png" id="15_efx54"]
+[ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Bonecos/Player/player_sp/SSS3.png" id="16_755ss"]
 [ext_resource type="Script" uid="uid://bqffk61cjxkhu" path="res://Barra de vida/Barradevida.gd" id="17_pisgm"]
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Barra de vida/Barra de vidaSP/0.png" id="18_qh5jn"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Barra de vida/Barra de vidaSP/1.png" id="19_b8amp"]
@@ -1418,8 +1418,8 @@ polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2,
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 3000
-limit_bottom = 700
+limit_right = 1890
+limit_bottom = 650
 
 [node name="BarraDeVida" type="CanvasLayer" parent="."]
 script = ExtResource("17_pisgm")

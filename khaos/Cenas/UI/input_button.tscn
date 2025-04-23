@@ -1,29 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyqpu8xl1dupk"]
+[gd_scene load_steps=4 format=3 uid="uid://dyqpu8xl1dupk"]
 
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="1_g3u85"]
+[ext_resource type="Script" uid="uid://b46c1iwwqdyju" path="res://Scripts/UI/input_button.gd" id="1_k2l7s"]
+[ext_resource type="Texture2D" uid="uid://cudfvgyg0qybq" path="res://Assets/BtFundos/Letrasm.png" id="2_kl5is"]
 
 [node name="InputButton" type="Button"]
-offset_top = 31.0
+offset_top = 24.0
 offset_right = 826.0
-offset_bottom = 67.0
+offset_bottom = 72.0
+rotation = -0.000247142
 focus_mode = 0
 flat = true
+script = ExtResource("1_k2l7s")
+
+[node name="Letrasm" type="Sprite2D" parent="."]
+position = Vector2(819.999, 3.20266)
+texture = ExtResource("2_kl5is")
+
+[node name="InputLabel" type="Label" parent="."]
+layout_direction = 3
+layout_mode = 2
+offset_left = -10.9997
+offset_top = -15.0086
+offset_right = 93.0003
+offset_bottom = 23.9914
+theme_override_fonts/font = ExtResource("1_g3u85")
+theme_override_font_sizes/font_size = 15
+text = " Input Key "
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+layout_direction = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -166.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g3u85")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Action Name"
 
 [node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
@@ -31,8 +57,4 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 
-[node name="InputLabel" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_g3u85")
-theme_override_font_sizes/font_size = 15
-text = "Input Key"
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,26 +1,26 @@
-[gd_scene load_steps=20 format=3 uid="uid://p6qe3yqdjq5f"]
+[gd_scene load_steps=20 format=3 uid="uid://l27ea6n2ywdf"]
 
-[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_7ipgm"]
-[ext_resource type="Script" uid="uid://phtiy3upften" path="res://Scripts/UI/options.gd" id="1_sgh0g"]
-[ext_resource type="Texture2D" uid="uid://ii2ohnsq6ic5" path="res://Assets/BtFundos/Fundo opt.png" id="2_mw2tm"]
-[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_523gn"]
-[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_j8ysl"]
-[ext_resource type="Texture2D" uid="uid://yc6mkvpe7nbk" path="res://Assets/icons/Player 2.png" id="6_pfq0h"]
-[ext_resource type="Texture2D" uid="uid://d0nx88t586c7y" path="res://Assets/icons/Player 1.png" id="7_4fc63"]
-[ext_resource type="Texture2D" uid="uid://i6q5qihmx7t3" path="res://Assets/icons/Player 3.png" id="8_xlljf"]
-[ext_resource type="Texture2D" uid="uid://cadsy78pu1gfc" path="res://Assets/icons/music1.png" id="9_cy3gw"]
-[ext_resource type="Texture2D" uid="uid://b8wrrgxsnn2gs" path="res://Assets/icons/Player 4.png" id="10_y8hnm"]
-[ext_resource type="Texture2D" uid="uid://d4r800hb4lri" path="res://Assets/icons/music2.png" id="11_ghi65"]
-[ext_resource type="Texture2D" uid="uid://c0xmbcg6eyidl" path="res://Assets/icons/Conta2.png" id="12_xlljf"]
-[ext_resource type="Texture2D" uid="uid://bqkbr5gybvgyt" path="res://Assets/icons/Conta1.png" id="13_cy3gw"]
-[ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_cy3gw"]
-[ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="15_y8hnm"]
+[ext_resource type="Script" uid="uid://cmtiwcn01y24c" path="res://Cenas/UI/options_ingame.gd" id="1_nmxo4"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_u15er"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_yhwhy"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="4_i37ck"]
+[ext_resource type="Texture2D" uid="uid://ii2ohnsq6ic5" path="res://Assets/BtFundos/Fundo opt.png" id="5_1ycee"]
+[ext_resource type="Texture2D" uid="uid://yc6mkvpe7nbk" path="res://Assets/icons/Player 2.png" id="6_coi5j"]
+[ext_resource type="Texture2D" uid="uid://d0nx88t586c7y" path="res://Assets/icons/Player 1.png" id="7_5nsgk"]
+[ext_resource type="Texture2D" uid="uid://i6q5qihmx7t3" path="res://Assets/icons/Player 3.png" id="8_sdoda"]
+[ext_resource type="Texture2D" uid="uid://b8wrrgxsnn2gs" path="res://Assets/icons/Player 4.png" id="9_1acag"]
+[ext_resource type="Texture2D" uid="uid://cadsy78pu1gfc" path="res://Assets/icons/music1.png" id="10_48j1v"]
+[ext_resource type="Texture2D" uid="uid://d4r800hb4lri" path="res://Assets/icons/music2.png" id="11_ewg25"]
+[ext_resource type="Texture2D" uid="uid://c0xmbcg6eyidl" path="res://Assets/icons/Conta2.png" id="12_e0w8b"]
+[ext_resource type="Texture2D" uid="uid://bqkbr5gybvgyt" path="res://Assets/icons/Conta1.png" id="13_4qytw"]
+[ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_uiwcn"]
+[ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="15_edxea"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nxuc1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_pfq0h")
+"texture": ExtResource("6_coi5j")
 }],
 "loop": true,
 "name": &"idle",
@@ -28,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_4fc63")
+"texture": ExtResource("7_5nsgk")
 }],
 "loop": true,
 "name": &"player1",
@@ -39,7 +39,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_xlljf")
+"texture": ExtResource("8_sdoda")
 }],
 "loop": true,
 "name": &"idle",
@@ -47,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_y8hnm")
+"texture": ExtResource("9_1acag")
 }],
 "loop": true,
 "name": &"player2",
@@ -58,7 +58,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_cy3gw")
+"texture": ExtResource("10_48j1v")
 }],
 "loop": true,
 "name": &"idle",
@@ -66,7 +66,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_ghi65")
+"texture": ExtResource("11_ewg25")
 }],
 "loop": true,
 "name": &"msc",
@@ -77,7 +77,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_xlljf")
+"texture": ExtResource("12_e0w8b")
 }],
 "loop": true,
 "name": &"conta",
@@ -85,30 +85,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_cy3gw")
+"texture": ExtResource("13_4qytw")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
 
-[node name="Options" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_sgh0g")
+[node name="Options_ingame" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_nmxo4")
 
 [node name="TelaSemNada" type="Sprite2D" parent="."]
 position = Vector2(576.75, 350)
 scale = Vector2(1.61921, 1.42276)
-texture = ExtResource("1_7ipgm")
+texture = ExtResource("2_u15er")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 692.0
 color = Color(0, 0, 0, 0.631373)
@@ -117,16 +111,15 @@ metadata/_edit_lock_ = true
 [node name="Khaoslogo" type="Sprite2D" parent="."]
 position = Vector2(572, 64.5)
 scale = Vector2(0.406, 0.298)
-texture = ExtResource("3_523gn")
+texture = ExtResource("3_yhwhy")
 
 [node name="Voltar" type="Button" parent="."]
-layout_mode = 0
 offset_left = 3.0
 offset_top = 611.0
 offset_right = 82.0
 offset_bottom = 650.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 flat = true
@@ -134,7 +127,7 @@ metadata/_edit_lock_ = true
 
 [node name="FundoOpt" type="Sprite2D" parent="."]
 position = Vector2(578, 324)
-texture = ExtResource("2_mw2tm")
+texture = ExtResource("5_1ycee")
 metadata/_edit_lock_ = true
 
 [node name="Butões" type="Node2D" parent="."]
@@ -153,7 +146,7 @@ offset_top = 110.0
 offset_right = 256.0
 offset_bottom = 203.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "
 
@@ -175,7 +168,7 @@ offset_top = 108.0
 offset_right = 413.0
 offset_bottom = 205.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "
 
@@ -197,7 +190,7 @@ offset_top = 108.0
 offset_right = 835.0
 offset_bottom = 205.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "
 
@@ -219,7 +212,7 @@ offset_top = 107.0
 offset_right = 990.0
 offset_bottom = 205.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "
 
@@ -228,19 +221,17 @@ Account"
 flat = true
 
 [node name="Options" type="Button" parent="."]
-layout_mode = 0
 offset_left = 476.0
 offset_top = 114.0
 offset_right = 675.0
 offset_bottom = 173.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
 offset_left = 126.0
 offset_top = 207.0
 offset_right = 1031.0
@@ -256,7 +247,7 @@ layout_mode = 2
 
 [node name="P1" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 40
 text = "|----------------------- Player 1 -----------------------|"
 horizontal_alignment = 1
@@ -272,7 +263,7 @@ layout_mode = 2
 
 [node name="Mov" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Moviment"
 
@@ -287,21 +278,21 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Jump" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Jump" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Left" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Left" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Down" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Down" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Right" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Right" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
 [node name="Combat" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Combat"
 
@@ -316,15 +307,15 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Attack" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Attack" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Block" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Block" parent="ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
 [node name="P2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 40
 text = "|----------------------- Player 2 -----------------------|"
 horizontal_alignment = 1
@@ -340,7 +331,7 @@ layout_mode = 2
 
 [node name="Mov" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Moviment"
 
@@ -355,21 +346,21 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Jump" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Jump" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Left" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Left" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Down" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Down" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Right" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Right" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
 [node name="Combat" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Combat"
 
@@ -384,15 +375,15 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Attack" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Attack" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
-[node name="Block" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_cy3gw")]
+[node name="Block" parent="ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("14_uiwcn")]
 layout_mode = 2
 
 [node name="Sounds" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 40
 text = "|------------------------ Sounds -----------------------|"
 horizontal_alignment = 1
@@ -405,7 +396,7 @@ theme_override_constants/margin_left = 10
 
 [node name="Auth" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 40
 text = "|----------------------- Account -----------------------|"
 horizontal_alignment = 1
@@ -425,13 +416,13 @@ theme_override_constants/separation = 20
 
 [node name="Username" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/UserName"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Username:"
 
 [node name="Name" type="LineEdit" parent="ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/UserName"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 max_length = 12
 expand_to_text_length = true
@@ -447,13 +438,13 @@ theme_override_constants/separation = 75
 
 [node name="Email" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/ID"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 text = "Email:"
 
 [node name="MyEmail" type="LineEdit" parent="ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/ID"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 25
 max_length = 55
 expand_to_text_length = true
@@ -465,32 +456,30 @@ mouse_filter = 1
 
 [node name="Restbt" type="Sprite2D" parent="."]
 position = Vector2(673, 584)
-texture = ExtResource("15_y8hnm")
+texture = ExtResource("15_edxea")
 
 [node name="Reset" type="Button" parent="."]
-layout_mode = 0
 offset_left = 640.0
 offset_top = 564.0
 offset_right = 706.0
 offset_bottom = 605.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "Reset"
 flat = true
 
 [node name="Applybt" type="Sprite2D" parent="."]
 position = Vector2(482, 585)
-texture = ExtResource("15_y8hnm")
+texture = ExtResource("15_edxea")
 
 [node name="Apply" type="Button" parent="."]
-layout_mode = 0
 offset_left = 449.0
 offset_top = 564.0
 offset_right = 517.0
 offset_bottom = 607.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_fonts/font = ExtResource("4_i37ck")
 theme_override_font_sizes/font_size = 20
 text = "Apply"
 flat = true
