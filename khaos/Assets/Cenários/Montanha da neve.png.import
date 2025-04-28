@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwjb87vb3tbum"
-path="res://.godot/imported/fundo.png-4012242d3221bc7c8d2c9c1f3d5ccdbf.ctex"
+uid="uid://c7dd7yo5i6w73"
+path="res://.godot/imported/Montanha da neve.png-e1d8044f2d3e0e9231c9547346a3a71e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cenários/fundo.png"
-dest_files=["res://.godot/imported/fundo.png-4012242d3221bc7c8d2c9c1f3d5ccdbf.ctex"]
+source_file="res://Assets/Cenários/Montanha da neve.png"
+dest_files=["res://.godot/imported/Montanha da neve.png-e1d8044f2d3e0e9231c9547346a3a71e.ctex"]
 
 [params]
 

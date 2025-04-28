@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=8 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_selwn"]
-[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="4_ehp0k"]
+[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="4_ad52v"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_8hpvv"]
-[ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="5_f5vk0"]
+[ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_ngor3"]
+[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_77h5k"]
 
 [node name="Tela_dos_mapas" type="Control"]
 layout_mode = 3
@@ -30,9 +31,9 @@ offset_right = 259.0
 offset_bottom = 217.0
 
 [node name="FundoEspaço" type="Sprite2D" parent="1"]
-position = Vector2(99.625, 60)
-scale = Vector2(0.0655833, 0.178462)
-texture = ExtResource("4_ehp0k")
+position = Vector2(100, 60)
+scale = Vector2(0.102321, 0.175)
+texture = ExtResource("4_ad52v")
 
 [node name="Mapa1" type="Button" parent="1"]
 layout_mode = 0
@@ -50,16 +51,26 @@ offset_bottom = 263.0
 
 [node name="Fundomontanha" type="Sprite2D" parent="2"]
 position = Vector2(99.875, 60.25)
-scale = Vector2(0.0654167, 0.177692)
-texture = ExtResource("5_f5vk0")
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("5_ngor3")
 
 [node name="Mapa2" type="Button" parent="2"]
 layout_mode = 0
+offset_left = 1.0
 offset_top = 1.0
-offset_right = 199.0
+offset_right = 200.0
 offset_bottom = 119.0
 focus_mode = 0
 flat = true
+
+[node name="Mapas unlocked" type="ColorRect" parent="2"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
 
 [node name="3" type="ColorRect" parent="."]
 layout_mode = 0
@@ -68,15 +79,21 @@ offset_top = 143.0
 offset_right = 869.0
 offset_bottom = 263.0
 
+[node name="Fundomontanha" type="Sprite2D" parent="3"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("6_77h5k")
+
 [node name="Mapa3" type="Button" parent="3"]
 layout_mode = 0
-offset_top = -4.0
+offset_top = 1.0
 offset_right = 199.0
-offset_bottom = 114.0
+offset_bottom = 119.0
 focus_mode = 0
 flat = true
 
 [node name="Mapas unlocked" type="ColorRect" parent="3"]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0

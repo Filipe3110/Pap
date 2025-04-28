@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db2o7imgchic7"
-path="res://.godot/imported/fundo espaço.jpg-1794202dac3d7a1141e3a921085e3216.ctex"
+uid="uid://c8d55aboc1lg4"
+path="res://.godot/imported/espaço.png-a3f0ef2384c7c3039cb00c04e80f54fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cenários/fundo espaço.jpg"
-dest_files=["res://.godot/imported/fundo espaço.jpg-1794202dac3d7a1141e3a921085e3216.ctex"]
+source_file="res://Assets/Cenários/espaço.png"
+dest_files=["res://.godot/imported/espaço.png-a3f0ef2384c7c3039cb00c04e80f54fb.ctex"]
 
 [params]
 

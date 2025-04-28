@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dtwp64gs1usv"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_hx8d7"]
-[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="2_h6sy4"]
+[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_gi46f"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_hx8d7"]
 [ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="4_gi46f"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="4_jf5l4"]
@@ -21,7 +21,7 @@ script = ExtResource("1_hx8d7")
 [node name="Fundo  espaço" type="Sprite2D" parent="."]
 position = Vector2(1505, 324.5)
 scale = Vector2(1, 1.00154)
-texture = ExtResource("2_h6sy4")
+texture = ExtResource("2_gi46f")
 
 [node name="Player" parent="." instance=ExtResource("3_hx8d7")]
 position = Vector2(906, 418)
@@ -39,7 +39,7 @@ position = Vector2(1503, 661)
 shape = SubResource("RectangleShape2D_ltyrb")
 
 [node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2964, 322)
+position = Vector2(2494, 331)
 shape = SubResource("RectangleShape2D_xwa4g")
 
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]

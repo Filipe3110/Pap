@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgma4jqnsfj0r"]
+[gd_scene load_steps=8 format=3 uid="uid://bgma4jqnsfj0r"]
 
 [ext_resource type="Script" uid="uid://bng7coayd3y85" path="res://Scripts/Multijogador/Mapas_Modo_História.gd" id="1_2l8wv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_tqfpy"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_2l8wv"]
-[ext_resource type="Texture2D" uid="uid://db2o7imgchic7" path="res://Assets/Cenários/fundo espaço.jpg" id="3_t7vir"]
-[ext_resource type="Texture2D" uid="uid://bj6brv4sbm82g" path="res://Assets/Cenários/fundo montanha.jpg" id="4_5ycn8"]
+[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="4_5ycn8"]
+[ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_favhp"]
+[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_8ifip"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="6_t7vir"]
 
 [node name="Multiplayermapas" type="Control"]
@@ -31,8 +32,8 @@ offset_bottom = 217.0
 
 [node name="FundoEspaço" type="Sprite2D" parent="Borda"]
 position = Vector2(99.625, 60)
-scale = Vector2(0.0655833, 0.178462)
-texture = ExtResource("3_t7vir")
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("4_5ycn8")
 
 [node name="Mapa1" type="Button" parent="Borda"]
 layout_mode = 0
@@ -50,8 +51,8 @@ offset_bottom = 263.0
 
 [node name="Fundomontanha" type="Sprite2D" parent="Borda1"]
 position = Vector2(99.875, 60.25)
-scale = Vector2(0.0654167, 0.177692)
-texture = ExtResource("4_5ycn8")
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("5_favhp")
 
 [node name="Mapa2" type="Button" parent="Borda1"]
 layout_mode = 0
@@ -83,6 +84,11 @@ offset_top = 2.0
 offset_right = 198.0
 offset_bottom = 118.0
 color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Fundomontanha" type="Sprite2D" parent="Borda2"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("6_8ifip")
 
 [node name="Borda3" type="ColorRect" parent="."]
 layout_mode = 0

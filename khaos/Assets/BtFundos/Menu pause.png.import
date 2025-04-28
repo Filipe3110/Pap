@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t60ai5letuau"
-path="res://.godot/imported/fundo montanha.jpg-86ab938152bc5188cc3956fd8fb26da4.ctex"
+uid="uid://dvpwelbmhq45x"
+path="res://.godot/imported/Menu pause.png-0f3367d4c0a266ee0bcd3d8241bb9287.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cenários/fundo montanha.jpg"
-dest_files=["res://.godot/imported/fundo montanha.jpg-86ab938152bc5188cc3956fd8fb26da4.ctex"]
+source_file="res://Assets/BtFundos/Menu pause.png"
+dest_files=["res://.godot/imported/Menu pause.png-0f3367d4c0a266ee0bcd3d8241bb9287.ctex"]
 
 [params]
 
