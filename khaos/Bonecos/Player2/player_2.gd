@@ -23,7 +23,8 @@ var contcombo_baixo: int = 0
 func _ready():
 	animation_player.connect("animation_finished", Callable(self, "_quando_animacao_finalizar"))
 	soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
-
+	direcao_atual = -1  
+	scale.x = abs(scale.x) * direcao_atual
 func _physics_process(delta: float) -> void:
 	# Aplica gravidade
 	if not is_on_floor():

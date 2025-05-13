@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0drclnjt7fdc"]
+[gd_scene load_steps=11 format=3 uid="uid://c0drclnjt7fdc"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_ub1nx"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="2_4aw55"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="7_7errg"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_gkdv5"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="8_gkdv5"]
-[ext_resource type="Script" path="res://Mapas/victory_screen.gd" id="9_7errg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ub1nx"]
 size = Vector2(3004, 20)
@@ -127,7 +126,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VictoryScreen" type="CanvasLayer" parent="."]
-script = ExtResource("9_7errg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen"]
 offset_left = 414.0

@@ -21,7 +21,7 @@ size = Vector2(81, 661.75)
 script = ExtResource("1_vhnfe")
 
 [node name="Fundo  espaço" type="Sprite2D" parent="."]
-position = Vector2(948, 324)
+position = Vector2(959, 324)
 texture = ExtResource("2_vhnfe")
 
 [node name="Player2" parent="." instance=ExtResource("3_y5nrm")]
@@ -29,7 +29,7 @@ position = Vector2(1352, 421)
 scale = Vector2(4, 4)
 
 [node name="Player1" parent="." instance=ExtResource("3_ybgde")]
-position = Vector2(921, 430)
+position = Vector2(831, 430)
 scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_xwa4g")
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3
 physics_interpolation_mode = 1
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu_pausa"]
 offset_right = 1152.0
@@ -127,6 +128,7 @@ visible = false
 
 [node name="Vitoria" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
 position = Vector2(576.75, 350)
@@ -203,6 +205,13 @@ theme_override_font_sizes/font_size = 17
 text = "• Restart •"
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+limit_left = -1000
+limit_top = 0
+limit_right = 1890
+limit_bottom = 650
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
