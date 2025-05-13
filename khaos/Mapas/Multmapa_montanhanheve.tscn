@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://w7cl6m1e2u16"]
 
-[ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_f0q1r"]
+[ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_f0q1r"]
 [ext_resource type="Texture2D" uid="uid://t60ai5letuau" path="res://Assets/Cenários/fundo montanha.jpg" id="2_f0q1r"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_f0q1r"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="4_he15w"]

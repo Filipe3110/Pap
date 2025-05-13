@@ -1,26 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtwp64gs1usv"]
+[gd_scene load_steps=13 format=3 uid="uid://dtwp64gs1usv"]
 
-[ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_hx8d7"]
+[ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_360m2"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_gi46f"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_hx8d7"]
 [ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="4_gi46f"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="4_jf5l4"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_h6sy4"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_hx8d7"]
+[ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_rk84j"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_gi46f"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_ea8so"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xme7b"]
 size = Vector2(3004, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
-size = Vector2(81, 639.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_df420"]
+size = Vector2(81, 661.75)
 
 [node name="Mapa Espço" type="Node2D"]
-script = ExtResource("1_hx8d7")
+script = ExtResource("1_360m2")
 
 [node name="Fundo  espaço" type="Sprite2D" parent="."]
-position = Vector2(1505, 324.5)
-scale = Vector2(1, 1.00154)
+position = Vector2(948, 324)
 texture = ExtResource("2_gi46f")
 
 [node name="Player" parent="." instance=ExtResource("3_hx8d7")]
@@ -35,16 +36,16 @@ scale = Vector2(4, 4)
 position = Vector2(0, 3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1503, 661)
-shape = SubResource("RectangleShape2D_ltyrb")
+position = Vector2(1510, 663)
+shape = SubResource("RectangleShape2D_xme7b")
 
 [node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2494, 331)
-shape = SubResource("RectangleShape2D_xwa4g")
+position = Vector2(1911, 333.125)
+shape = SubResource("RectangleShape2D_df420")
 
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(41.5, 321.25)
-shape = SubResource("RectangleShape2D_xwa4g")
+position = Vector2(-22, 329)
+shape = SubResource("RectangleShape2D_df420")
 
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -56,28 +57,29 @@ offset_bottom = 653.0
 color = Color(0, 0, 0, 0.631373)
 metadata/_edit_use_anchors_ = true
 
-[node name="FundoDoLogin" type="Sprite2D" parent="Menu_pausa"]
-position = Vector2(573, 365)
-texture = ExtResource("4_jf5l4")
+[node name="MenuPause" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(570, 371)
+texture = ExtResource("5_rk84j")
 
 [node name="Logo" type="Sprite2D" parent="Menu_pausa"]
-position = Vector2(572, 244)
+position = Vector2(572, 48)
 scale = Vector2(0.224398, 0.147099)
 texture = ExtResource("5_hx8d7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
-offset_left = 430.0
-offset_top = 335.0
-offset_right = 573.0
-offset_bottom = 550.0
+offset_left = 414.0
+offset_top = 266.0
+offset_right = 570.0
+offset_bottom = 430.0
 scale = Vector2(2, 2)
-theme_override_constants/separation = -1
+theme_override_constants/separation = 5
 
 [node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_h6sy4")
-text = "Menu"
+theme_override_font_sizes/font_size = 17
+text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -85,7 +87,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_h6sy4")
-text = "Options"
+theme_override_font_sizes/font_size = 17
+text = "• Options •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -93,7 +96,8 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_h6sy4")
-text = "Change Map
+theme_override_font_sizes/font_size = 17
+text = "• Change Map •
 "
 flat = true
 
@@ -101,26 +105,110 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_h6sy4")
-text = "Resume"
+theme_override_font_sizes/font_size = 17
+text = "• Resume •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Menu_pausa"]
-offset_left = 430.0
-offset_top = 270.0
-offset_right = 713.0
-offset_bottom = 353.0
+offset_left = 351.0
+offset_top = 201.0
+offset_right = 786.0
+offset_bottom = 284.0
 theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 40
 text = "Paused
------------------"
+---------------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Options_ingame" parent="." instance=ExtResource("8_gi46f")]
 visible = false
 
+[node name="Vitoria" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
+position = Vector2(576.75, 350)
+scale = Vector2(1.61921, 1.42276)
+texture = ExtResource("9_ea8so")
+
+[node name="Logo" type="Sprite2D" parent="Vitoria"]
+position = Vector2(776, 188)
+texture = ExtResource("5_hx8d7")
+
+[node name="ColorRect" type="ColorRect" parent="Vitoria"]
+offset_top = -3.0
+offset_right = 1152.0
+offset_bottom = 689.0
+pivot_offset = Vector2(789, 455)
+color = Color(0, 0, 0, 0.631373)
+
+[node name="FundoDoLogin" type="Sprite2D" parent="Vitoria"]
+position = Vector2(788, 477)
+texture = ExtResource("4_jf5l4")
+
+[node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
+offset_left = 633.0
+offset_top = 239.0
+offset_right = 939.0
+offset_bottom = 354.0
+theme_override_fonts/normal_font = ExtResource("5_h6sy4")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Player Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vitoria"]
+offset_left = 645.0
+offset_top = 333.0
+offset_right = 788.0
+offset_bottom = 476.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 5
+
+[node name="Back" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_h6sy4")
+theme_override_font_sizes/font_size = 17
+text = "• Menu •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_h6sy4")
+theme_override_font_sizes/font_size = 17
+text = "• Options •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Change_map" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_h6sy4")
+theme_override_font_sizes/font_size = 17
+text = "• Change Map •
+"
+flat = true
+
+[node name="Restart" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_h6sy4")
+theme_override_font_sizes/font_size = 17
+text = "• Restart •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
