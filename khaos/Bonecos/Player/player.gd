@@ -132,3 +132,6 @@ func Player_receber_dano(dano):
 	
 	await get_tree().create_timer(.5).timeout
 	in_hit_cooldown = false
+	
+	
+	

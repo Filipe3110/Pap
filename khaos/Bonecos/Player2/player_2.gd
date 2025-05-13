@@ -21,11 +21,8 @@ var contcombo: int = 0
 var contcombo_baixo: int = 0
 
 func _ready():
-	if barra_de_vida == null:
-		print("Erro: Barra de vida não encontrada no nó Player!")
 	animation_player.connect("animation_finished", Callable(self, "_quando_animacao_finalizar"))
 	soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
-	print("Sinal area_entered conectado")
 
 func _physics_process(delta: float) -> void:
 	# Aplica gravidade
@@ -124,7 +121,6 @@ func p2_receber_dano(dano):
 		return
 	if not barra_de_vida.has_method("receber_dano"):
 		return
-	print(esta_bloqueando)
 	if esta_bloqueando:
 		dano = dano / 2  
 	

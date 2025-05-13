@@ -21,11 +21,10 @@ var contcombo: int = 0
 var contcombo_baixo: int = 0
 
 func _ready():
-	if barra_de_vida == null:
-		print("Erro: Barra de vida não encontrada no nó Player!")
-	animation_player.connect("animation_finished", Callable(self, "_quando_animacao_finalizar"))
-	soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
-	print("Sinal area_entered conectado")
+	if animation_player.has_signal("animation_finished"):
+		animation_player.connect("animation_finished", Callable(self, "_quando_animacao_finalizar").bind())
+	if soco_area.has_signal("body_entered"):
+		soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
 
 func _physics_process(delta: float) -> void:
 	# Aplica gravidade
@@ -48,18 +47,14 @@ func _physics_process(delta: float) -> void:
 			iniciar_ataque()
 
 	# Abaixar
-	if Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_abaixando = true
-		animation_player.play("crouch") 
-	else:
-		esta_abaixando = false
+	esta_abaixando = Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando
+	if esta_abaixando:
+		animation_player.play("crouch")
 
 	# Bloqueio
-	if Input.is_action_pressed("block") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_bloqueando = true
+	esta_bloqueando = Input.is_action_pressed("block") and is_on_floor() and not esta_pulando and not esta_atacando
+	if esta_bloqueando:
 		animation_player.play("block")
-	else:
-		esta_bloqueando = false
 
 	# Movimento horizontal
 	var direcao := Input.get_axis("left", "right")
@@ -69,17 +64,17 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direcao * VELOCIDADE
 			if direcao * direcao_atual < 0:
 				direcao_atual = direcao
-				scale.x = -scale.x
+				scale.x *= -1
 		else:
 			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
-		
+
 		# Animação de movimento
-		if esta_pulando and animation_player.current_animation:
-			animation_player.current_animation = "jump"
+		if esta_pulando:
+			animation_player.play("jump")
 		elif direcao != 0:
-			animation_player.current_animation = "run"
+			animation_player.play("run")
 		else:
-			animation_player.current_animation = "idle"
+			animation_player.play("idle")
 
 	move_and_slide()
 
@@ -88,9 +83,8 @@ func iniciar_ataque() -> void:
 		esta_atacando = true
 		contcombo = 0
 	else:
-		contcombo += 1
-		if contcombo >= combo.size():
-			contcombo = 0
+		contcombo = (contcombo + 1) % combo.size()
+
 	animation_player.play(combo[contcombo])
 
 func iniciar_ataque_baixo() -> void:
@@ -98,9 +92,8 @@ func iniciar_ataque_baixo() -> void:
 		esta_atacando = true
 		contcombo_baixo = 0
 	else:
-		contcombo_baixo += 1
-		if contcombo_baixo >= baixo_combo.size():
-			contcombo_baixo = 0
+		contcombo_baixo = (contcombo_baixo + 1) % baixo_combo.size()
+
 	animation_player.play(baixo_combo[contcombo_baixo])
 
 func _quando_animacao_finalizar(anim_name):
@@ -108,27 +101,21 @@ func _quando_animacao_finalizar(anim_name):
 		esta_atacando = false
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("p2"):
-		if combo[contcombo] == "soco_direita" or combo[contcombo] == "soco_esquerda":
-			body.call("p2_receber_dano", 5)  
-		elif combo[contcombo] == "uppercut":
-			body.call("p2_receber_dano", 10)
+	if body.is_in_group("p2") and body.has_method("p2_receber_dano"):
+		var dano := 5 if combo[contcombo] in ["soco_direita", "soco_esquerda"] else 10
+		body.p2_receber_dano(dano)
 
 var in_hit_cooldown = false
 
 func p1_receber_dano(dano):
-	if (in_hit_cooldown): return
+	if in_hit_cooldown:
+		return
 	in_hit_cooldown = true
-	
-	if barra_de_vida == null:
-		return
-	if not barra_de_vida.has_method("receber_dano"):
-		return
-	print(esta_bloqueando)
-	if esta_bloqueando:
-		dano = dano / 2  
-	
-	barra_de_vida.receber_dano(dano) 
-	
-	await get_tree().create_timer(.5).timeout
+
+	if barra_de_vida and barra_de_vida.has_method("receber_dano"):
+		if esta_bloqueando:
+			dano /= 2  
+		barra_de_vida.receber_dano(dano)
+
+	await get_tree().create_timer(0.5).timeout
 	in_hit_cooldown = false

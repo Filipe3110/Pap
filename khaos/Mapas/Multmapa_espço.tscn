@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce6vd4lykf81q"]
+[gd_scene load_steps=12 format=3 uid="uid://ce6vd4lykf81q"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_vhnfe"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_vhnfe"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_y5nrm"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="3_ybgde"]
+[ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_vhnfe"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="6_7cq1f"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_f3cpy"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_wk5lh"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_7cq1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -42,5 +46,109 @@ shape = SubResource("RectangleShape2D_xwa4g")
 position = Vector2(-22, 329)
 shape = SubResource("RectangleShape2D_xwa4g")
 
+[node name="Menu_pausa" type="CanvasLayer" parent="."]
+process_mode = 3
+physics_interpolation_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Menu_pausa"]
+offset_right = 1152.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 0.631373)
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuPause" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(570, 371)
+texture = ExtResource("5_vhnfe")
+
+[node name="Logo" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(572, 48)
+scale = Vector2(0.224398, 0.147099)
+texture = ExtResource("6_7cq1f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
+offset_left = 414.0
+offset_top = 266.0
+offset_right = 570.0
+offset_bottom = 430.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 5
+
+[node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 17
+text = "• Menu •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 17
+text = "• Options •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Change_map" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 17
+text = "• Change Map •
+"
+flat = true
+
+[node name="Resume" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 17
+text = "• Resume •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu_pausa"]
+offset_left = 351.0
+offset_top = 201.0
+offset_right = 786.0
+offset_bottom = 284.0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 40
+text = "Paused
+---------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Options_ingame" parent="." instance=ExtResource("7_wk5lh")]
 visible = false
+
+[node name="Vitoria" type="CanvasLayer" parent="."]
+
+[node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
+position = Vector2(576.75, 350)
+scale = Vector2(1.61921, 1.42276)
+texture = ExtResource("9_7cq1f")
+
+[node name="ColorRect" type="ColorRect" parent="Vitoria"]
+offset_right = 1152.0
+offset_bottom = 692.0
+pivot_offset = Vector2(789, 455)
+color = Color(0, 0, 0, 0.631373)
+
+[node name="VitoriaLabel" type="Label" parent="Vitoria"]
+offset_left = 347.0
+offset_top = 135.0
+offset_right = 842.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 40
+text = "Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://w7cl6m1e2u16"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/Mapas.gd" id="1_f0q1r"]
-[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_f0q1r"]
+[ext_resource type="Texture2D" uid="uid://t60ai5letuau" path="res://Assets/Cenários/fundo montanha.jpg" id="2_f0q1r"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_f0q1r"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="4_he15w"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_f0q1r"]
@@ -18,8 +18,9 @@ size = Vector2(81, 658.75)
 [node name="Mapa Montanhanheve" type="Node2D"]
 script = ExtResource("1_f0q1r")
 
-[node name="Fundo montanha" type="Sprite2D" parent="."]
-position = Vector2(949, 324)
+[node name="MontanhaDaNeve" type="Sprite2D" parent="."]
+position = Vector2(972, 329)
+scale = Vector2(0.650667, 1)
 texture = ExtResource("2_f0q1r")
 
 [node name="Player2" parent="." instance=ExtResource("3_f0q1r")]
