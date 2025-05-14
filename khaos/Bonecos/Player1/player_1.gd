@@ -27,6 +27,8 @@ func _ready():
 		soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
 
 func _physics_process(delta: float) -> void:
+	
+	
 	# Aplica gravidade
 	if not is_on_floor():
 		velocity.y += GRAVIDADE * delta
@@ -119,3 +121,4 @@ func p1_receber_dano(dano):
 
 	await get_tree().create_timer(0.5).timeout
 	in_hit_cooldown = false
+	

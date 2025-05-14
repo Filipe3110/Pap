@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://dg4s4y01dai02"]
+[gd_scene load_steps=138 format=3 uid="uid://dg4s4y01dai02"]
 
 [ext_resource type="Script" uid="uid://blg1ejdwu05yo" path="res://Bonecos/Player2/player_2.gd" id="1_g5mwa"]
 [ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Bonecos/Player/player_sp/baixo.png" id="2_ur2mx"]
@@ -118,6 +118,8 @@
 [ext_resource type="Texture2D" uid="uid://br5pc1mx1rvl0" path="res://Barra de vida/Barra de vidaSP/98.png" id="116_0aayu"]
 [ext_resource type="Texture2D" uid="uid://dx1iwh1rnmoxl" path="res://Barra de vida/Barra de vidaSP/99.png" id="117_7b4p1"]
 [ext_resource type="Texture2D" uid="uid://bsqpuwl4ykl2b" path="res://Barra de vida/Barra de vidaSP/100.png" id="118_wopbk"]
+[ext_resource type="Texture2D" uid="uid://ddfki0ncqyyun" path="res://Assets/BtFundos/P2.png" id="119_15ji8"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="120_eo3e2"]
 
 [sub_resource type="Animation" id="Animation_ccnfg"]
 length = 0.001
@@ -1448,5 +1450,22 @@ disabled = true
 position = Vector2(15, 7)
 shape = SubResource("CapsuleShape2D_m3e42")
 disabled = true
+
+[node name="point" type="Sprite2D" parent="."]
+position = Vector2(2, -43)
+scale = Vector2(0.273972, 0.295454)
+texture = ExtResource("119_15ji8")
+
+[node name="Label" type="Label" parent="point"]
+offset_left = -65.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("120_eo3e2")
+theme_override_font_sizes/font_size = 20
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="SocoArea" to="." method="_on_soco_area_area_entered"]
