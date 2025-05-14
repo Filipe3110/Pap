@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce6vd4lykf81q"]
+[gd_scene load_steps=14 format=3 uid="uid://ce6vd4lykf81q"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_vhnfe"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_vhnfe"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_wk5lh"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_7cq1f"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_wk5lh"]
+[ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_f3cpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -21,7 +22,7 @@ size = Vector2(81, 661.75)
 script = ExtResource("1_vhnfe")
 
 [node name="Fundo  espaço" type="Sprite2D" parent="."]
-position = Vector2(959, 324)
+position = Vector2(948, 324)
 texture = ExtResource("2_vhnfe")
 
 [node name="Player2" parent="." instance=ExtResource("3_y5nrm")]
@@ -206,12 +207,13 @@ text = "• Restart •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="DynamicCamera" type="Camera2D" parent="."]
 position = Vector2(576, 325)
-limit_left = -1000
+limit_left = 0
 limit_top = 0
 limit_right = 1890
 limit_bottom = 650
+script = ExtResource("11_f3cpy")
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
