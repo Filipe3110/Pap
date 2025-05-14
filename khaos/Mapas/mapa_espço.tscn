@@ -12,10 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_ea8so"]
 [ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_rk84j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xme7b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk84j"]
 size = Vector2(3004, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_df420"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea8so"]
 size = Vector2(81, 661.75)
 
 [node name="Mapa Espço" type="Node2D"]
@@ -38,15 +38,15 @@ position = Vector2(0, 3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1510, 663)
-shape = SubResource("RectangleShape2D_xme7b")
+shape = SubResource("RectangleShape2D_rk84j")
 
 [node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1911, 333.125)
-shape = SubResource("RectangleShape2D_df420")
+shape = SubResource("RectangleShape2D_ea8so")
 
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-22, 329)
-shape = SubResource("RectangleShape2D_df420")
+shape = SubResource("RectangleShape2D_ea8so")
 
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3

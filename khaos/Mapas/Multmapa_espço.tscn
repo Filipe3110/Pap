@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce6vd4lykf81q"]
+[gd_scene load_steps=17 format=3 uid="uid://ce6vd4lykf81q"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_vhnfe"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_vhnfe"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_wk5lh"]
 [ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_f3cpy"]
 [ext_resource type="Texture2D" uid="uid://rmm0fyg2q1t8" path="res://Assets/BtFundos/P1.png" id="12_3ltmf"]
+[ext_resource type="Script" uid="uid://camg5tnjko7xv" path="res://Mapas/PointP1.gd" id="12_l4wke"]
+[ext_resource type="Texture2D" uid="uid://ddfki0ncqyyun" path="res://Assets/BtFundos/P2.png" id="13_avyrg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -27,7 +29,7 @@ position = Vector2(948, 324)
 texture = ExtResource("2_vhnfe")
 
 [node name="Player2" parent="." instance=ExtResource("3_y5nrm")]
-position = Vector2(1352, 421)
+position = Vector2(1251, 430)
 scale = Vector2(4, 4)
 
 [node name="Player1" parent="." instance=ExtResource("3_ybgde")]
@@ -216,12 +218,15 @@ limit_right = 1890
 limit_bottom = 650
 script = ExtResource("11_f3cpy")
 
-[node name="P1" type="Sprite2D" parent="."]
+[node name="P1" type="CanvasLayer" parent="."]
+script = ExtResource("12_l4wke")
+
+[node name="point" type="Sprite2D" parent="P1"]
 position = Vector2(844, 256)
 scale = Vector2(1.17808, 1.31818)
 texture = ExtResource("12_3ltmf")
 
-[node name="Label" type="Label" parent="P1"]
+[node name="Label" type="Label" parent="P1/point"]
 offset_left = -65.0
 offset_top = -11.0
 offset_right = 70.0
@@ -231,6 +236,26 @@ theme_override_font_sizes/font_size = 20
 text = "Player 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="P2" type="CanvasLayer" parent="."]
+
+[node name="point" type="Sprite2D" parent="P2"]
+position = Vector2(1265, 256)
+scale = Vector2(1.17808, 1.31818)
+texture = ExtResource("13_avyrg")
+
+[node name="Label" type="Label" parent="P2/point"]
+offset_left = -65.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("7_f3cpy")
+theme_override_font_sizes/font_size = 20
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
