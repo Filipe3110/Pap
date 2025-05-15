@@ -6,7 +6,6 @@ extends Node2D
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
 @onready var camera = $DynamicCamera 
-@onready var p1indicator = $P1
 var is_paused = false
 
 func _ready():
