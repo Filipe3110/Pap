@@ -1,14 +1,23 @@
 extends Control
 
 
+var COLLECTION_ID = "khaos_stats"
+var selected_map_path = ""
+var selected_map_name = ""
+# Mapa do espaço (índice 0) sempre desbloqueado, outros bloqueados inicialmente
+var mapas_desbloqueados = [true, false, false, false]
+
 var random_map = ["res://Mapas/Multmapa_espço.tscn", "res://Mapas/Multmapa_montanhanheve.tscn"]
 
 func _ready():
 	randomize()
 
 func _on_mapa_1_pressed() -> void:
+
 	carregar_cena_com_loading("res://Mapas/Multmapa_espço.tscn")
 
+
+	tentar_entrar_mapa(0, "mapa_espaco", "res://Mapas/mapa_espaco.tscn")
 
 func _on_mapa_2_pressed() -> void:
 	carregar_cena_com_loading("res://Mapas/Multmapa_montanhanheve.tscn")
