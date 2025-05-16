@@ -1,92 +1,99 @@
 extends Node2D
 
-var COLLECTION_ID = "khaos_stats"
-var selected_map_path = ""
-var selected_map_name = ""
-var mapas_desbloqueados = [true, false, false, false]  # Espaço sempre desbloqueado
+@onready var options = $Options_ingame
+@onready var pause_menu = $Menu_pausa
+@onready var p1 = $Player
+@onready var p2 = $Enemy
+@onready var vitoria_canvas = $Vitoria  
+@onready var vitoria_label = $Vitoria/VitoriaLabel
+@onready var camera = $StoryDynamicCamera  # Referência para a câmera dinâmica do modo história
 
-@onready var text = $Text
-@onready var mapa1_btn = $Borda1/Mapa1
-@onready var mapa2_btn = $Borda2/Mapa2
-@onready var mapa3_btn = $Mapa3
-@onready var mapa4_btn = $Mapa4
+var is_paused = false
 
 func _ready():
-	await carregar_progresso_mapa()
-	atualizar_botoes_mapas()
-	print("Estado inicial dos mapas:", mapas_desbloqueados)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pause_menu.visible = false
+	options.visible = false
+	vitoria_canvas.visible = false
+	
+	# Conecta os sinais dos personagens  
+	if p1 and p1.has_node("BarraDeVida"):
+		p1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+	if p2 and p2.has_node("BarraDeVida"):
+		p2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+	
+	# Aguarda um frame para garantir que todos os nós estão prontos
+	await get_tree().process_frame
+	
+	# Configura a câmera dinâmica
+	_setup_camera()
+
+# Função para configurar a câmera
+func _setup_camera():
+	# Busca a câmera se ela não foi encontrada automaticamente
+	if not camera:
+		camera = get_node_or_null("StoryDynamicCamera")
+	
+	# Se a câmera existe e tem o método set_characters
+	if camera and camera.has_method("set_characters"):
+		# Verifica se o jogador e inimigo existem
+		if p1 and p2:
+			camera.set_characters(p1, p2)
+		else:
+			# Tenta encontrar os personagens por nome
+			var player = get_node_or_null("Player")
+			var enemy = get_node_or_null("Enemy")
+			if player and enemy:
+				camera.set_characters(player, enemy)
+
+func _on_jogador_morreu(jogador_id):
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if jogador_id == "Player":
+		# Jogador perdeu
+		vitoria_label.text = "[center][color=#FF0000]Defeat[/color][/center]"
+	else:
+		# Jogador ganhou
+		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
+		
+	vitoria_canvas.visible = true
+	pause_menu.visible = false  
+	options.visible = false     
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		# Atalho de desenvolvimento: desbloqueia todos com ESC
-		for i in range(1, mapas_desbloqueados.size()):
-			mapas_desbloqueados[i] = true
-		text.text = "Todos os mapas desbloqueados (modo dev)"
-		await salvar_progresso_mapa()
-		atualizar_botoes_mapas()
-
-# Função chamada pelo Global.gd quando o jogador vence
-func desbloquear_nivel_atual():
-	var ultimo_desbloqueado = mapas_desbloqueados.rfind(true)
-	if ultimo_desbloqueado < mapas_desbloqueados.size() - 1:
-		mapas_desbloqueados[ultimo_desbloqueado + 1] = true
-		text.text = "Mapa %d desbloqueado!" % (ultimo_desbloqueado + 2)
-		await salvar_progresso_mapa()
-		atualizar_botoes_mapas()
-
-func atualizar_botoes_mapas():
-	mapa1_btn.disabled = !mapas_desbloqueados[0]
-	mapa2_btn.disabled = !mapas_desbloqueados[1]
-	mapa3_btn.disabled = !mapas_desbloqueados[2]
-	mapa4_btn.disabled = !mapas_desbloqueados[3]
-
-func tentar_entrar_mapa(index: int, nome: String, path: String) -> void:
-	if index >= 0 and index < mapas_desbloqueados.size():
-		if mapas_desbloqueados[index]:
-			selected_map_name = nome
-			selected_map_path = path
-			carregar_cena_com_loading(path)
+		if is_paused:
+			_unpause_game()
 		else:
-			text.text = "Mapa (%s) bloqueado!" % nome.capitalize()
-	else:
-		text.text = "Erro: Índice inválido!"
+			_pause_game()
 
-# Botões dos mapas (conecte esses sinais no editor)
-func _on_mapa_1_pressed(): tentar_entrar_mapa(0, "mapa_espaco", "res://Mapas/mapa_espaco.tscn")
-func _on_mapa_2_pressed(): tentar_entrar_mapa(1, "mapa_neve", "res://Mapas/mapa_montanhanheve.tscn")
-func _on_mapa_3_pressed(): tentar_entrar_mapa(2, "mapa_floresta", "res://Mapas/mapa_floresta.tscn")
-func _on_mapa_4_pressed(): tentar_entrar_mapa(3, "mapa_deserto", "res://Mapas/mapa_deserto.tscn")
+func _pause_game():
+	is_paused = true
+	get_tree().paused = true
+	pause_menu.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func _on_voltar_pressed():
+func _unpause_game():
+	is_paused = false
+	get_tree().paused = false
+	pause_menu.visible = false
+
+func _on_options_pressed():
+	options.visible = true
+	pause_menu.visible = false
+
+func _on_back_pressed() -> void:
+	_unpause_game()
 	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
-func carregar_cena_com_loading(caminho: String):
-	var loading = load("res://Cenas/UI/loading_screen.tscn").instantiate()
-	loading.next_scene = caminho
-	get_tree().root.add_child(loading)
-	queue_free()
+func _on_change_map_pressed() -> void:
+	_unpause_game()
+	get_tree().change_scene_to_file("res://Cenas/Modo_História/modo_história.tscn")
 
-# Firestore functions
-func salvar_progresso_mapa() -> void:
-	var auth = Firebase.Auth.auth
-	if auth and auth.localid:
-		var task = Firebase.Firestore.collection(COLLECTION_ID).update(auth.localid, {
-			"unlocked_maps": mapas_desbloqueados
-		})
-		var result = await task.task_finished
-		if result is FirestoreDocument:
-			print("Progresso salvo com sucesso!")
-		else:
-			print("Erro ao salvar progresso")
+func _on_resume_pressed() -> void:
+	_unpause_game()
 
-func carregar_progresso_mapa() -> void:
-	var auth = Firebase.Auth.auth
-	if auth and auth.localid:
-		var task = Firebase.Firestore.collection(COLLECTION_ID).get_doc(auth.localid)
-		var document = await task.task_finished
-		
-		if document is FirestoreDocument and "unlocked_maps" in document.doc_fields:
-			var dados = document.doc_fields["unlocked_maps"]
-			if dados.size() == 4:  # Garante que temos 4 mapas
-				mapas_desbloqueados = [true] + dados.slice(1)  # Mantém mapa 1 sempre desbloqueado
-				print("Progresso carregado:", mapas_desbloqueados)
+func _on_restart_pressed() -> void:
+	_unpause_game()
+	get_tree().reload_current_scene()

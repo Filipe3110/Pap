@@ -70,7 +70,6 @@ offset_right = 869.0
 offset_bottom = 263.0
 
 [node name="Mapa3" type="Button" parent="Borda3"]
-layout_mode = 0
 offset_top = 1.0
 
 
