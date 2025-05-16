@@ -38,10 +38,24 @@ func _on_voltar_pressed() -> void:
 
 func _on_mapa_1_pressed() -> void:
 	tentar_entrar_mapa(0, "mapa_espaco", "res://Mapas/mapa_espço.tscn")
+var random_map = ["res://Mapas/Multmapa_espço.tscn", "res://Mapas/Multmapa_montanhanheve.tscn"]
+
+func _ready():
+	randomize()
+
+func _on_mapa_1_pressed() -> void:
+	carregar_cena_com_loading("res://Mapas/Multmapa_espço.tscn")
+
 
 func _on_mapa_2_pressed() -> void:
-	tentar_entrar_mapa(1, "mapa_neve", "res://Mapas/mapa_montanhanheve.tscn")
+	carregar_cena_com_loading("res://Mapas/Multmapa_montanhanheve.tscn")
 
+func _on_mapa_r_pressed() -> void:
+	var random_index = randi() % random_map.size()
+	var random_scene = random_map[random_index]
+	carregar_cena_com_loading(random_scene)
+
+ 
 func _on_mapa_3_pressed() -> void:
 	tentar_entrar_mapa(2, "mapa_floresta", "res://Mapas/mapa_floresta.tscn")
 
@@ -49,10 +63,15 @@ func _on_mapa_4_pressed() -> void:
 	tentar_entrar_mapa(3, "mapa_deserto", "res://Mapas/mapa_deserto.tscn")
 
 func carregar_cena_com_loading(caminho_da_proxima_cena: String) -> void:
+
+
+
+func carregar_cena_com_loading(caminho_da_proxima_cena):
 	var loading = load("res://Cenas/UI/loading_screen.tscn").instantiate()
 	loading.next_scene = caminho_da_proxima_cena
 	get_tree().root.add_child(loading)
 	queue_free()
+	
 
 func salvar_progresso_mapa() -> void:
 	var auth = Firebase.Auth.auth
@@ -86,3 +105,6 @@ func carregar_progresso_mapa() -> void:
 			# Se não encontrar dados, usa o padrão (mapa do espaço desbloqueado, outros bloqueados)
 			print("Nenhum progresso de mapa encontrado, usando padrão")
 			mapas_desbloqueados = [true, false, false, false]
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")

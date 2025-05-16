@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgma4jqnsfj0r"]
 
-[ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_5ycn8"]
+[ext_resource type="Script" uid="uid://bng7coayd3y85" path="res://Scripts/Multijogador/Mapas_Modo_História.gd" id="1_2l8wv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_tqfpy"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_2l8wv"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="4_5ycn8"]
@@ -11,7 +11,7 @@
 [node name="Multiplayermapas" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5ycn8")
+script = ExtResource("1_2l8wv")
 
 [node name="Tela" type="Sprite2D" parent="."]
 position = Vector2(576.999, 348.5)
@@ -23,38 +23,38 @@ position = Vector2(572, 64.5)
 scale = Vector2(0.406, 0.298)
 texture = ExtResource("3_2l8wv")
 
-[node name="Borda1" type="ColorRect" parent="."]
+[node name="Borda" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 97.0
 offset_right = 259.0
 offset_bottom = 217.0
 
-[node name="FundoEspaço" type="Sprite2D" parent="Borda1"]
+[node name="FundoEspaço" type="Sprite2D" parent="Borda"]
 position = Vector2(99.625, 60)
 scale = Vector2(0.102, 0.175)
 texture = ExtResource("4_5ycn8")
 
-[node name="Mapa1" type="Button" parent="Borda1"]
+[node name="Mapa1" type="Button" parent="Borda"]
 layout_mode = 0
 offset_right = 199.0
 offset_bottom = 118.0
 focus_mode = 0
 flat = true
 
-[node name="Borda2" type="ColorRect" parent="."]
+[node name="Borda1" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 292.0
 offset_top = 143.0
 offset_right = 492.0
 offset_bottom = 263.0
 
-[node name="Fundomontanha" type="Sprite2D" parent="Borda2"]
+[node name="Fundomontanha" type="Sprite2D" parent="Borda1"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
 texture = ExtResource("5_favhp")
 
-[node name="Mapa2" type="Button" parent="Borda2"]
+[node name="Mapa2" type="Button" parent="Borda1"]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 199.0
@@ -62,7 +62,7 @@ offset_bottom = 119.0
 focus_mode = 0
 flat = true
 
-[node name="Borda3" type="ColorRect" parent="."]
+[node name="Borda2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 669.0
 offset_top = 143.0
@@ -72,22 +72,56 @@ offset_bottom = 263.0
 [node name="Mapa3" type="Button" parent="Borda3"]
 layout_mode = 0
 offset_top = 1.0
+
+[node name="Mapa2" type="Button" parent="Borda2"]
+layout_mode = 0
+offset_top = -4.0
 offset_right = 199.0
-offset_bottom = 119.0
+offset_bottom = 114.0
 focus_mode = 0
 flat = true
 
-[node name="Fundomontanha" type="Sprite2D" parent="Borda3"]
+[node name="Mapas unlocked" type="ColorRect" parent="Borda2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Fundomontanha" type="Sprite2D" parent="Borda2"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
 texture = ExtResource("6_8ifip")
 
-[node name="Borda4" type="ColorRect" parent="."]
+[node name="Borda3" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 895.0
 offset_top = 96.0
 offset_right = 1095.0
 offset_bottom = 216.0
+
+[node name="Mapas unlocked" type="ColorRect" parent="Borda3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
+[node name="Mapa4" type="Button" parent="Borda3"]
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 118.0
+focus_mode = 0
+flat = true
+
+[node name="Borda4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 284.0
+offset_right = 688.0
+offset_bottom = 404.0
 
 [node name="Mapas unlocked" type="ColorRect" parent="Borda4"]
 layout_mode = 0
@@ -97,29 +131,7 @@ offset_right = 198.0
 offset_bottom = 118.0
 color = Color(0.207512, 0.207512, 0.207512, 1)
 
-[node name="Mapa4" type="Button" parent="Borda4"]
-layout_mode = 0
-offset_right = 199.0
-offset_bottom = 118.0
-focus_mode = 0
-flat = true
-
-[node name="BordaR" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 284.0
-offset_right = 688.0
-offset_bottom = 404.0
-
-[node name="Mapas unlocked" type="ColorRect" parent="BordaR"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 198.0
-offset_bottom = 118.0
-color = Color(0.207512, 0.207512, 0.207512, 1)
-
-[node name="MapaR" type="Button" parent="BordaR"]
+[node name="MapaR" type="Button" parent="Borda4"]
 layout_mode = 0
 offset_right = 199.0
 offset_bottom = 118.0
@@ -140,31 +152,8 @@ theme_override_font_sizes/font_size = 30
 text = "Back"
 flat = true
 
-[node name="Play" type="Button" parent="."]
-layout_mode = 0
-offset_left = 445.0
-offset_top = 440.0
-offset_right = 712.0
-offset_bottom = 490.0
-theme_override_fonts/font = ExtResource("6_t7vir")
-theme_override_font_sizes/font_size = 40
-text = "Play"
-flat = true
-
-[connection signal="mouse_entered" from="Borda1/Mapa1" to="." method="_on_mapa_1_mouse_entered"]
-[connection signal="mouse_exited" from="Borda1/Mapa1" to="." method="_on_mapa_1_mouse_exited"]
-[connection signal="pressed" from="Borda1/Mapa1" to="." method="_on_mapa_1_pressed"]
-[connection signal="mouse_entered" from="Borda2/Mapa2" to="." method="_on_mapa_2_mouse_entered"]
-[connection signal="mouse_exited" from="Borda2/Mapa2" to="." method="_on_mapa_2_mouse_exited"]
+[connection signal="pressed" from="Borda/Mapa1" to="." method="_on_mapa_1_pressed"]
+[connection signal="pressed" from="Borda1/Mapa2" to="." method="_on_mapa_2_pressed"]
 [connection signal="pressed" from="Borda2/Mapa2" to="." method="_on_mapa_2_pressed"]
-[connection signal="mouse_entered" from="Borda3/Mapa3" to="." method="_on_mapa_3_mouse_entered"]
-[connection signal="mouse_exited" from="Borda3/Mapa3" to="." method="_on_mapa_3_mouse_exited"]
-[connection signal="pressed" from="Borda3/Mapa3" to="." method="_on_mapa_3_pressed"]
-[connection signal="mouse_entered" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_entered"]
-[connection signal="mouse_exited" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_exited"]
-[connection signal="pressed" from="Borda4/Mapa4" to="." method="_on_mapa_4_pressed"]
-[connection signal="mouse_entered" from="BordaR/MapaR" to="." method="_on_mapa_r_mouse_entered"]
-[connection signal="mouse_exited" from="BordaR/MapaR" to="." method="_on_mapa_r_mouse_exited"]
-[connection signal="pressed" from="BordaR/MapaR" to="." method="_on_mapa_r_pressed"]
+[connection signal="pressed" from="Borda4/MapaR" to="." method="_on_mapa_r_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
