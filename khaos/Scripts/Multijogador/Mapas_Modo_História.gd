@@ -3,7 +3,6 @@ extends Control
 var COLLECTION_ID = "khaos_stats"
 var selected_map_path = ""
 var selected_map_name = ""
-# Mapa do espaço (índice 0) sempre desbloqueado, outros bloqueados inicialmente
 var mapas_desbloqueados = [true, false, false, false]
 
 @onready var text = $Text
@@ -38,7 +37,7 @@ func _on_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
 func _on_mapa_1_pressed() -> void:
-	tentar_entrar_mapa(0, "mapa_espaco", "res://Mapas/mapa_espaco.tscn")
+	tentar_entrar_mapa(0, "mapa_espaco", "res://Mapas/mapa_espço.tscn")
 
 func _on_mapa_2_pressed() -> void:
 	tentar_entrar_mapa(1, "mapa_neve", "res://Mapas/mapa_montanhanheve.tscn")
