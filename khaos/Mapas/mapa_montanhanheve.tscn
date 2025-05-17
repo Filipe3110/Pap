@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c0drclnjt7fdc"]
 
-[ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_ub1nx"]
+[ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_ub1nx"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="2_4aw55"]
 [ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="2_ub1nx"]
 [ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="3_yobii"]

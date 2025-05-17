@@ -153,21 +153,21 @@ texture = ExtResource("4_jf5l4")
 
 [node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
 offset_left = 633.0
-offset_top = 239.0
+offset_top = 332.0
 offset_right = 939.0
-offset_bottom = 354.0
+offset_bottom = 447.0
 theme_override_fonts/normal_font = ExtResource("5_h6sy4")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "Player Win"
+text = "Victory"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Vitoria"]
 offset_left = 645.0
-offset_top = 333.0
+offset_top = 435.0
 offset_right = 788.0
-offset_bottom = 476.0
+offset_bottom = 578.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 5
 
@@ -180,21 +180,12 @@ text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="Button" parent="Vitoria/VBoxContainer"]
+[node name="Continue" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 17
-text = "• Options •"
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Change_map" type="Button" parent="Vitoria/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("5_h6sy4")
-theme_override_font_sizes/font_size = 17
-text = "• Change Map •
+text = "• Continue •
 "
 flat = true
 
@@ -220,6 +211,5 @@ script = ExtResource("11_rk84j")
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

@@ -6,11 +6,15 @@ extends Node2D
 @onready var p2 = $Enemy
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
-@onready var camera = $StoryDynamicCamera  # Referência para a câmera dinâmica do modo história
-
+@onready var camera = $StoryDynamicCamera 
+@onready var conti = $Vitoria/VBoxContainer/Continue
+@onready var restart = $Vitoria/VBoxContainer/Restart
 var is_paused = false
 
 func _ready():
+	conti.visible = false
+	restart.visible = false
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pause_menu.visible = false
 	options.visible = false
@@ -53,9 +57,13 @@ func _on_jogador_morreu(jogador_id):
 	if jogador_id == "Player":
 		# Jogador perdeu
 		vitoria_label.text = "[center][color=#FF0000]Defeat[/color][/center]"
+		conti.visible = false
+		restart.visible = true
 	else:
 		# Jogador ganhou
 		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
+		conti.visible = true
+		restart.visible = false
 		
 	vitoria_canvas.visible = true
 	pause_menu.visible = false  
