@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+Global="*res://Global.gd"
 
 [display]
 

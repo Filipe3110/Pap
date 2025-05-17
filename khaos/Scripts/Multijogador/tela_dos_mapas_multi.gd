@@ -3,7 +3,7 @@ extends Control
 # Cores para as bordas
 const COR_P1 = Color(0, 0, 1)        # Azul
 const COR_P2 = Color(1, 0, 0)        # Vermelho
-const COR_AMBOS = Color(0.5, 0, 0.5) # Roxo para escolha dupla
+const COR_AMBOS = Color(0, 1, 0) # Roxo para escolha dupla
 const COR = Color(255, 255, 255)
 
 # Variáveis de estado

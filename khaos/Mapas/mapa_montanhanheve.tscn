@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0drclnjt7fdc"]
+[gd_scene load_steps=14 format=3 uid="uid://c0drclnjt7fdc"]
 
 [ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_ub1nx"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="2_4aw55"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="7_7errg"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_gkdv5"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="8_gkdv5"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_1sdmv"]
+[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_afcsc"]
+[ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_67mfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ub1nx"]
 size = Vector2(3004, 20)
@@ -27,7 +30,6 @@ position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
 [node name="Enemy" parent="." instance=ExtResource("3_yobii")]
-visible = false
 position = Vector2(1324, 410)
 scale = Vector2(4, 4)
 
@@ -45,9 +47,6 @@ shape = SubResource("RectangleShape2D_7errg")
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(52.75, 316)
 shape = SubResource("RectangleShape2D_7errg")
-
-[node name="Options_ingame" parent="." instance=ExtResource("7_gkdv5")]
-visible = false
 
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -125,17 +124,54 @@ text = "Paused
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VictoryScreen" type="CanvasLayer" parent="."]
+[node name="Options_ingame" parent="." instance=ExtResource("7_gkdv5")]
+visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VictoryScreen"]
-offset_left = 414.0
-offset_top = 266.0
-offset_right = 570.0
-offset_bottom = 430.0
+[node name="Vitoria" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
+position = Vector2(576.75, 350)
+scale = Vector2(1.61921, 1.42276)
+texture = ExtResource("9_1sdmv")
+
+[node name="Logo" type="Sprite2D" parent="Vitoria"]
+position = Vector2(776, 188)
+texture = ExtResource("7_7errg")
+
+[node name="ColorRect" type="ColorRect" parent="Vitoria"]
+offset_top = -3.0
+offset_right = 1152.0
+offset_bottom = 689.0
+pivot_offset = Vector2(789, 455)
+color = Color(0, 0, 0, 0.631373)
+
+[node name="FundoDoLogin" type="Sprite2D" parent="Vitoria"]
+position = Vector2(788, 477)
+texture = ExtResource("10_afcsc")
+
+[node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
+offset_left = 633.0
+offset_top = 332.0
+offset_right = 939.0
+offset_bottom = 447.0
+theme_override_fonts/normal_font = ExtResource("8_gkdv5")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Victory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vitoria"]
+offset_left = 645.0
+offset_top = 435.0
+offset_right = 788.0
+offset_bottom = 578.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 5
 
-[node name="Back" type="Button" parent="VictoryScreen/VBoxContainer"]
+[node name="Back" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
@@ -144,45 +180,28 @@ text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="Button" parent="VictoryScreen/VBoxContainer"]
+[node name="Continue" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
 theme_override_font_sizes/font_size = 17
-text = "• Options •"
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Change_map" type="Button" parent="VictoryScreen/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
-text = "• Change Map •
+text = "• Continue •
 "
 flat = true
 
-[node name="Resume" type="Button" parent="VictoryScreen/VBoxContainer"]
+[node name="Restart" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
 theme_override_font_sizes/font_size = 17
-text = "• Resume •"
+text = "• Restart •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="VictoryScreen"]
-offset_left = 351.0
-offset_top = 201.0
-offset_right = 786.0
-offset_bottom = 284.0
-theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 40
-text = "Paused
----------------------"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="P2Victory" type="Sprite2D" parent="VictoryScreen"]
-
-[node name="P1Victory" type="Sprite2D" parent="VictoryScreen"]
+[node name="StoryDynamicCamera" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+limit_left = 0
+limit_top = 0
+limit_right = 1890
+limit_bottom = 650
+script = ExtResource("11_67mfi")

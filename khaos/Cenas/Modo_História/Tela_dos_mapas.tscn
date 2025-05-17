@@ -54,6 +54,14 @@ position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
 texture = ExtResource("5_ngor3")
 
+[node name="Mapas unlocked" type="ColorRect" parent="2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
 [node name="Mapa2" type="Button" parent="2"]
 layout_mode = 0
 offset_left = 1.0
@@ -62,15 +70,6 @@ offset_right = 200.0
 offset_bottom = 119.0
 focus_mode = 0
 flat = true
-
-[node name="Mapas unlocked" type="ColorRect" parent="2"]
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 198.0
-offset_bottom = 118.0
-color = Color(0.207512, 0.207512, 0.207512, 1)
 
 [node name="3" type="ColorRect" parent="."]
 layout_mode = 0
@@ -84,6 +83,14 @@ position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
 texture = ExtResource("6_77h5k")
 
+[node name="Mapas unlocked" type="ColorRect" parent="3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 118.0
+color = Color(0.207512, 0.207512, 0.207512, 1)
+
 [node name="Mapa3" type="Button" parent="3"]
 layout_mode = 0
 offset_top = 1.0
@@ -91,15 +98,6 @@ offset_right = 199.0
 offset_bottom = 119.0
 focus_mode = 0
 flat = true
-
-[node name="Mapas unlocked" type="ColorRect" parent="3"]
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 198.0
-offset_bottom = 118.0
-color = Color(0.207512, 0.207512, 0.207512, 1)
 
 [node name="4" type="ColorRect" parent="."]
 layout_mode = 0
@@ -137,13 +135,25 @@ flat = true
 
 [node name="text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 338.0
-offset_right = 646.0
-offset_bottom = 361.0
+offset_left = 426.0
+offset_top = 110.0
+offset_right = 734.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("5_8hpvv")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
+[connection signal="mouse_entered" from="1/Mapa1" to="." method="_on_mapa_1_mouse_entered"]
+[connection signal="mouse_exited" from="1/Mapa1" to="." method="_on_mapa_1_mouse_exited"]
 [connection signal="pressed" from="1/Mapa1" to="." method="_on_mapa_1_pressed"]
+[connection signal="mouse_entered" from="2/Mapa2" to="." method="_on_mapa_2_mouse_entered"]
+[connection signal="mouse_exited" from="2/Mapa2" to="." method="_on_mapa_2_mouse_exited"]
 [connection signal="pressed" from="2/Mapa2" to="." method="_on_mapa_2_pressed"]
+[connection signal="mouse_entered" from="3/Mapa3" to="." method="_on_mapa_3_mouse_entered"]
+[connection signal="mouse_exited" from="3/Mapa3" to="." method="_on_mapa_3_mouse_exited"]
 [connection signal="pressed" from="3/Mapa3" to="." method="_on_mapa_3_pressed"]
+[connection signal="mouse_entered" from="4/Mapa4" to="." method="_on_mapa_4_mouse_entered"]
+[connection signal="mouse_exited" from="4/Mapa4" to="." method="_on_mapa_4_mouse_exited"]
 [connection signal="pressed" from="4/Mapa4" to="." method="_on_mapa_4_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
