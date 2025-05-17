@@ -32,7 +32,6 @@ var selecao_mapa = {
 func _ready():
 	randomize()
 	botao_play.visible = false
-	print("🎮 Player 1, escolha o mapa.")
 	update_estado()
 	# Atualiza bordas de todos os mapas inicialmente
 	for mapa_path in mapas:
@@ -112,9 +111,7 @@ func selecionar_mapa(mapa: String) -> void:
 		escolha_p1 = mapa
 		selecao_mapa[mapa].append(1)
 		atualizar_borda_mapa(mapa, get_borda_por_mapa(mapa))
-		print("✅ Player 1 escolheu:", mapa)
 		jogador_atual = 2
-		print("🎮 Player 2, escolha o mapa.")
 	elif jogador_atual == 2:
 		if escolha_p2 != "":
 			selecao_mapa[escolha_p2].erase(2)
@@ -122,9 +119,7 @@ func selecionar_mapa(mapa: String) -> void:
 		escolha_p2 = mapa
 		selecao_mapa[mapa].append(2)
 		atualizar_borda_mapa(mapa, get_borda_por_mapa(mapa))
-		print("✅ Player 2 escolheu:", mapa)
 		jogador_atual = 3
-		print("✅ Ambos os jogadores escolheram! Clique em 'Play'.")
 		botao_play.visible = true
 	update_estado()
 
@@ -134,26 +129,19 @@ func _input(event):
 		if jogador_atual == 2 and escolha_p1 != "":
 			selecao_mapa[escolha_p1].erase(1)
 			atualizar_borda_mapa(escolha_p1, get_borda_por_mapa(escolha_p1))
-			print("🔙 Player 1 cancelou a escolha. Escolha novamente.")
 			escolha_p1 = ""
 			jogador_atual = 1
 			botao_play.visible = false
 		elif jogador_atual == 3 and escolha_p2 != "":
 			selecao_mapa[escolha_p2].erase(2)
 			atualizar_borda_mapa(escolha_p2, get_borda_por_mapa(escolha_p2))
-			print("🔙 Player 2 cancelou a escolha. Escolha novamente.")
 			escolha_p2 = ""
 			jogador_atual = 2
 			botao_play.visible = false
 		update_estado()
 
 func update_estado():
-	if jogador_atual == 1:
-		print("🟣 Player 1 deve escolher.")
-	elif jogador_atual == 2:
-		print("🔵 Player 2 deve escolher.")
-	elif jogador_atual == 3:
-		print("✅ Ambos escolheram.")
+	pass  # Esta função agora está vazia já que removemos todos os prints
 
 # Botões dos mapas ligados no editor para chamar essa função
 func _on_mapa_1_pressed():
@@ -172,16 +160,12 @@ func _on_mapa_4_pressed():
 func _on_play_pressed() -> void:
 	if escolha_p1 != "" and escolha_p2 != "":
 		var escolhido = escolha_p1 if randi() % 2 == 0 else escolha_p2
-		print("🎲 Mapa sorteado aleatoriamente:", escolhido)
 		carregar_cena_com_loading(escolhido)
-	else:
-		print("⚠️ Ainda faltam escolhas.")
 
 # Botão para escolher mapa aleatório (random)
 func _on_mapa_r_pressed():
 	# Escolhe aleatoriamente um dos 4 mapas e seleciona para o jogador atual
 	var mapa_aleatorio = mapas[randi() % mapas.size()]
-	print("🎲 Mapa aleatório escolhido para Player %d: %s" % [jogador_atual, mapa_aleatorio])
 	selecionar_mapa(mapa_aleatorio)
 
 func _on_mapa_r_mouse_entered():
@@ -191,7 +175,6 @@ func _on_mapa_r_mouse_entered():
 		$BordaR.color = COR_P2
 
 func _on_mapa_r_mouse_exited():
-	# No caso do random, só fica transparente, pois não é selecionável fixo
 	$BordaR.color = COR
 
 func carregar_cena_com_loading(caminho_da_proxima_cena):
