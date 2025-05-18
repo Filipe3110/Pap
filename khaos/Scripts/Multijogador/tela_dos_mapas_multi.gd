@@ -123,7 +123,6 @@ func selecionar_mapa(mapa: String) -> void:
 		botao_play.visible = true
 	update_estado()
 
-# Cancelar seleção com 'ui_cancel'
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if jogador_atual == 2 and escolha_p1 != "":

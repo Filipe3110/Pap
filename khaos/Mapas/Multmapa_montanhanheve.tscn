@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w7cl6m1e2u16"]
+[gd_scene load_steps=14 format=3 uid="uid://w7cl6m1e2u16"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_f0q1r"]
 [ext_resource type="Texture2D" uid="uid://t60ai5letuau" path="res://Assets/Cenários/fundo montanha.jpg" id="2_f0q1r"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_1yph6"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_1yph6"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_c7yyc"]
+[ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_c7yyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0q1r"]
 size = Vector2(3004, 20)
@@ -51,6 +52,7 @@ shape = SubResource("RectangleShape2D_he15w")
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3
 physics_interpolation_mode = 1
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu_pausa"]
 offset_right = 1152.0
@@ -73,13 +75,13 @@ offset_top = 266.0
 offset_right = 570.0
 offset_bottom = 430.0
 scale = Vector2(2, 2)
-theme_override_constants/separation = 5
+theme_override_constants/separation = 1
 
 [node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_he15w")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -88,7 +90,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_he15w")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Options •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -97,7 +99,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_he15w")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Change Map •
 "
 flat = true
@@ -106,7 +108,7 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_he15w")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Resume •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -152,9 +154,9 @@ texture = ExtResource("10_c7yyc")
 
 [node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
 offset_left = 633.0
-offset_top = 239.0
+offset_top = 322.0
 offset_right = 939.0
-offset_bottom = 354.0
+offset_bottom = 437.0
 theme_override_fonts/normal_font = ExtResource("6_he15w")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
@@ -164,9 +166,9 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Vitoria"]
 offset_left = 645.0
-offset_top = 333.0
+offset_top = 409.0
 offset_right = 788.0
-offset_bottom = 476.0
+offset_bottom = 552.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 5
 
@@ -176,15 +178,6 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("6_he15w")
 theme_override_font_sizes/font_size = 17
 text = "• Menu •"
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Options" type="Button" parent="Vitoria/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("6_he15w")
-theme_override_font_sizes/font_size = 17
-text = "• Options •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -206,7 +199,18 @@ text = "• Restart •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="DynamicCamera" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+limit_left = 0
+limit_top = 0
+limit_right = 1890
+limit_bottom = 650
+script = ExtResource("11_c7yyc")
+
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

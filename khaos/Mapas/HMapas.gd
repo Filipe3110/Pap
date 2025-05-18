@@ -95,13 +95,13 @@ func _on_back_pressed() -> void:
 	_unpause_game()
 	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
-func _on_change_map_pressed() -> void:
-	_unpause_game()
-	get_tree().change_scene_to_file("res://Cenas/Modo_História/modo_história.tscn")
-
 func _on_resume_pressed() -> void:
 	_unpause_game()
 
 func _on_restart_pressed() -> void:
 	_unpause_game()
 	get_tree().reload_current_scene()
+
+
+func _on_continue_pressed() -> void:
+	pass # Replace with function body.

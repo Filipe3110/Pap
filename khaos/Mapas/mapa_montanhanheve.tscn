@@ -70,9 +70,9 @@ texture = ExtResource("7_7errg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
 offset_left = 414.0
-offset_top = 266.0
+offset_top = 288.0
 offset_right = 570.0
-offset_bottom = 430.0
+offset_bottom = 452.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 5
 
@@ -80,7 +80,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -89,38 +89,29 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Options •"
 flat = true
 metadata/_edit_use_anchors_ = true
-
-[node name="Change_map" type="Button" parent="Menu_pausa/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
-text = "• Change Map •
-"
-flat = true
 
 [node name="Resume" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Resume •"
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Menu_pausa"]
 offset_left = 351.0
-offset_top = 201.0
+offset_top = 194.0
 offset_right = 786.0
-offset_bottom = 284.0
+offset_bottom = 299.0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Paused
----------------------"
+-----------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -175,7 +166,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Menu •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -184,7 +175,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Continue •
 "
 flat = true
@@ -193,7 +184,7 @@ flat = true
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("8_gkdv5")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 20
 text = "• Restart •"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -205,3 +196,10 @@ limit_top = 0
 limit_right = 1890
 limit_bottom = 650
 script = ExtResource("11_67mfi")
+
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
