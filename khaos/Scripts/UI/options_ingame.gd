@@ -3,30 +3,17 @@ extends CanvasLayer
 var COLLECTION_ID = "khaos_stats"
 
 @onready var input_buton_scene = preload("res://Cenas/UI/input_button.tscn")
-@onready var p1 = $"Butões/Player"
-@onready var p2 = $"Butões/Player2"
-@onready var sounds = $"Butões/Sounds2"
-@onready var account = $"Butões/account"
-
-@onready var lp1 = $ScrollContainer/MarginContainer/VBoxContainer/P1
-@onready var ct1 = $ScrollContainer/MarginContainer/VBoxContainer/P1Container
-
-@onready var lp2 = $ScrollContainer/MarginContainer/VBoxContainer/P2
-@onready var ct2 = $ScrollContainer/MarginContainer/VBoxContainer/P2Container
-
-@onready var lsd = $ScrollContainer/MarginContainer/VBoxContainer/Sounds
-@onready var ctsd = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer
-
-@onready var lauth = $ScrollContainer/MarginContainer/VBoxContainer/Auth
-@onready var ctauth = $ScrollContainer/MarginContainer/VBoxContainer/AuthContainer
+@onready var volume_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer/SoundBar/HSlider
+@onready var sfx_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2/SFXSoundBar/HSlider
 
 func _ready():
-	var auth = Firebase.Auth.auth
-	if auth and auth.localid:
-		load_player_data()
-	else:
-		load_local_settings()
+	load_player_data()
 	setup_input_buttons()
+	var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
+	volume_slider.value = db_to_linear(current_db)
+	
+	var sfxcurent_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))
+	sfx_slider.value = db_to_linear(sfxcurent_db)
 	
 func load_player_data():
 	var auth = Firebase.Auth.auth
@@ -42,40 +29,21 @@ func load_player_data():
 				$ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/UserName/Name.text = document.doc_fields.username 
 			if document.doc_fields.has("email"): 
 				$ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/ID/MyEmail.text = document.doc_fields.email
-			
-			# Load controls if they exist
-			if document.doc_fields.has("controls"):
-				apply_control_settings(document.doc_fields.controls)
-				update_all_input_labels()
-			else:
-				# If no controls are saved yet, use defaults
-				reset_to_default_controls()
-				update_all_input_labels()
-		else:
-			# New user with no document yet
-			reset_to_default_controls()
-			update_all_input_labels()
+		
+		load_control_settings()
 
-func save_local_settings():
-	var settings = get_current_control_settings()
-	var config = ConfigFile.new()
-	config.set_value("controls", "settings", settings)
-	config.save("user://local_settings.cfg")
-
-func load_local_settings():
-	var config = ConfigFile.new()
-	var err = config.load("user://local_settings.cfg")
-	if err == OK:
-		var settings = config.get_value("controls", "settings", {})
-		if not settings.is_empty():
-			apply_control_settings(settings)
+func load_control_settings():
+	var auth = Firebase.Auth.auth
+	if auth and auth.localid:
+		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
+		var task: FirestoreTask = collection.get_doc(auth.localid)
+		
+		var finished_task: FirestoreTask = await task.task_finished
+		var document = finished_task.document
+		
+		if document and document.doc_fields and document.doc_fields.has("controls"):
+			apply_control_settings(document.doc_fields.controls)
 			update_all_input_labels()
-		else:
-			reset_to_default_controls()
-			update_all_input_labels()
-	else:
-		reset_to_default_controls()
-		update_all_input_labels()
 
 func apply_control_settings(settings: Dictionary):
 	for action in settings:
@@ -88,9 +56,27 @@ func apply_control_settings(settings: Dictionary):
 				event.keycode = keycode
 				InputMap.action_erase_events(action)
 				InputMap.action_add_event(action, event)
+	
+	# Aplica o volume de música se existir no dicionário
+	if settings.has("music_volume"):
+		var volume_value = float(settings["music_volume"])
+		volume_slider.value = volume_value
+		var db = linear_to_db(volume_value)
+		var audio_bus_id = AudioServer.get_bus_index("Music")
+		if audio_bus_id != -1:
+			AudioServer.set_bus_volume_db(audio_bus_id, db)
+			
+	if settings.has("sfx_volume"):
+		var sfx_value = float(settings["sfx_volume"])
+		sfx_slider.value = sfx_value
+		var sfxdb = linear_to_db(sfx_value)
+		var sfxaudio_bus_id = AudioServer.get_bus_index("SFX")
+		if sfxaudio_bus_id != -1:
+			AudioServer.set_bus_volume_db(sfxaudio_bus_id, sfxdb)
+
+
 
 func setup_input_buttons():
-	# Player 1 controls
 	setup_input_button("Left", "left", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Left)
 	setup_input_button("Right", "right", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Right)
 	setup_input_button("Jump", "jump", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Jump)
@@ -98,7 +84,6 @@ func setup_input_buttons():
 	setup_input_button("Attack", "attack", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Attack)
 	setup_input_button("Block", "block", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Block)
 	
-	# Player 2 controls
 	setup_input_button("Left", "p2left", $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Left)
 	setup_input_button("Right", "p2right", $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Right)
 	setup_input_button("Jump", "p2jump", $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Jump)
@@ -118,20 +103,15 @@ func save_control_settings():
 	var auth = Firebase.Auth.auth
 	if auth and auth.localid:
 		var settings = get_current_control_settings()
+		settings["music_volume"] = volume_slider.value
+		settings["sfx_volume"] = clamp(sfx_slider.value, 0.0, 1.0)
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
-		collection.update(auth.localid, {"controls": settings})
+		var task: FirestoreTask = collection.update(auth.localid, {"controls": settings})
+
 		
-		# Show success notification
-		show_notification("Configurações salvas com sucesso!", Color(0, 1, 0))
-	else:
-		# No user logged in, save locally
-		save_local_settings()
-		show_notification("Configurações salvas localmente!", Color(0, 1, 0))
 
 func get_current_control_settings() -> Dictionary:
 	var settings = {}
-	
-	# Player 1 controls
 	settings["left"] = InputMap.action_get_events("left")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("left").size() > 0 else ""
 	settings["right"] = InputMap.action_get_events("right")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("right").size() > 0 else ""
 	settings["jump"] = InputMap.action_get_events("jump")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("jump").size() > 0 else ""
@@ -139,7 +119,6 @@ func get_current_control_settings() -> Dictionary:
 	settings["attack"] = InputMap.action_get_events("attack")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("attack").size() > 0 else ""
 	settings["block"] = InputMap.action_get_events("block")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("block").size() > 0 else ""
 	
-	# Player 2 controls
 	settings["p2left"] = InputMap.action_get_events("p2left")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("p2left").size() > 0 else ""
 	settings["p2right"] = InputMap.action_get_events("p2right")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("p2right").size() > 0 else ""
 	settings["p2jump"] = InputMap.action_get_events("p2jump")[0].as_text().replace(" (Physical)", "") if InputMap.action_get_events("p2jump").size() > 0 else ""
@@ -149,21 +128,19 @@ func get_current_control_settings() -> Dictionary:
 	
 	return settings
 
+
 func _on_apply_pressed() -> void:
 	save_control_settings()
 
 func _on_reset_pressed() -> void:
 	reset_to_default_controls()
 	update_all_input_labels()
-	show_notification("Configurações redefinidas para padrão!", Color(0, 1, 0))
-
-func show_notification(message: String, color: Color = Color(0, 1, 0)):
 	if has_node("NotificationLabel"):
-		$NotificationLabel.text = message
-		$NotificationLabel.modulate = color 
+		$NotificationLabel.text = "Configurações redefinidas para padrão!"
+		$NotificationLabel.modulate = Color(0, 1, 0) 
 		$NotificationLabel.visible = true
-		var timer = get_tree().create_timer(2.0)
-		timer.timeout.connect(func(): $NotificationLabel.visible = false)
+		await get_tree().create_timer(2.0).timeout
+		$NotificationLabel.visible = false
 
 func reset_to_default_controls():
 	var default_controls = {
@@ -179,68 +156,69 @@ func reset_to_default_controls():
 		"p2jump": "Up",
 		"p2down": "Down",
 		"p2attack": "Enter",
-		"p2block": "Shift"
+		"p2block": "Shift",
+		"music_volume": 1.0,
+		"sfx_volume": 1.0
+
 	}
 	apply_control_settings(default_controls)
+	volume_slider.value = 1.0
+	var audio_bus_id = AudioServer.get_bus_index("Music")
+	if audio_bus_id != -1:
+		AudioServer.set_bus_volume_db(audio_bus_id, linear_to_db(1.0))
 
+
+	sfx_slider.value = 1.0
+	var sfxaudio_bus_id = AudioServer.get_bus_index("SFX")
+	if sfxaudio_bus_id != -1:
+		AudioServer.set_bus_volume_db(sfxaudio_bus_id, linear_to_db(1.0))
+		
+		
 func update_all_input_labels():
-	# Define button paths dictionary for cleaner code
-	var button_paths = {
-		# Player 1 buttons
-		"left": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Left,
-		"right": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Right,
-		"jump": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Jump,
-		"down": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Down,
-		"attack": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Attack,
-		"block": $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Block,
+	for action in ["left", "right", "jump", "down", "attack", "block", "p2left", "p2right", "p2jump", "p2down", "p2attack", "p2block"]:
+		var button_path
 		
-		# Player 2 buttons
-		"p2left": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Left,
-		"p2right": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Right,
-		"p2jump": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Jump,
-		"p2down": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Down,
-		"p2attack": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer/Attack,
-		"p2block": $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer/Block
-	}
-	
-	# Update all button labels
-	for action in button_paths:
-		var button = button_paths[action]
-		if button and button.has_method("update_key_display"):
-			button.update_key_display()
-
-func switch_user(user_id: String):
-	# Load the new user's settings
-	var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
-	var task: FirestoreTask = collection.get_doc(user_id)
-	
-	var finished_task: FirestoreTask = await task.task_finished
-	var document = finished_task.document
-	
-	if document and document.doc_fields:
-		# Update user info
-		if document.doc_fields.has("username"): 
-			$ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/UserName/Name.text = document.doc_fields.username 
-		if document.doc_fields.has("email"): 
-			$ScrollContainer/MarginContainer/VBoxContainer/AuthContainer/VBoxContainer/ID/MyEmail.text = document.doc_fields.email
-		
-		# Load controls
-		if document.doc_fields.has("controls"):
-			apply_control_settings(document.doc_fields.controls)
-			update_all_input_labels()
-			show_notification("Configurações do usuário carregadas!", Color(0, 1, 0))
+		if action.begins_with("p2"):
+			match action:
+				"p2left": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Left
+				"p2right": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Right
+				"p2jump": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Jump
+				"p2down": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer/VBoxContainer/Down
+				"p2attack": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer/Attack
+				"p2block": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P2Container/VBoxContainer/MarginContainer2/VBoxContainer/Block
 		else:
-			# If user has no controls saved yet, use defaults
-			reset_to_default_controls()
-			update_all_input_labels()
-			show_notification("Novo usuário: configurações padrão aplicadas", Color(1, 1, 0))
-	else:
-		# Handle new user case
-		reset_to_default_controls()
-		update_all_input_labels()
-		show_notification("Novo usuário: configurações padrão aplicadas", Color(1, 1, 0))
+			match action:
+				"left": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Left
+				"right": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Right
+				"jump": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Jump
+				"down": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Down
+				"attack": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Attack
+				"block": button_path = $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer2/VBoxContainer/Block
+		
+		if button_path and button_path.has_method("update_key_display"):
+			button_path.update_key_display()
+			
+			
+			
+			
 
-# UI Navigation functions
+@onready var p1 = $"Butões/Player"
+@onready var p2 = $"Butões/Player2"
+@onready var sounds = $"Butões/Sounds2"
+@onready var account = $"Butões/account"
+
+@onready var lp1 =$ScrollContainer/MarginContainer/VBoxContainer/P1
+@onready var ct1 =$ScrollContainer/MarginContainer/VBoxContainer/P1Container
+
+@onready var lp2 =$ScrollContainer/MarginContainer/VBoxContainer/P2
+@onready var ct2 =$ScrollContainer/MarginContainer/VBoxContainer/P2Container
+
+@onready var lsd =$ScrollContainer/MarginContainer/VBoxContainer/Sounds
+@onready var ctsd =$ScrollContainer/MarginContainer/VBoxContainer/SDsContainer
+
+@onready var lauth =$ScrollContainer/MarginContainer/VBoxContainer/Auth
+@onready var ctauth =$ScrollContainer/MarginContainer/VBoxContainer/AuthContainer
+
 func _on_voltar_pressed() -> void:
 	get_parent().options.visible = false
 	get_parent().pause_menu.visible = true
@@ -263,6 +241,7 @@ func _on_player_1_pressed() -> void:
 	lp1.visible = true
 	ct1.visible = true
 
+	
 	lp2.visible = false 
 	ct2.visible = false 
 
@@ -271,7 +250,6 @@ func _on_player_1_pressed() -> void:
 
 	lauth.visible = false
 	ctauth.visible = false
-
 func _on_player_3_pressed() -> void:
 	lp2.visible = true 
 	ct2.visible = true 
@@ -302,6 +280,7 @@ func _on_account_2_pressed() -> void:
 	lauth.visible = true
 	ctauth.visible = true
 
+
 	lp1.visible = false
 	ct1.visible = false
 	
@@ -311,27 +290,19 @@ func _on_account_2_pressed() -> void:
 	lsd.visible = false
 	ctsd.visible = false
 
-# Animation hover functions
 func _on_player_1_mouse_entered() -> void:
 	p1.play("player1")
-
 func _on_player_1_mouse_exited() -> void:
 	p1.play("idle")
-
 func _on_player_3_mouse_entered() -> void:
 	p2.play("player2")
-
 func _on_player_3_mouse_exited() -> void:
 	p2.play("idle")
-
 func _on_sounds_mouse_entered() -> void:
 	sounds.play("msc")
-
 func _on_sounds_mouse_exited() -> void:
 	sounds.play("idle")
-
 func _on_account_2_mouse_entered() -> void:
 	account.play("conta")
-
 func _on_account_2_mouse_exited() -> void:
 	account.play("idle")

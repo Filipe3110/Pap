@@ -3,13 +3,17 @@ extends Control
 var COLLECTION_ID = "khaos_stats"
 
 @onready var input_buton_scene = preload("res://Cenas/UI/input_button.tscn")
-@onready var volume_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer/SoundBar/
+@onready var volume_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer/SoundBar/HSlider
+@onready var sfx_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2/SFXSoundBar/HSlider
 
 func _ready():
 	load_player_data()
 	setup_input_buttons()
 	var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
 	volume_slider.value = db_to_linear(current_db)
+	
+	var sfxcurent_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))
+	sfx_slider.value = db_to_linear(sfxcurent_db)
 	
 func load_player_data():
 	var auth = Firebase.Auth.auth
@@ -61,6 +65,14 @@ func apply_control_settings(settings: Dictionary):
 		var audio_bus_id = AudioServer.get_bus_index("Music")
 		if audio_bus_id != -1:
 			AudioServer.set_bus_volume_db(audio_bus_id, db)
+			
+	if settings.has("sfx_volume"):
+		var sfx_value = float(settings["sfx_volume"])
+		sfx_slider.value = sfx_value
+		var sfxdb = linear_to_db(sfx_value)
+		var sfxaudio_bus_id = AudioServer.get_bus_index("SFX")
+		if sfxaudio_bus_id != -1:
+			AudioServer.set_bus_volume_db(sfxaudio_bus_id, sfxdb)
 
 
 
@@ -91,7 +103,8 @@ func save_control_settings():
 	var auth = Firebase.Auth.auth
 	if auth and auth.localid:
 		var settings = get_current_control_settings()
-		settings["music_volume"] = volume_slider.value  # Adiciona o volume atual ao dicionário
+		settings["music_volume"] = volume_slider.value
+		settings["sfx_volume"] = clamp(sfx_slider.value, 0.0, 1.0)
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
 		var task: FirestoreTask = collection.update(auth.localid, {"controls": settings})
 
@@ -143,10 +156,24 @@ func reset_to_default_controls():
 		"p2jump": "Up",
 		"p2down": "Down",
 		"p2attack": "Enter",
-		"p2block": "Shift"
+		"p2block": "Shift",
+		"music_volume": 1.0,
+		"sfx_volume": 1.0
+
 	}
 	apply_control_settings(default_controls)
+	volume_slider.value = 1.0
+	var audio_bus_id = AudioServer.get_bus_index("Music")
+	if audio_bus_id != -1:
+		AudioServer.set_bus_volume_db(audio_bus_id, linear_to_db(1.0))
 
+
+	sfx_slider.value = 1.0
+	var sfxaudio_bus_id = AudioServer.get_bus_index("SFX")
+	if sfxaudio_bus_id != -1:
+		AudioServer.set_bus_volume_db(sfxaudio_bus_id, linear_to_db(1.0))
+		
+		
 func update_all_input_labels():
 	for action in ["left", "right", "jump", "down", "attack", "block", "p2left", "p2right", "p2jump", "p2down", "p2attack", "p2block"]:
 		var button_path
@@ -170,8 +197,6 @@ func update_all_input_labels():
 		
 		if button_path and button_path.has_method("update_key_display"):
 			button_path.update_key_display()
-	
-	
 	
 	
 	

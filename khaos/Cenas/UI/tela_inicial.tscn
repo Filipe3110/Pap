@@ -143,6 +143,7 @@ flat = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_t0id6")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="HBoxContainer/Modo História" to="." method="_on_modo_história_pressed"]
 [connection signal="pressed" from="HBoxContainer/Multijogador" to="." method="_on_multijogador_pressed"]

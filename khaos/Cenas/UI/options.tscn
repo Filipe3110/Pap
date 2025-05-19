@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://p6qe3yqdjq5f"]
+[gd_scene load_steps=23 format=3 uid="uid://p6qe3yqdjq5f"]
 
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_7ipgm"]
 [ext_resource type="Script" uid="uid://phtiy3upften" path="res://Scripts/UI/options.gd" id="1_sgh0g"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_cy3gw"]
 [ext_resource type="PackedScene" uid="uid://d1p3fbd6wpcvb" path="res://Cenas/UI/sound_bar.tscn" id="15_ghi65"]
 [ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="15_y8hnm"]
+[ext_resource type="PackedScene" uid="uid://chn7pjpxhevcj" path="res://sfx_sound_bar.tscn" id="16_xtoph"]
 [ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="17_nxuc1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nxuc1"]
@@ -257,7 +258,6 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="P1" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -266,7 +266,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="P1Container" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -327,7 +326,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="P2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -336,7 +334,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="P2Container" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -409,21 +406,37 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 
-[node name="VBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Music" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
+[node name="Music" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 25
 text = "Music"
 
-[node name="SoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer" instance=ExtResource("15_ghi65")]
+[node name="SoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("15_ghi65")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Sfx" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 25
+text = "Sonds Efects"
+
+[node name="SFXSoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2" instance=ExtResource("16_xtoph")]
 layout_mode = 2
 
 [node name="Auth" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -432,7 +445,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AuthContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10

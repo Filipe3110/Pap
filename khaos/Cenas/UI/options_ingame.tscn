@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://l27ea6n2ywdf"]
+[gd_scene load_steps=22 format=3 uid="uid://l27ea6n2ywdf"]
 
 [ext_resource type="Script" uid="uid://cmtiwcn01y24c" path="res://Scripts/UI/options_ingame.gd" id="1_nmxo4"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_u15er"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bqkbr5gybvgyt" path="res://Assets/icons/Conta1.png" id="13_4qytw"]
 [ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_uiwcn"]
 [ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="15_edxea"]
+[ext_resource type="PackedScene" uid="uid://d1p3fbd6wpcvb" path="res://Cenas/UI/sound_bar.tscn" id="15_yhwhy"]
+[ext_resource type="PackedScene" uid="uid://chn7pjpxhevcj" path="res://sfx_sound_bar.tscn" id="16_i37ck"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nxuc1"]
 animations = [{
@@ -393,6 +395,36 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Music" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i37ck")
+theme_override_font_sizes/font_size = 25
+text = "Music"
+
+[node name="SoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer" instance=ExtResource("15_yhwhy")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Sfx" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i37ck")
+theme_override_font_sizes/font_size = 25
+text = "Sonds Efects"
+
+[node name="SFXSoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer2/VBoxContainer2" instance=ExtResource("16_i37ck")]
+layout_mode = 2
 
 [node name="Auth" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
