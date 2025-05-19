@@ -255,6 +255,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="P1" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -263,6 +264,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="P1Container" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -323,6 +325,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="P2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -331,6 +334,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="P2Container" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -403,7 +407,28 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
+layout_mode = 2
+
+[node name="Mov" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_j8ysl")
+theme_override_font_sizes/font_size = 25
+text = "Moviment"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
 [node name="Auth" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 40
@@ -412,6 +437,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AuthContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10

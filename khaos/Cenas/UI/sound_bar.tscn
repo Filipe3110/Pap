@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1p3fbd6wpcvb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u016"]
+color = Color(0.791999, 0.791999, 0.791999, 1)
+thickness = 20
+
+[node name="SoundBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 24.0
+offset_right = 493.0
+offset_bottom = 83.0
+rotation = -0.000247142
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0605303, 0.0605303, 0.0605303, 1)
+
+[node name="Control" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_7u016")

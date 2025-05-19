@@ -153,14 +153,14 @@ position = Vector2(788, 477)
 texture = ExtResource("10_c7yyc")
 
 [node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
-offset_left = 633.0
+offset_left = 644.0
 offset_top = 322.0
-offset_right = 939.0
+offset_right = 933.0
 offset_bottom = 437.0
 theme_override_fonts/normal_font = ExtResource("6_he15w")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
-text = "Player Win"
+text = "Player  Win"
 horizontal_alignment = 1
 vertical_alignment = 1
 

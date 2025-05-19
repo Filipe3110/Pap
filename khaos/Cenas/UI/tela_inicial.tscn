@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dodqa0hhxsm5p"]
+[gd_scene load_steps=8 format=3 uid="uid://dodqa0hhxsm5p"]
 
 [ext_resource type="Script" uid="uid://ceyrfq2fmjgux" path="res://Scripts/UI/tela_inicial.gd" id="1_vcnny"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_vt6gu"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="4_t0id6"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_eqttr"]
 [ext_resource type="Texture2D" uid="uid://c2k6l1r1ho7ws" path="res://Assets/BtFundos/Butões.png" id="6_bc6dj"]
+[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="7_t0id6"]
 
 [node name="Tela inicial" type="Control"]
 layout_mode = 3
@@ -138,6 +139,10 @@ theme_override_font_sizes/font_size = 40
 text = "Yes
 "
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_t0id6")
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/Modo História" to="." method="_on_modo_história_pressed"]
 [connection signal="pressed" from="HBoxContainer/Multijogador" to="." method="_on_multijogador_pressed"]

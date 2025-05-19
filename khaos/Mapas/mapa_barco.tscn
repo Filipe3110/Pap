@@ -1,0 +1,205 @@
+[gd_scene load_steps=14 format=3 uid="uid://dytdhlf6fghp8"]
+
+[ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_mv5pj"]
+[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_ar5ce"]
+[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_ar5ce"]
+[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="4_rw12q"]
+[ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_rjnsf"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="6_pgc72"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_e5h3u"]
+[ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_6neya"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_8de5f"]
+[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_lx5nw"]
+[ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_hxq0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnsf"]
+size = Vector2(3004, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgc72"]
+size = Vector2(81, 661.75)
+
+[node name="Mapa Barco" type="Node2D"]
+script = ExtResource("1_mv5pj")
+
+[node name="Fundo  barco" type="Sprite2D" parent="."]
+position = Vector2(948, 324)
+texture = ExtResource("2_ar5ce")
+
+[node name="Player" parent="." instance=ExtResource("3_ar5ce")]
+position = Vector2(906, 418)
+scale = Vector2(4, 4)
+
+[node name="Enemy" parent="." instance=ExtResource("4_rw12q")]
+position = Vector2(1324, 410)
+scale = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 3.05176e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1510, 663)
+shape = SubResource("RectangleShape2D_rjnsf")
+
+[node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1933, 333.125)
+shape = SubResource("RectangleShape2D_pgc72")
+
+[node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(54, 329)
+shape = SubResource("RectangleShape2D_pgc72")
+
+[node name="Menu_pausa" type="CanvasLayer" parent="."]
+process_mode = 3
+physics_interpolation_mode = 1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Menu_pausa"]
+offset_right = 1152.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 0.631373)
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuPause" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(570, 371)
+texture = ExtResource("5_rjnsf")
+
+[node name="Logo" type="Sprite2D" parent="Menu_pausa"]
+position = Vector2(572, 48)
+scale = Vector2(0.224398, 0.147099)
+texture = ExtResource("6_pgc72")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
+offset_left = 414.0
+offset_top = 288.0
+offset_right = 570.0
+offset_bottom = 452.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 5
+
+[node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Menu •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Options •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" type="Button" parent="Menu_pausa/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Resume •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu_pausa"]
+offset_left = 351.0
+offset_top = 194.0
+offset_right = 786.0
+offset_bottom = 299.0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 50
+text = "Paused
+-----------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options_ingame" parent="." instance=ExtResource("8_6neya")]
+visible = false
+
+[node name="Vitoria" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
+position = Vector2(576.75, 350)
+scale = Vector2(1.61921, 1.42276)
+texture = ExtResource("9_8de5f")
+
+[node name="Logo" type="Sprite2D" parent="Vitoria"]
+position = Vector2(776, 188)
+texture = ExtResource("6_pgc72")
+
+[node name="ColorRect" type="ColorRect" parent="Vitoria"]
+offset_top = -3.0
+offset_right = 1152.0
+offset_bottom = 689.0
+pivot_offset = Vector2(789, 455)
+color = Color(0, 0, 0, 0.631373)
+
+[node name="FundoDoLogin" type="Sprite2D" parent="Vitoria"]
+position = Vector2(788, 477)
+texture = ExtResource("10_lx5nw")
+
+[node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
+offset_left = 633.0
+offset_top = 332.0
+offset_right = 939.0
+offset_bottom = 447.0
+theme_override_fonts/normal_font = ExtResource("7_e5h3u")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Victory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vitoria"]
+offset_left = 645.0
+offset_top = 435.0
+offset_right = 788.0
+offset_bottom = 578.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 5
+
+[node name="Back" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Menu •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Continue •
+"
+flat = true
+
+[node name="Restart" type="Button" parent="Vitoria/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_e5h3u")
+theme_override_font_sizes/font_size = 20
+text = "• Restart •"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="StoryDynamicCamera" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+limit_left = 0
+limit_top = 0
+limit_right = 1890
+limit_bottom = 650
+script = ExtResource("11_hxq0t")
+
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

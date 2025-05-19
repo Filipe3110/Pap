@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://dg4s4y01dai02"]
+[gd_scene load_steps=139 format=3 uid="uid://dg4s4y01dai02"]
 
 [ext_resource type="Script" uid="uid://blg1ejdwu05yo" path="res://Bonecos/Player2/player_2.gd" id="1_g5mwa"]
 [ext_resource type="Texture2D" uid="uid://b13ba6ee8xtlt" path="res://Bonecos/Player/player_sp/baixo.png" id="2_ur2mx"]
@@ -120,6 +120,7 @@
 [ext_resource type="Texture2D" uid="uid://bsqpuwl4ykl2b" path="res://Barra de vida/Barra de vidaSP/100.png" id="118_wopbk"]
 [ext_resource type="Texture2D" uid="uid://ddfki0ncqyyun" path="res://Assets/BtFundos/P2.png" id="119_15ji8"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="120_eo3e2"]
+[ext_resource type="Script" uid="uid://4q83aqkxp74s" path="res://Mapas/point_1.gd" id="120_x40cr"]
 
 [sub_resource type="Animation" id="Animation_ccnfg"]
 length = 0.001
@@ -1452,9 +1453,10 @@ shape = SubResource("CapsuleShape2D_m3e42")
 disabled = true
 
 [node name="point" type="Sprite2D" parent="."]
-position = Vector2(2, -43)
-scale = Vector2(0.273972, 0.295454)
+position = Vector2(65.5, -59.5625)
+scale = Vector2(0.99315, 1.29924)
 texture = ExtResource("119_15ji8")
+script = ExtResource("120_x40cr")
 
 [node name="Label" type="Label" parent="point"]
 offset_left = -65.0
