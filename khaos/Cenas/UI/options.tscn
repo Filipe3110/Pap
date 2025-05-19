@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://p6qe3yqdjq5f"]
+[gd_scene load_steps=22 format=3 uid="uid://p6qe3yqdjq5f"]
 
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_7ipgm"]
 [ext_resource type="Script" uid="uid://phtiy3upften" path="res://Scripts/UI/options.gd" id="1_sgh0g"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c0xmbcg6eyidl" path="res://Assets/icons/Conta2.png" id="12_xlljf"]
 [ext_resource type="Texture2D" uid="uid://bqkbr5gybvgyt" path="res://Assets/icons/Conta1.png" id="13_cy3gw"]
 [ext_resource type="PackedScene" uid="uid://dyqpu8xl1dupk" path="res://Cenas/UI/input_button.tscn" id="14_cy3gw"]
+[ext_resource type="PackedScene" uid="uid://d1p3fbd6wpcvb" path="res://Cenas/UI/sound_bar.tscn" id="15_ghi65"]
 [ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="15_y8hnm"]
+[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="17_nxuc1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nxuc1"]
 animations = [{
@@ -407,25 +409,18 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer"]
 layout_mode = 2
+theme_override_constants/separation = 50
 
-[node name="Mov" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
+[node name="Music" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 25
-text = "Moviment"
+text = "Music"
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer"]
+[node name="SoundBar" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer" instance=ExtResource("15_ghi65")]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 40
 
 [node name="Auth" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
@@ -520,6 +515,11 @@ theme_override_fonts/font = ExtResource("5_j8ysl")
 theme_override_font_sizes/font_size = 20
 text = "Apply"
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_nxuc1")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="mouse_entered" from="Butões/Player1" to="." method="_on_player_1_mouse_entered"]

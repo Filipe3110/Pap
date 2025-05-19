@@ -3,11 +3,13 @@ extends Control
 var COLLECTION_ID = "khaos_stats"
 
 @onready var input_buton_scene = preload("res://Cenas/UI/input_button.tscn")
+@onready var volume_slider = $ScrollContainer/MarginContainer/VBoxContainer/SDsContainer/VBoxContainer/SoundBar/
 
 func _ready():
 	load_player_data()
 	setup_input_buttons()
-	
+	var current_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
+	volume_slider.value = db_to_linear(current_db)
 	
 func load_player_data():
 	var auth = Firebase.Auth.auth
@@ -50,6 +52,17 @@ func apply_control_settings(settings: Dictionary):
 				event.keycode = keycode
 				InputMap.action_erase_events(action)
 				InputMap.action_add_event(action, event)
+	
+	# Aplica o volume de música se existir no dicionário
+	if settings.has("music_volume"):
+		var volume_value = float(settings["music_volume"])
+		volume_slider.value = volume_value
+		var db = linear_to_db(volume_value)
+		var audio_bus_id = AudioServer.get_bus_index("Music")
+		if audio_bus_id != -1:
+			AudioServer.set_bus_volume_db(audio_bus_id, db)
+
+
 
 func setup_input_buttons():
 	setup_input_button("Left", "left", $ScrollContainer/MarginContainer/VBoxContainer/P1Container/VBoxContainer/MarginContainer/VBoxContainer/Left)
@@ -78,8 +91,11 @@ func save_control_settings():
 	var auth = Firebase.Auth.auth
 	if auth and auth.localid:
 		var settings = get_current_control_settings()
+		settings["music_volume"] = volume_slider.value  # Adiciona o volume atual ao dicionário
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
 		var task: FirestoreTask = collection.update(auth.localid, {"controls": settings})
+
+		
 
 func get_current_control_settings() -> Dictionary:
 	var settings = {}

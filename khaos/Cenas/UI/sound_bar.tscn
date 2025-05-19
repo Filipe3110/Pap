@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1p3fbd6wpcvb"]
+[gd_scene load_steps=3 format=3 uid="uid://d1p3fbd6wpcvb"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u016"]
-color = Color(0.791999, 0.791999, 0.791999, 1)
-thickness = 20
+[ext_resource type="Script" uid="uid://lxw6rxj274wc" path="res://Scripts/UI/sound_bar.gd" id="1_okfe3"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_okfe3"]
+color = Color(0.683077, 0.683077, 0.683077, 1)
+thickness = 8
 
 [node name="SoundBar" type="Control"]
 layout_mode = 3
@@ -12,21 +14,16 @@ offset_right = 493.0
 offset_bottom = 83.0
 rotation = -0.000247142
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0605303, 0.0605303, 0.0605303, 1)
+offset_left = -0.000741426
+offset_top = 3.0
+offset_right = 176.999
+offset_bottom = 22.0
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_okfe3")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("1_okfe3")
 
-[node name="Control" type="HSlider" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_7u016")
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]
