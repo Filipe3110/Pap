@@ -26,7 +26,7 @@ var mapas_desbloqueados = {
 const CENAS_MAPAS = {
 	"mapa_1": "res://Mapas/mapa_espço.tscn",
 	"mapa_2": "res://Mapas/mapa_montanhanheve.tscn", 
-	"mapa_3": "res://Mapas/mapa_montanhanheve.tscn",
+	"mapa_3": "res://Mapas/mapa_barco.tscn",
 	"mapa_4": "res://Mapas/mapa_montanhanheve.tscn"
 }
 

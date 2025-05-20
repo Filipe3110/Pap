@@ -9,9 +9,12 @@ extends Node2D
 @onready var camera = $StoryDynamicCamera 
 @onready var conti = $Vitoria/VBoxContainer/Continue
 @onready var restart = $Vitoria/VBoxContainer/Restart
+@onready var victory = $Victory
 var is_paused = false
 
 func _ready():
+	victory.playing = true
+
 	conti.visible = false
 	restart.visible = false
 
@@ -55,13 +58,14 @@ func _on_jogador_morreu(jogador_id):
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if jogador_id == "Player":
-		# Jogador perdeu
 		vitoria_label.text = "[center][color=#FF0000]Defeat[/color][/center]"
 		conti.visible = false
 		restart.visible = true
 	else:
 		# Jogador ganhou
 		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
+		victory.playing 
+
 		conti.visible = true
 		restart.visible = false
 		
@@ -102,6 +106,6 @@ func _on_restart_pressed() -> void:
 	_unpause_game()
 	get_tree().reload_current_scene()
 
-
-func _on_continue_pressed() -> void:
-	pass # Replace with function body.
+func _on_change_map_pressed() -> void:
+	_unpause_game()
+	get_tree().change_scene_to_file("res://Cenas/Modo_História/modo_história.tscn")

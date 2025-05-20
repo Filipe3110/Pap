@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgma4jqnsfj0r"]
+[gd_scene load_steps=9 format=3 uid="uid://bgma4jqnsfj0r"]
 
 [ext_resource type="Script" uid="uid://ckwyboqaeemqc" path="res://Scripts/Multijogador/tela_dos_mapas_multi.gd" id="1_5ycn8"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_tqfpy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_favhp"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_8ifip"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="6_t7vir"]
+[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_favhp"]
 
 [node name="Multiplayermapas" type="Control"]
 layout_mode = 3
@@ -152,6 +153,11 @@ theme_override_font_sizes/font_size = 60
 text = "Play"
 flat = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_favhp")
+autoplay = true
+bus = &"Music"
+
 [connection signal="mouse_entered" from="Borda1/Mapa1" to="." method="_on_mapa_1_mouse_entered"]
 [connection signal="mouse_exited" from="Borda1/Mapa1" to="." method="_on_mapa_1_mouse_exited"]
 [connection signal="pressed" from="Borda1/Mapa1" to="." method="_on_mapa_1_pressed"]
@@ -160,7 +166,7 @@ flat = true
 [connection signal="pressed" from="Borda2/Mapa2" to="." method="_on_mapa_2_pressed"]
 [connection signal="mouse_entered" from="Borda3/Mapa3" to="." method="_on_mapa_3_mouse_entered"]
 [connection signal="mouse_exited" from="Borda3/Mapa3" to="." method="_on_mapa_3_mouse_exited"]
-[connection signal="pressed" from="Borda3/Mapa3" to="." method="_on_mapa_2_pressed"]
+[connection signal="pressed" from="Borda3/Mapa3" to="." method="_on_mapa_3_pressed"]
 [connection signal="mouse_entered" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_entered"]
 [connection signal="mouse_exited" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_exited"]
 [connection signal="mouse_entered" from="BordaR/MapaR" to="." method="_on_mapa_r_mouse_entered"]

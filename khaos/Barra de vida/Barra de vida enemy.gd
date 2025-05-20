@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var barra_sprite = $BarraSprite  
 signal jogador_morreu(jogador_id)  # Adicione esta linha
 
-var vida_atual = 10
+var vida_atual = 1
 var vida_maxima = 100  
 var esta_bloqueando = false 
 

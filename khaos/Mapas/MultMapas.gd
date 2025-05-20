@@ -8,14 +8,11 @@ extends Node2D
 @onready var camera = $DynamicCamera 
 var is_paused = false
 
-#@onready var p1ind1 = $point1
-@onready var p1ind2 = $point2
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pause_menu.visible = false
 	options.visible = false
 	vitoria_canvas.visible = false  
-	points()
 	
 	if p1 and p1.has_node("BarraDeVida"):
 		p1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
@@ -95,5 +92,3 @@ func _on_restart_pressed() -> void:
 	_unpause_game()
 	get_tree().reload_current_scene()
 	
-func points():
-	pass

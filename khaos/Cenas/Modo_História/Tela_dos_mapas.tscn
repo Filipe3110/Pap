@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=9 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_ngor3"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_77h5k"]
+[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_ngor3"]
 
 [node name="Tela_dos_mapas" type="Control"]
 layout_mode = 3
@@ -143,6 +144,11 @@ theme_override_fonts/font = ExtResource("5_8hpvv")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ngor3")
+autoplay = true
+bus = &"Music"
 
 [connection signal="mouse_entered" from="1/Mapa1" to="." method="_on_mapa_1_mouse_entered"]
 [connection signal="mouse_exited" from="1/Mapa1" to="." method="_on_mapa_1_mouse_exited"]
