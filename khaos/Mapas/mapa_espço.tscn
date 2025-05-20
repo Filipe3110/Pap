@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtwp64gs1usv"]
+[gd_scene load_steps=15 format=3 uid="uid://dtwp64gs1usv"]
 
 [ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_360m2"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_gi46f"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_gi46f"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_ea8so"]
 [ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_rk84j"]
+[ext_resource type="AudioStream" uid="uid://ypfy6n0gr008" path="res://Assets/Msc/victorymale-version-230553.mp3" id="12_ea8so"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rk84j"]
 size = Vector2(3004, 20)
@@ -197,6 +198,10 @@ limit_top = 0
 limit_right = 1890
 limit_bottom = 650
 script = ExtResource("11_rk84j")
+
+[node name="Victory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ea8so")
+bus = &"SFX"
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]

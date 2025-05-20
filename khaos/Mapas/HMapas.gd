@@ -13,8 +13,7 @@ extends Node2D
 var is_paused = false
 
 func _ready():
-	victory.playing = true
-
+	victory.process_mode = Node.PROCESS_MODE_ALWAYS
 	conti.visible = false
 	restart.visible = false
 
@@ -64,7 +63,7 @@ func _on_jogador_morreu(jogador_id):
 	else:
 		# Jogador ganhou
 		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
-		victory.playing 
+		victory.playing = true
 
 		conti.visible = true
 		restart.visible = false
