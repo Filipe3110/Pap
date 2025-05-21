@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_360m2"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_gi46f"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_hx8d7"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="4_gi46f"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="4_jf5l4"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_h6sy4"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_hx8d7"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_ea8so"]
 [ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_rk84j"]
 [ext_resource type="AudioStream" uid="uid://ypfy6n0gr008" path="res://Assets/Msc/victorymale-version-230553.mp3" id="12_ea8so"]
+[ext_resource type="PackedScene" uid="uid://dkgqh675bq8c3" path="res://Bonecos/Enemy/ex_enemy.tscn" id="12_xme7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rk84j"]
 size = Vector2(3004, 20)
@@ -30,8 +30,8 @@ texture = ExtResource("2_gi46f")
 position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("4_gi46f")]
-position = Vector2(1324, 410)
+[node name="ExEnemy" parent="." instance=ExtResource("12_xme7b")]
+position = Vector2(1264, 420)
 scale = Vector2(4, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

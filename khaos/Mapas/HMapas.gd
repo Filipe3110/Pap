@@ -3,7 +3,7 @@ extends Node2D
 @onready var options = $Options_ingame
 @onready var pause_menu = $Menu_pausa
 @onready var p1 = $Player
-@onready var p2 = $Enemy
+@onready var p2 = $ExEnemy 
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
 @onready var camera = $StoryDynamicCamera 
