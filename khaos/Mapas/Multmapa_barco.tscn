@@ -1,22 +1,38 @@
-[gd_scene load_steps=14 format=3 uid="uid://b83f4f7wptg58"]
+[gd_scene load_steps=20 format=3 uid="uid://b83f4f7wptg58"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_yjd12"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_3mk50"]
+[ext_resource type="PackedScene" uid="uid://chpohav3iist1" path="res://Bonecos/Player2/ex_player_2.tscn" id="3_ajylm"]
+[ext_resource type="PackedScene" uid="uid://ccc0362diyosh" path="res://Bonecos/Player2/pir_player_2.tscn" id="3_ilko3"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_lql06"]
+[ext_resource type="PackedScene" uid="uid://c1rg1fssjeian" path="res://Bonecos/Player1/pir_player_1.tscn" id="4_3mk50"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="4_ilko3"]
 [ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_ajylm"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="6_3d3wu"]
+[ext_resource type="PackedScene" uid="uid://co25j40g8ul54" path="res://Bonecos/Player1/ex_player_1.tscn" id="6_xndh6"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_xndh6"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_tmux7"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_fep56"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_ddeq4"]
 [ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_l6p0e"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon1.png" id="14_3d3wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
 size = Vector2(81, 661.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xndh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_3d3wu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Mapa Barco" type="Node2D"]
 script = ExtResource("1_yjd12")
@@ -25,13 +41,31 @@ script = ExtResource("1_yjd12")
 position = Vector2(948, 324)
 texture = ExtResource("2_3mk50")
 
-[node name="Player2" parent="." instance=ExtResource("3_lql06")]
+[node name="Player2" type="Node2D" parent="."]
 position = Vector2(1251, 430)
 scale = Vector2(4, 4)
 
-[node name="Player1" parent="." instance=ExtResource("4_ilko3")]
-position = Vector2(831, 430)
+[node name="exPlayer2" parent="Player2" instance=ExtResource("3_ajylm")]
+visible = false
+
+[node name="pirPlayer2" parent="Player2" instance=ExtResource("3_ilko3")]
+visible = false
+
+[node name="Player2" parent="Player2" instance=ExtResource("3_lql06")]
+visible = false
+
+[node name="Player1" type="Node2D" parent="."]
+position = Vector2(845, 419)
 scale = Vector2(4, 4)
+
+[node name="exPlayer1" parent="Player1" instance=ExtResource("6_xndh6")]
+visible = false
+
+[node name="Player1" parent="Player1" instance=ExtResource("4_ilko3")]
+visible = false
+
+[node name="pirPlayer1" parent="Player1" instance=ExtResource("4_3mk50")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 3.05176e-05)
@@ -129,7 +163,6 @@ visible = false
 
 [node name="Vitoria" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
 position = Vector2(576.75, 350)
@@ -139,6 +172,12 @@ texture = ExtResource("9_fep56")
 [node name="Logo" type="Sprite2D" parent="Vitoria"]
 position = Vector2(776, 188)
 texture = ExtResource("6_3d3wu")
+
+[node name="A1" type="AnimatedSprite2D" parent="Vitoria"]
+position = Vector2(392, 417.5)
+scale = Vector2(4.19565, 3.59231)
+sprite_frames = SubResource("SpriteFrames_xndh6")
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]
 offset_top = -3.0

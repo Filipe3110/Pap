@@ -1,14 +1,17 @@
 extends Node2D
 @onready var options = $Options_ingame
 @onready var pause_menu = $Menu_pausa
-@onready var p1 = $Player1
-@onready var p2 = $Player2
+@onready var p1 = $Player1/Player1
+@onready var p2 = $Player2/Player2
+@onready var pirp1 = $Player1/pirPlayer1
+@onready var pirp2 = $Player2/pirPlayer2
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
 @onready var camera = $DynamicCamera 
 var is_paused = false
 
 func _ready():
+	personagens()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pause_menu.visible = false
 	options.visible = false
@@ -19,6 +22,13 @@ func _ready():
 	
 	if p2 and p2.has_node("BarraDeVida"):
 		p2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+		
+		
+	if pirp1 and pirp1.has_node("BarraDeVida"):
+		pirp1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+	
+	if pirp2 and pirp2.has_node("BarraDeVida"):
+		pirp2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
 	
 	await get_tree().process_frame
 	
@@ -92,3 +102,22 @@ func _on_restart_pressed() -> void:
 	_unpause_game()
 	get_tree().reload_current_scene()
 	
+	
+func personagens():
+	if Global.personagem_jogador1 == "Pers1":
+		$Player1/Player1.visible = true
+	elif Global.personagem_jogador1 == "Pers2":
+		$Player1/exPlayer1.visible = true
+	elif Global.personagem_jogador1 == "Pers3":
+		$Player1/pirPlayer1.visible = true
+	elif Global.personagem_jogador1 == "Pers4":
+		$Player1/Player1.visible = true
+		
+	if Global.personagem_jogador2 == "Pers1":
+		$Player2/Player2.visible = true
+	elif Global.personagem_jogador2 == "Pers2":
+		$Player2/exPlayer2.visible = true
+	elif Global.personagem_jogador2 == "Pers3":
+		$Player2/pirPlayer2.visible = true
+	elif Global.personagem_jogador2 == "Pers4":
+		$Player2/Player2.visible = true
