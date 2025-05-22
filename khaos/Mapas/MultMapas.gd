@@ -5,6 +5,8 @@ extends Node2D
 @onready var p2 = $Player2/Player2
 @onready var pirp1 = $Player1/pirPlayer1
 @onready var pirp2 = $Player2/pirPlayer2
+@onready var monp1 = $Player1/monPlayer1
+@onready var monp2 = $Player2/monPlayer2
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
 @onready var camera = $DynamicCamera 
@@ -30,6 +32,11 @@ func _ready():
 	if pirp2 and pirp2.has_node("BarraDeVida"):
 		pirp2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
 	
+	if monp1 and monp1.has_node("BarraDeVida"):
+		monp1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+	
+	if monp2 and monp2.has_node("BarraDeVida"):
+		monp2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
 	await get_tree().process_frame
 	
 	_setup_camera()
@@ -56,7 +63,7 @@ func _setup_camera():
 func _on_jogador_morreu(jogador_id):
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	var vencedor = "Player 2" if jogador_id == "Player1" else "Player 1"
+	var vencedor = "Player 2"  if jogador_id == "Player1" else "Player 1"
 	if vencedor == "Player 1":
 		vitoria_label.text = "[color=#0000FF]Player 1[/color] Win"
 	else:
@@ -105,19 +112,23 @@ func _on_restart_pressed() -> void:
 	
 func personagens():
 	if Global.personagem_jogador1 == "Pers1":
-		$Player1/Player1.visible = true
-	elif Global.personagem_jogador1 == "Pers2":
 		$Player1/exPlayer1.visible = true
-	elif Global.personagem_jogador1 == "Pers3":
+	elif Global.personagem_jogador1 == "Pers2":
 		$Player1/pirPlayer1.visible = true
+	elif Global.personagem_jogador1 == "Pers3":
+		$Player1/monPlayer1.visible = true
 	elif Global.personagem_jogador1 == "Pers4":
+		$Player1/Player1.visible = true
+	elif Global.personagem_jogador1 == "Pers5":
 		$Player1/Player1.visible = true
 		
 	if Global.personagem_jogador2 == "Pers1":
-		$Player2/Player2.visible = true
-	elif Global.personagem_jogador2 == "Pers2":
 		$Player2/exPlayer2.visible = true
-	elif Global.personagem_jogador2 == "Pers3":
+	elif Global.personagem_jogador2 == "Pers2":
 		$Player2/pirPlayer2.visible = true
+	elif Global.personagem_jogador2 == "Pers3":
+		$Player2/monPlayer2.visible = true
 	elif Global.personagem_jogador2 == "Pers4":
+		$Player2/Player2.visible = true
+	elif Global.personagem_jogador2 == "Pers5":
 		$Player2/Player2.visible = true

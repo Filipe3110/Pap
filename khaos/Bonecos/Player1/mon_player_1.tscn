@@ -1,0 +1,1461 @@
+[gd_scene load_steps=138 format=3 uid="uid://b5eslcey74iuq"]
+
+[ext_resource type="Script" uid="uid://cr8wblqshtc4e" path="res://Bonecos/Player1/player_1.gd" id="1_20rpf"]
+[ext_resource type="Texture2D" uid="uid://7gmu2cobid02" path="res://Bonecos/Player/player_sp/monbaixo.png" id="2_5g1hg"]
+[ext_resource type="Texture2D" uid="uid://bkq8rjsuux3ma" path="res://Bonecos/Player/player_sp/mons2baixo.png" id="3_62xj6"]
+[ext_resource type="Texture2D" uid="uid://brqu0j745evv7" path="res://Bonecos/Player/player_sp/monss2baixo.png" id="4_pb8mb"]
+[ext_resource type="Texture2D" uid="uid://qcwxral2ybrn" path="res://Bonecos/Player/player_sp/monPlayer id1.png" id="4_xa6nf"]
+[ext_resource type="Texture2D" uid="uid://bg87p38awxbi2" path="res://Bonecos/Player/player_sp/monblock.png" id="5_j0m23"]
+[ext_resource type="Texture2D" uid="uid://b3b1you58oro1" path="res://Bonecos/Player/player_sp/monPlayer id2.png" id="5_uoren"]
+[ext_resource type="Texture2D" uid="uid://bjypxsrngb56v" path="res://Bonecos/Player/player_sp/monS2.png" id="6_avlj5"]
+[ext_resource type="Script" uid="uid://bqffk61cjxkhu" path="res://Barra de vida/Barradevida.gd" id="7_pb8mb"]
+[ext_resource type="Texture2D" uid="uid://cad3wcc56lyf8" path="res://Bonecos/Player/player_sp/monsalto.png" id="8_8wi55"]
+[ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Barra de vida/Barra de vidaSP/0.png" id="8_j0m23"]
+[ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Barra de vida/Barra de vidaSP/1.png" id="9_8wi55"]
+[ext_resource type="Texture2D" uid="uid://cjp2sq00a6fwb" path="res://Bonecos/Player/player_sp/monwalk1.png" id="9_vcunj"]
+[ext_resource type="Texture2D" uid="uid://cs1o68eqnq0ci" path="res://Bonecos/Player/player_sp/monSS2.png" id="10_1bh7r"]
+[ext_resource type="Texture2D" uid="uid://bw02kng0iidcm" path="res://Bonecos/Player/player_sp/monwalk2.png" id="10_6670m"]
+[ext_resource type="Texture2D" uid="uid://cyl1s7o5e2die" path="res://Barra de vida/Barra de vidaSP/2.png" id="10_vcunj"]
+[ext_resource type="Texture2D" uid="uid://dex61touw3sbc" path="res://Barra de vida/Barra de vidaSP/3.png" id="11_1bh7r"]
+[ext_resource type="Texture2D" uid="uid://die4rmmywq4kl" path="res://Bonecos/Player/player_sp/monwalk3.png" id="11_3y027"]
+[ext_resource type="Texture2D" uid="uid://dyugun1mf8t0n" path="res://Bonecos/Player/player_sp/monSSS2e3.png" id="11_6670m"]
+[ext_resource type="Texture2D" uid="uid://cqgu3w7rs7kv8" path="res://Bonecos/Player/player_sp/monSSS2e4.png" id="12_3y027"]
+[ext_resource type="Texture2D" uid="uid://bofo1obet43w8" path="res://Barra de vida/Barra de vidaSP/4.png" id="12_6670m"]
+[ext_resource type="Texture2D" uid="uid://ddwcy8f4f5yut" path="res://Barra de vida/Barra de vidaSP/5.png" id="13_3y027"]
+[ext_resource type="Texture2D" uid="uid://doqh6ircvw0o3" path="res://Barra de vida/Barra de vidaSP/6.png" id="14_kquvf"]
+[ext_resource type="Texture2D" uid="uid://16rdcatvxomp" path="res://Barra de vida/Barra de vidaSP/7.png" id="15_ualy2"]
+[ext_resource type="Texture2D" uid="uid://b6q6snc8a2o4k" path="res://Barra de vida/Barra de vidaSP/8.png" id="16_ahmgu"]
+[ext_resource type="Texture2D" uid="uid://cj6tnd3u6yaqs" path="res://Barra de vida/Barra de vidaSP/9.png" id="17_a62px"]
+[ext_resource type="Texture2D" uid="uid://c52lnvco5ovwr" path="res://Barra de vida/Barra de vidaSP/10.png" id="18_kqw05"]
+[ext_resource type="Texture2D" uid="uid://bq5laawvyyuqf" path="res://Barra de vida/Barra de vidaSP/11.png" id="19_sql3d"]
+[ext_resource type="Texture2D" uid="uid://fntvur2rq8m" path="res://Barra de vida/Barra de vidaSP/12.png" id="20_mogpj"]
+[ext_resource type="Texture2D" uid="uid://ckn23ypdha5h4" path="res://Barra de vida/Barra de vidaSP/13.png" id="21_awvty"]
+[ext_resource type="Texture2D" uid="uid://b0tygu8uuhbb7" path="res://Barra de vida/Barra de vidaSP/14.png" id="22_6efsi"]
+[ext_resource type="Texture2D" uid="uid://ctvoaveodgkjt" path="res://Barra de vida/Barra de vidaSP/15.png" id="23_0pxcu"]
+[ext_resource type="Texture2D" uid="uid://c0usrs26fd5fk" path="res://Barra de vida/Barra de vidaSP/16.png" id="24_0ir1q"]
+[ext_resource type="Texture2D" uid="uid://b33jgpge1rmqy" path="res://Barra de vida/Barra de vidaSP/17.png" id="25_ymtl3"]
+[ext_resource type="Texture2D" uid="uid://wmokcjh30tlv" path="res://Barra de vida/Barra de vidaSP/18.png" id="26_n6213"]
+[ext_resource type="Texture2D" uid="uid://bnnmxa47mjoov" path="res://Barra de vida/Barra de vidaSP/19.png" id="27_1t6e6"]
+[ext_resource type="Texture2D" uid="uid://ce0x18wb1tyef" path="res://Barra de vida/Barra de vidaSP/20.png" id="28_q02d8"]
+[ext_resource type="Texture2D" uid="uid://3g75y7w3cmug" path="res://Barra de vida/Barra de vidaSP/21.png" id="29_j2ysl"]
+[ext_resource type="Texture2D" uid="uid://cq5ch435st6yg" path="res://Barra de vida/Barra de vidaSP/22.png" id="30_0s5ud"]
+[ext_resource type="Texture2D" uid="uid://bfw0o7g6jgesf" path="res://Barra de vida/Barra de vidaSP/23.png" id="31_34cln"]
+[ext_resource type="Texture2D" uid="uid://cq8rr2dwgsoqs" path="res://Barra de vida/Barra de vidaSP/24.png" id="32_iuujq"]
+[ext_resource type="Texture2D" uid="uid://gxw65gexuqhg" path="res://Barra de vida/Barra de vidaSP/25.png" id="33_gg4cv"]
+[ext_resource type="Texture2D" uid="uid://gu0k722gwdn0" path="res://Barra de vida/Barra de vidaSP/26.png" id="34_v8ipu"]
+[ext_resource type="Texture2D" uid="uid://clkqxdtpbdros" path="res://Barra de vida/Barra de vidaSP/27.png" id="35_kyyg4"]
+[ext_resource type="Texture2D" uid="uid://cm256vhpwqipv" path="res://Barra de vida/Barra de vidaSP/28.png" id="36_g5guh"]
+[ext_resource type="Texture2D" uid="uid://bhk5o5ogm7jkh" path="res://Barra de vida/Barra de vidaSP/29.png" id="37_xbdnd"]
+[ext_resource type="Texture2D" uid="uid://lfuc3hyax6na" path="res://Barra de vida/Barra de vidaSP/30.png" id="38_j5tqv"]
+[ext_resource type="Texture2D" uid="uid://bwveseio6lmx1" path="res://Barra de vida/Barra de vidaSP/31.png" id="39_efdpn"]
+[ext_resource type="Texture2D" uid="uid://bg3npp00jq6sm" path="res://Barra de vida/Barra de vidaSP/32.png" id="40_nw5vk"]
+[ext_resource type="Texture2D" uid="uid://c1wlsx4oaigdm" path="res://Barra de vida/Barra de vidaSP/33.png" id="41_dhhg8"]
+[ext_resource type="Texture2D" uid="uid://5x7qouia6vyx" path="res://Barra de vida/Barra de vidaSP/34.png" id="42_e8fo8"]
+[ext_resource type="Texture2D" uid="uid://bfw1bprd78c35" path="res://Barra de vida/Barra de vidaSP/35.png" id="43_bcxna"]
+[ext_resource type="Texture2D" uid="uid://p3jyjwllfyg2" path="res://Barra de vida/Barra de vidaSP/36.png" id="44_f7tnn"]
+[ext_resource type="Texture2D" uid="uid://bc1cfubmwqacd" path="res://Barra de vida/Barra de vidaSP/37.png" id="45_4njg1"]
+[ext_resource type="Texture2D" uid="uid://c4djrtrb35idq" path="res://Barra de vida/Barra de vidaSP/38.png" id="46_yeh33"]
+[ext_resource type="Texture2D" uid="uid://415t857b7773" path="res://Barra de vida/Barra de vidaSP/39.png" id="47_vc2k3"]
+[ext_resource type="Texture2D" uid="uid://vx3ki2v314mv" path="res://Barra de vida/Barra de vidaSP/40.png" id="48_5y7ks"]
+[ext_resource type="Texture2D" uid="uid://ch1g55d4jducy" path="res://Barra de vida/Barra de vidaSP/41.png" id="49_2inag"]
+[ext_resource type="Texture2D" uid="uid://bpjdx2esyjplc" path="res://Barra de vida/Barra de vidaSP/42.png" id="50_r3k1a"]
+[ext_resource type="Texture2D" uid="uid://dpm76stjuhxjm" path="res://Barra de vida/Barra de vidaSP/43.png" id="51_4gtib"]
+[ext_resource type="Texture2D" uid="uid://dhm3x8l5k5jqk" path="res://Barra de vida/Barra de vidaSP/44.png" id="52_5wj8p"]
+[ext_resource type="Texture2D" uid="uid://d0kqdaa58hgv4" path="res://Barra de vida/Barra de vidaSP/45.png" id="53_65i8v"]
+[ext_resource type="Texture2D" uid="uid://b0j23n5n67cva" path="res://Barra de vida/Barra de vidaSP/46.png" id="54_dn8hk"]
+[ext_resource type="Texture2D" uid="uid://dhjwfhuwt211b" path="res://Barra de vida/Barra de vidaSP/47.png" id="55_uoxk3"]
+[ext_resource type="Texture2D" uid="uid://d02fmu2mxo26d" path="res://Barra de vida/Barra de vidaSP/48.png" id="56_wq6mj"]
+[ext_resource type="Texture2D" uid="uid://m7iktwhxp8g8" path="res://Barra de vida/Barra de vidaSP/49.png" id="57_8eg1t"]
+[ext_resource type="Texture2D" uid="uid://b34k8uetuq1e4" path="res://Barra de vida/Barra de vidaSP/50.png" id="58_hoyw2"]
+[ext_resource type="Texture2D" uid="uid://dcnwjolhensb2" path="res://Barra de vida/Barra de vidaSP/51.png" id="59_yfpaj"]
+[ext_resource type="Texture2D" uid="uid://bts5gjglu507u" path="res://Barra de vida/Barra de vidaSP/52.png" id="60_ykerw"]
+[ext_resource type="Texture2D" uid="uid://olotebbu3vti" path="res://Barra de vida/Barra de vidaSP/53.png" id="61_ub8so"]
+[ext_resource type="Texture2D" uid="uid://uynb0plceq10" path="res://Barra de vida/Barra de vidaSP/54.png" id="62_xv5x8"]
+[ext_resource type="Texture2D" uid="uid://dt3y35gcx0x6g" path="res://Barra de vida/Barra de vidaSP/55.png" id="63_6614m"]
+[ext_resource type="Texture2D" uid="uid://c6evx32y16mg4" path="res://Barra de vida/Barra de vidaSP/56.png" id="64_wy2vm"]
+[ext_resource type="Texture2D" uid="uid://bjje72g3w0g7" path="res://Barra de vida/Barra de vidaSP/57.png" id="65_q7rxv"]
+[ext_resource type="Texture2D" uid="uid://bys8thaak538q" path="res://Barra de vida/Barra de vidaSP/58.png" id="66_xtqso"]
+[ext_resource type="Texture2D" uid="uid://blxvgfhk8exi2" path="res://Barra de vida/Barra de vidaSP/59.png" id="67_20ucf"]
+[ext_resource type="Texture2D" uid="uid://cpdtwhyg4trbe" path="res://Barra de vida/Barra de vidaSP/60.png" id="68_rxbeh"]
+[ext_resource type="Texture2D" uid="uid://c087va1n6p7le" path="res://Barra de vida/Barra de vidaSP/61.png" id="69_6y0ka"]
+[ext_resource type="Texture2D" uid="uid://bf2nga6vtm8f0" path="res://Barra de vida/Barra de vidaSP/62.png" id="70_n44hy"]
+[ext_resource type="Texture2D" uid="uid://0m5mcij4lunh" path="res://Barra de vida/Barra de vidaSP/63.png" id="71_u6xs6"]
+[ext_resource type="Texture2D" uid="uid://dd7xe1tx54i60" path="res://Barra de vida/Barra de vidaSP/64.png" id="72_4i3fo"]
+[ext_resource type="Texture2D" uid="uid://db4qtj3khw16j" path="res://Barra de vida/Barra de vidaSP/65.png" id="73_k4qew"]
+[ext_resource type="Texture2D" uid="uid://coexu83vcy8dr" path="res://Barra de vida/Barra de vidaSP/66.png" id="74_x1e0m"]
+[ext_resource type="Texture2D" uid="uid://cvsjqg2hjiauq" path="res://Barra de vida/Barra de vidaSP/67.png" id="75_nmo3u"]
+[ext_resource type="Texture2D" uid="uid://ddxnrhjm2duw" path="res://Barra de vida/Barra de vidaSP/68.png" id="76_cohhr"]
+[ext_resource type="Texture2D" uid="uid://ddry2tvnekc2p" path="res://Barra de vida/Barra de vidaSP/69.png" id="77_3ddvq"]
+[ext_resource type="Texture2D" uid="uid://cadqqj1oxgdgy" path="res://Barra de vida/Barra de vidaSP/70.png" id="78_5wi32"]
+[ext_resource type="Texture2D" uid="uid://h18wc0ml2fgr" path="res://Barra de vida/Barra de vidaSP/71.png" id="79_j266y"]
+[ext_resource type="Texture2D" uid="uid://bwikjcmolm056" path="res://Barra de vida/Barra de vidaSP/72.png" id="80_1wpwv"]
+[ext_resource type="Texture2D" uid="uid://d3e4bod23cgnf" path="res://Barra de vida/Barra de vidaSP/73.png" id="81_e6m6x"]
+[ext_resource type="Texture2D" uid="uid://5ukcsfylkpgh" path="res://Barra de vida/Barra de vidaSP/74.png" id="82_ms380"]
+[ext_resource type="Texture2D" uid="uid://drs18xje8qkfm" path="res://Barra de vida/Barra de vidaSP/75.png" id="83_x4yi0"]
+[ext_resource type="Texture2D" uid="uid://cholndl2x2iar" path="res://Barra de vida/Barra de vidaSP/76.png" id="84_hy2a5"]
+[ext_resource type="Texture2D" uid="uid://bj02w5dkkper8" path="res://Barra de vida/Barra de vidaSP/77.png" id="85_kl46n"]
+[ext_resource type="Texture2D" uid="uid://b4setogfhe1ky" path="res://Barra de vida/Barra de vidaSP/78.png" id="86_lfwj8"]
+[ext_resource type="Texture2D" uid="uid://bgo38e8p1je14" path="res://Barra de vida/Barra de vidaSP/79.png" id="87_r10d2"]
+[ext_resource type="Texture2D" uid="uid://dy0uhejpux7et" path="res://Barra de vida/Barra de vidaSP/80.png" id="88_55jx5"]
+[ext_resource type="Texture2D" uid="uid://b1bmsxm34qq7r" path="res://Barra de vida/Barra de vidaSP/81.png" id="89_env45"]
+[ext_resource type="Texture2D" uid="uid://r0lj8pyynw7a" path="res://Barra de vida/Barra de vidaSP/82.png" id="90_vwck4"]
+[ext_resource type="Texture2D" uid="uid://mjmjbaalph4b" path="res://Barra de vida/Barra de vidaSP/83.png" id="91_ubpsj"]
+[ext_resource type="Texture2D" uid="uid://cgo0fa17is2wg" path="res://Barra de vida/Barra de vidaSP/84.png" id="92_a8d7n"]
+[ext_resource type="Texture2D" uid="uid://1mliqadlgxds" path="res://Barra de vida/Barra de vidaSP/85.png" id="93_rs26r"]
+[ext_resource type="Texture2D" uid="uid://5qpdwreirlp3" path="res://Barra de vida/Barra de vidaSP/86.png" id="94_k8q2o"]
+[ext_resource type="Texture2D" uid="uid://cd2v3edam0rmh" path="res://Barra de vida/Barra de vidaSP/87.png" id="95_7tgg6"]
+[ext_resource type="Texture2D" uid="uid://bnxg6ra7e07wk" path="res://Barra de vida/Barra de vidaSP/88.png" id="96_7ypgl"]
+[ext_resource type="Texture2D" uid="uid://bd57gb56k81wl" path="res://Barra de vida/Barra de vidaSP/89.png" id="97_s0g4g"]
+[ext_resource type="Texture2D" uid="uid://bpbx1mnqkjj1k" path="res://Barra de vida/Barra de vidaSP/90.png" id="98_idayr"]
+[ext_resource type="Texture2D" uid="uid://d27nscm4cjmej" path="res://Barra de vida/Barra de vidaSP/91.png" id="99_dt2s3"]
+[ext_resource type="Texture2D" uid="uid://gk4qyo8v1jy6" path="res://Barra de vida/Barra de vidaSP/92.png" id="100_ypccv"]
+[ext_resource type="Texture2D" uid="uid://bu503ki4p0twb" path="res://Barra de vida/Barra de vidaSP/93.png" id="101_1kb4y"]
+[ext_resource type="Texture2D" uid="uid://bd7dad0qenk3f" path="res://Barra de vida/Barra de vidaSP/94.png" id="102_nu4jq"]
+[ext_resource type="Texture2D" uid="uid://dig1d8jbxjfmr" path="res://Barra de vida/Barra de vidaSP/95.png" id="103_gv0jv"]
+[ext_resource type="Texture2D" uid="uid://byg4cywbejtsl" path="res://Barra de vida/Barra de vidaSP/96.png" id="104_wxhp6"]
+[ext_resource type="Texture2D" uid="uid://cy47wy1et4bai" path="res://Barra de vida/Barra de vidaSP/97.png" id="105_nkrra"]
+[ext_resource type="Texture2D" uid="uid://br5pc1mx1rvl0" path="res://Barra de vida/Barra de vidaSP/98.png" id="106_p57rl"]
+[ext_resource type="Texture2D" uid="uid://dx1iwh1rnmoxl" path="res://Barra de vida/Barra de vidaSP/99.png" id="107_rxhkw"]
+[ext_resource type="Texture2D" uid="uid://bsqpuwl4ykl2b" path="res://Barra de vida/Barra de vidaSP/100.png" id="108_72sx0"]
+[ext_resource type="Texture2D" uid="uid://rmm0fyg2q1t8" path="res://Assets/BtFundos/P1.png" id="109_21lfx"]
+[ext_resource type="Script" uid="uid://4q83aqkxp74s" path="res://Mapas/point_1.gd" id="110_e6476"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="111_0ekdg"]
+
+[sub_resource type="Animation" id="Animation_ccnfg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_e0bti"]
+resource_name = "baixo_soco_direita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"baixo_soco_direita", &"baixo_soco_direita"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 1.11759e-06, 15, -3, 22, 0, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49), PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 1.11759e-06, 15, -3, 22, 0, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49), PackedVector2Array(-11, 52, -17, 47, -16, 22, -15, 15, -15, 1, -10, -7, -8, -8, -7, -14, -4, -18, 1, -19, 9, -17, 9, -6, 13, -5, 19, -5, 26, -6, 27, 1, 2, 3, -1, 20, 16, 19, 20, 43, 20, 49, 11, 49, 8, 30, -4, 32, -6, 49), PackedVector2Array(-11, 52, -17, 47, -16, 22, -15, 15, -15, 1, -10, -7, -8, -8, -7, -14, -4, -18, 1, -19, 9, -17, 9, -6, 13, -5, 19, -5, 26, -6, 27, 1, 2, 3, -1, 20, 16, 19, 20, 43, 20, 49, 11, 49, 8, 30, -4, 32, -6, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, -4), Vector2(30, -4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_2j7qf"]
+resource_name = "baixo_soco_esquerda"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"baixo_soco_esquerda", &"baixo_soco_esquerda"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 2.23518e-06, 15, -3, 22, -2.38419e-07, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 9.53674e-07, 32, -3, 49), PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 2.23518e-06, 15, -3, 22, -2.38419e-07, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 9.53674e-07, 32, -3, 49), PackedVector2Array(-13, 52, -19, 47, -17, 22, -25, 8, -25, 1, -22, -4, -11, -5, -11, -12, -7, -17, 2, -18, 7, -10, 5, -4, 30, -2, 29, 5, 12, 4, 2, 7, -1, 20, 10, 18, 16, 23, 18, 40, 17, 49, 10, 49, 6, 30, -6, 32, -8, 48), PackedVector2Array(-13, 52, -19, 47, -17, 22, -25, 8, -25, 1, -22, -4, -11, -5, -11, -12, -7, -17, 2, -18, 7, -10, 5, -4, 30, -2, 29, 5, 12, 4, 2, 7, -1, 20, 10, 18, 16, 23, 18, 40, 17, 49, 10, 49, 6, 30, -6, 32, -8, 48)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, 2), Vector2(31, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_urmn2"]
+resource_name = "baixoblock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"baixoblock", &"baixoblock"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 13, -4, 15, -4, 14, 1, 15, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49), PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 13, -4, 15, -4, 14, 1, 15, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15, 7), Vector2(15, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_dituj"]
+resource_name = "block"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"block", &"block"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 20, -13, 12, -13, 5, -11, -2, -11, -17, -10, -20, -2, -32, 5, -34, 12, -31, 13, -25, 9, -21, 9, -9, 9, -5, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 24, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 20, -13, 12, -13, 5, -11, -2, -11, -17, -10, -20, -2, -32, 5, -34, 12, -31, 13, -25, 9, -21, 9, -9, 9, -5, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 24, -12, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, -13), Vector2(13, -13)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_r0aw5"]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"crouch", &"crouch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 1.11759e-06, 15, -3, 22, 0, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49), PackedVector2Array(-8, 52, -14, 47, -12, 21, -12, 12, -16, 4, -14, -2, -10, -3, -4, -7, -1, -16, 6, -19, 13, -15, 14, -8, 11, -3, 12, 1.11759e-06, 15, -3, 22, 0, 22, 18, 16, 20, 20, 22, 23, 41, 24, 49, 11, 49, 8, 31, 0, 32, -3, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_1tlyv"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_768la"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"jump", &"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-9, 47, -13, 43, -14, 20, -13, 12, -13, 5, -11, -2, -16, -13, -14, -20, -9, -22, 1, -35, 6, -37, 14, -32, 14, -26, 10, -21, 21, -7, 17, -3, 11, -5, 10, -1, 5, 3, 18, 15, 21, 22, 13, 39, 10, 46, 1, 41, 11, 24, 1, 16, -5, 44), PackedVector2Array(-9, 47, -13, 43, -14, 20, -13, 12, -13, 5, -11, -2, -16, -13, -14, -20, -9, -22, 1, -35, 6, -37, 14, -32, 14, -26, 10, -21, 21, -7, 17, -3, 11, -5, 10, -1, 5, 3, 18, 15, 21, 22, 13, 39, 10, 46, 1, 41, 11, 24, 1, 16, -5, 44)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_p1q8w"]
+resource_name = "run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"run", &"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.3, 0.566667, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -19, 52, -8, 34, -10, 14, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 4, 5, 7, 18, 9, 24, 9, 40, 8, 49, 0, 49, -12, 49, 1, 23, -12, 49), PackedVector2Array(-8, 52, -19, 52, -8, 34, -10, 14, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 4, 5, 7, 18, 9, 24, 9, 40, 8, 49, 0, 49, -12, 49, 1, 23, -12, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_qor31"]
+resource_name = "soco_direita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"soco_direita", &"soco_direita"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -30, 52, -20, 32, -18, 9, -16, 1, -14, -2, -14, -16, -9, -27, -6, -32, -4, -38, 4, -39, 9, -34, 9, -25, 27, -25, 28, -18, 13, -17, 4, -16, 1, -9, -1, 1, 12, 20, 15, 25, 17, 41, 16, 49, 9, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -30, 52, -20, 32, -18, 9, -16, 1, -14, -2, -14, -16, -9, -27, -6, -32, -4, -38, 4, -39, 9, -34, 9, -25, 27, -25, 28, -18, 13, -17, 4, -16, 1, -9, -1, 1, 12, 20, 15, 25, 17, 41, 16, 49, 9, 49, 10, 29, 1, 23, -12, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, -23), Vector2(29, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_kl158"]
+resource_name = "soco_esquerda"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"soco_esquerda", &"soco_esquerda"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49), PackedVector2Array(-14, 52, -23, 52, -20, 32, -18, 9, -17, 1, -27, -15, -26, -22, -12, -27, -12, -34, -5, -38, 1, -37, 5, -31, 3, -24, 27, -22, 27, -16, 13, -17, 4, -16, 1, -9, -1, 1, -1, 7, 9, 20, 12, 26, 12, 41, 11, 49, 4, 49, 6, 30, -7, 16, -14, 49), PackedVector2Array(-14, 52, -23, 52, -20, 32, -18, 9, -17, 1, -27, -15, -26, -22, -12, -27, -12, -34, -5, -38, 1, -37, 5, -31, 3, -24, 27, -22, 27, -16, 13, -17, 4, -16, 1, -9, -1, 1, -1, 7, 9, 20, 12, 26, 12, 41, 11, 49, 4, 49, 6, 30, -7, 16, -14, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, -18), Vector2(29, -18)]
+}
+
+[sub_resource type="Animation" id="Animation_61tsg"]
+resource_name = "uppercut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"uppercut", &"uppercut"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-8, 52, -15, 52, -14, 33, -11, 13, -10, -1, -18, -4, -17, -15, -13, -20, -4, -26, 1, -37, 8, -39, 14, -35, 16, -30, 8, -20, 13, -17, 13, -13, 9, -12, 7, -8, 3, 3, 16, 20, 19, 23, 21, 40, 22, 49, 11, 49, 10, 29, 1, 23, -6, 48), PackedVector2Array(-8, 52, -15, 52, -14, 33, -11, 13, -10, -1, -18, -4, -17, -15, -13, -20, -4, -26, 1, -37, 8, -39, 14, -35, 16, -30, 8, -20, 13, -17, 13, -13, 9, -12, 7, -8, 3, 3, 16, 20, 19, 23, 21, 40, 22, 49, 11, 49, 10, 29, 1, 23, -6, 48), PackedVector2Array(-18, 52, -25, 52, -21, 44, -14, 30, -11, 13, -10, -1, -21, -5, -19, -15, -16, -20, -4, -26, 1, -37, 8, -39, 14, -35, 16, -30, 11, -22, 14, -20, 32, -18, 31, -4, 11, -11, 3, 3, 19, 17, 21, 22, 21, 40, 22, 49, 11, 49, 10, 29, 1, 23, -10, 43), PackedVector2Array(-18, 52, -25, 52, -21, 44, -14, 30, -11, 13, -10, -1, -21, -5, -19, -15, -16, -20, -4, -26, 1, -37, 8, -39, 14, -35, 16, -30, 11, -22, 14, -20, 32, -18, 31, -4, 11, -11, 3, 3, 19, 17, 21, 22, 21, 40, 22, 49, 11, 49, 10, 29, 1, 23, -10, 43)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlockArea/colisao_do_block:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SocoArea/colisao_do_soco:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SocoArea/colisao_do_soco:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25, -23), Vector2(25, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2hxc"]
+_data = {
+&"RESET": SubResource("Animation_ccnfg"),
+&"baixo_soco_direita": SubResource("Animation_e0bti"),
+&"baixo_soco_esquerda": SubResource("Animation_2j7qf"),
+&"baixoblock": SubResource("Animation_urmn2"),
+&"block": SubResource("Animation_dituj"),
+&"crouch": SubResource("Animation_r0aw5"),
+&"idle": SubResource("Animation_1tlyv"),
+&"jump": SubResource("Animation_768la"),
+&"run": SubResource("Animation_p1q8w"),
+&"soco_direita": SubResource("Animation_qor31"),
+&"soco_esquerda": SubResource("Animation_kl158"),
+&"uppercut": SubResource("Animation_61tsg")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh7b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g1hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_62xj6")
+}],
+"loop": true,
+"name": &"baixo_soco_direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g1hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pb8mb")
+}],
+"loop": true,
+"name": &"baixo_soco_esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j0m23")
+}],
+"loop": true,
+"name": &"block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g1hg")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xa6nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uoren")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8wi55")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vcunj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6670m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3y027")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xa6nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_avlj5")
+}],
+"loop": true,
+"name": &"soco_direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xa6nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1bh7r")
+}],
+"loop": true,
+"name": &"soco_esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6670m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3y027")
+}],
+"loop": true,
+"name": &"uppercut",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oaoea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_j0m23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8wi55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vcunj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1bh7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6670m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3y027")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kquvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ualy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ahmgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a62px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kqw05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sql3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mogpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_awvty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6efsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0pxcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0ir1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ymtl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_n6213")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1t6e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_q02d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_j2ysl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_0s5ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_34cln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_iuujq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gg4cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_v8ipu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_kyyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_g5guh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_xbdnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_j5tqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_efdpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_nw5vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dhhg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_e8fo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bcxna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_f7tnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4njg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_yeh33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vc2k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5y7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_2inag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_r3k1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_4gtib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_5wj8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_65i8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_dn8hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_uoxk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_wq6mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_8eg1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_hoyw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_yfpaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ykerw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ub8so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xv5x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_6614m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_wy2vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_q7rxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_xtqso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_20ucf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_rxbeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_6y0ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_n44hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_u6xs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_4i3fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_k4qew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_x1e0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_nmo3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_cohhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_3ddvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_5wi32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_j266y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_1wpwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_e6m6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ms380")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_x4yi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_hy2a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_kl46n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_lfwj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_r10d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_55jx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_env45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_vwck4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_ubpsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_a8d7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_rs26r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_k8q2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_7tgg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_7ypgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_s0g4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_idayr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_dt2s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_ypccv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_1kb4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_nu4jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_gv0jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_wxhp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_nkrra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_p57rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_rxhkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_72sx0")
+}],
+"loop": true,
+"name": &"Barra de vida",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1b88"]
+radius = 5.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3e42"]
+radius = 7.0
+height = 24.0
+
+[node name="monPlayer1" type="CharacterBody2D" groups=["p1"]]
+collision_layer = 2
+script = ExtResource("1_20rpf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_x2hxc")
+}
+
+[node name="texture" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+sprite_frames = SubResource("SpriteFrames_jh7b1")
+animation = &"idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["Player"]]
+position = Vector2(-3, 0)
+polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)
+
+[node name="BarraDeVida" type="CanvasLayer" parent="."]
+script = ExtResource("7_pb8mb")
+
+[node name="BarraSprite" type="AnimatedSprite2D" parent="BarraDeVida"]
+position = Vector2(250.5, 42.25)
+scale = Vector2(4.4537, 4.75)
+sprite_frames = SubResource("SpriteFrames_oaoea")
+animation = &"Barra de vida"
+frame = 97
+frame_progress = 0.963966
+
+[node name="ComboTimer" type="Timer" parent="."]
+
+[node name="SocoArea" type="Area2D" parent="." groups=["soco_area"]]
+collision_layer = 8
+collision_mask = 4
+
+[node name="colisao_do_soco" type="CollisionShape2D" parent="SocoArea"]
+position = Vector2(31, 2)
+shape = SubResource("CircleShape2D_g1b88")
+disabled = true
+
+[node name="BlockArea" type="Area2D" parent="."]
+
+[node name="colisao_do_block" type="CollisionShape2D" parent="BlockArea"]
+position = Vector2(15, 7)
+shape = SubResource("CapsuleShape2D_m3e42")
+disabled = true
+
+[node name="point" type="Sprite2D" parent="."]
+position = Vector2(65.5, -59.5625)
+scale = Vector2(0.99315, 1.29924)
+texture = ExtResource("109_21lfx")
+script = ExtResource("110_e6476")
+
+[node name="Label" type="Label" parent="point"]
+offset_left = -65.0
+offset_top = -11.0
+offset_right = 70.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("111_0ekdg")
+theme_override_font_sizes/font_size = 20
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="SocoArea" to="." method="_on_soco_area_area_entered"]

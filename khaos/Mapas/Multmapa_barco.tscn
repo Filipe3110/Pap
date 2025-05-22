@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://b83f4f7wptg58"]
+[gd_scene load_steps=22 format=3 uid="uid://b83f4f7wptg58"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_yjd12"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_3mk50"]
 [ext_resource type="PackedScene" uid="uid://chpohav3iist1" path="res://Bonecos/Player2/ex_player_2.tscn" id="3_ajylm"]
 [ext_resource type="PackedScene" uid="uid://ccc0362diyosh" path="res://Bonecos/Player2/pir_player_2.tscn" id="3_ilko3"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_lql06"]
+[ext_resource type="PackedScene" uid="uid://p7fsfb8rfk78" path="res://Bonecos/Player2/mon_player_2.tscn" id="3_tmux7"]
 [ext_resource type="PackedScene" uid="uid://c1rg1fssjeian" path="res://Bonecos/Player1/pir_player_1.tscn" id="4_3mk50"]
 [ext_resource type="PackedScene" uid="uid://cva260e8t263d" path="res://Bonecos/Player1/player_1.tscn" id="4_ilko3"]
 [ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_ajylm"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://co25j40g8ul54" path="res://Bonecos/Player1/ex_player_1.tscn" id="6_xndh6"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_xndh6"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_tmux7"]
+[ext_resource type="PackedScene" uid="uid://b5eslcey74iuq" path="res://Bonecos/Player1/mon_player_1.tscn" id="9_ddeq4"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_fep56"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_ddeq4"]
 [ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_l6p0e"]
@@ -45,6 +47,9 @@ texture = ExtResource("2_3mk50")
 position = Vector2(1251, 430)
 scale = Vector2(4, 4)
 
+[node name="monPlayer2" parent="Player2" instance=ExtResource("3_tmux7")]
+visible = false
+
 [node name="exPlayer2" parent="Player2" instance=ExtResource("3_ajylm")]
 visible = false
 
@@ -62,6 +67,9 @@ scale = Vector2(4, 4)
 visible = false
 
 [node name="Player1" parent="Player1" instance=ExtResource("4_ilko3")]
+visible = false
+
+[node name="monPlayer1" parent="Player1" instance=ExtResource("9_ddeq4")]
 visible = false
 
 [node name="pirPlayer1" parent="Player1" instance=ExtResource("4_3mk50")]
@@ -163,6 +171,7 @@ visible = false
 
 [node name="Vitoria" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
 position = Vector2(576.75, 350)
