@@ -13,7 +13,7 @@ var direcao_atual := 1
 
 @onready var animation_player = $AnimationPlayer
 @onready var barra_de_vida = $BarraDeVida
-@onready var jogador = get_parent().get_node("Player")  # Assumindo que o jogador está no mesmo nó pai
+@onready var jogador = get_parent().get_node("Player")  
 
 var combo = ["soco_direita", "soco_esquerda", "uppercut"]
 var baixo_combo = ["baixo_soco_direita", "baixo_soco_esquerda"]
