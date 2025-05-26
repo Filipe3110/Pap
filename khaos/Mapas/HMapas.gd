@@ -3,7 +3,7 @@ extends Node2D
 @onready var options = $Options_ingame
 @onready var pause_menu = $Menu_pausa
 @onready var p1 = $Player
-@onready var p2 = $ExEnemy 
+@onready var p2 = $Enemy 
 @onready var vitoria_canvas = $Vitoria  
 @onready var vitoria_label = $Vitoria/VitoriaLabel
 @onready var camera = $StoryDynamicCamera 
@@ -64,9 +64,10 @@ func _on_jogador_morreu(jogador_id):
 		# Jogador ganhou
 		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
 		victory.playing = true
-
 		conti.visible = true
 		restart.visible = false
+		Global.desbloquear_proximo_mapa()
+		
 		
 	vitoria_canvas.visible = true
 	pause_menu.visible = false  

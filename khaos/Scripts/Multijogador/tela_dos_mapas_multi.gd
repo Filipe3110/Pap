@@ -27,6 +27,7 @@ var mapas = [
 
 # Personagens disponíveis (4 personagens)
 var personagens = [
+	"Pers",
 	"Pers1",
 	"Pers2",
 	"Pers3",
@@ -43,6 +44,7 @@ var selecao_mapa = {
 
 # Guarda quem escolheu qual personagem
 var selecao_personagem = {
+	"Pers":[],
 	"Pers1": [],
 	"Pers2": [],
 	"Pers3": [],

@@ -3,7 +3,7 @@ extends CanvasLayer
 signal jogador_morreu(jogador_id)  # Adicione esta linha
 
 @onready var barra_sprite = $BarraSprite  
-var vida_atual = 100
+var vida_atual = 1
 var vida_maxima = 100  
 var esta_bloqueando = false 
 
@@ -18,7 +18,8 @@ func receber_dano(dano):
 	
 	if vida_atual <= 0:
 		vida_atual = 0
-		emit_signal("jogador_morreu", get_parent().name) 
+		var root_nome = get_parent().get_parent().name  # Vai até Player1 ou Player2
+		emit_signal("jogador_morreu", root_nome)
 	update_barra()
 
 func update_barra():

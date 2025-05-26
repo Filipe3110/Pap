@@ -13,7 +13,6 @@ const COLECAO_ID = "khaos_stats"
 @onready var unlocked2 = $"2/Mapas unlocked"
 @onready var unlocked3 = $"3/Mapas unlocked"
 @onready var unlocked4 = $"4/Mapas unlocked"
-
 # Estado inicial dos mapas (valores padrão)
 var mapas_desbloqueados = {
 	"mapa_1": true,   # Mapa 1 sempre liberado por padrão
@@ -31,8 +30,8 @@ const CENAS_MAPAS = {
 }
 
 func _ready():
-	load_player_data()
 	update_unlocked_visibility()
+	load_player_data()
 
 func load_player_data():
 	var auth = Firebase.Auth.auth
