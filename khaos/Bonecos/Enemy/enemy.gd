@@ -3,6 +3,7 @@ extends CharacterBody2D
 const VELOCIDADE = 300.0
 const FORCA_PULO = -400.0
 const GRAVIDADE = 900.0
+const DISTANCIA_MINIMA = 50.0  # Distância mínima do jogador
 
 var esta_pulando := false
 var esta_atacando := false
@@ -42,21 +43,24 @@ func _physics_process(delta: float) -> void:
 		tomar_decisao()
 		tempo_para_proxima_acao = tempo_entre_acoes
 
-	# Movimento horizontal
+	# Movimento horizontal melhorado
 	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
-		var direcao: float = sign(jogador.position.x - position.x)  # Definindo o tipo explicitamente
-		if direcao != 0:
+		var distancia = jogador.position.x - position.x
+		var direcao: float = sign(distancia)
+		
+		# Só move se estiver longe o suficiente do jogador
+		if abs(distancia) > DISTANCIA_MINIMA:
 			velocity.x = direcao * VELOCIDADE
 			if direcao * direcao_atual < 0:
 				direcao_atual = direcao
 				scale.x = -scale.x
 		else:
-			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
+			velocity.x = 0  # Para quando estiver próximo o suficiente
 
 		# Animação de movimento
 		if esta_pulando:
 			animation_player.play("jump")
-		elif direcao != 0:
+		elif velocity.x != 0:
 			animation_player.play("run")
 		else:
 			animation_player.play("idle")
@@ -143,4 +147,3 @@ func _on_soco_area_body_entered(body: Node2D) -> void:
 			body.call("Player_receber_dano", 5)  # Causa 5 de dano
 		elif combo[contcombo] == "uppercut":
 			body.call("Player_receber_dano", 10)  # Causa 10 de dano
-		
