@@ -106,6 +106,6 @@ func _on_restart_pressed() -> void:
 	_unpause_game()
 	get_tree().reload_current_scene()
 
-func _on_change_map_pressed() -> void:
+func _on_continue_pressed() -> void:
 	_unpause_game()
 	get_tree().change_scene_to_file("res://Cenas/Modo_História/modo_história.tscn")

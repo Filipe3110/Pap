@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=17 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cg60ismalfsu8" path="res://Assets/icons/exIcon.png" id="7_i4uiw"]
 [ext_resource type="Texture2D" uid="uid://djt436axwt5eu" path="res://Assets/icons/mumIcon.png" id="8_2dhq4"]
 [ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_ngor3"]
+[ext_resource type="Texture2D" uid="uid://ctiqm3goh4b5" path="res://Assets/Cenários/Deserto.png" id="12_0u8yt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ty068"]
 animations = [{
@@ -156,6 +157,11 @@ offset_top = 96.0
 offset_right = 1095.0
 offset_bottom = 216.0
 
+[node name="deserto" type="Sprite2D" parent="4"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("12_0u8yt")
+
 [node name="Mapas unlocked" type="ColorRect" parent="4"]
 layout_mode = 0
 offset_left = 2.0
@@ -166,8 +172,9 @@ color = Color(0.207512, 0.207512, 0.207512, 1)
 
 [node name="Mapa4" type="Button" parent="4"]
 layout_mode = 0
+offset_top = 1.0
 offset_right = 199.0
-offset_bottom = 118.0
+offset_bottom = 119.0
 focus_mode = 0
 flat = true
 

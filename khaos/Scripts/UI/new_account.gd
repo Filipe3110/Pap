@@ -45,7 +45,26 @@ func _on_task_finished(task_result):
 func on_signup_failed(error_code, message):
 	print("Error code: ", error_code)
 	print("Error message: ", message)
-	%StateLabel.text = "Sign up failed. Error: %s (Code: %s)" % [message, error_code]
+	
+	# Short messages for common errors
+	var short_errors = {
+		"EMAIL_EXISTS": "Email already registered",
+		"INVALID_EMAIL": "Invalid email",
+		"WEAK_PASSWORD": "Weak password (min. 6 chars)",
+		"MISSING_PASSWORD": "Missing password",
+		"MISSING_EMAIL": "Missing email",
+		"INVALID_LOGIN_CREDENTIALS": "Invalid credentials",
+		"OPERATION_NOT_ALLOWED": "Signup disabled",
+		"TOO_MANY_ATTEMPTS_TRY_LATER": "Too many attempts, try later"
+	}
+	
+	# Check if we have a short message for this error
+	var error_key = message.get_slice(":", 0).strip_edges()
+	if short_errors.has(error_key):
+		%StateLabel.text = short_errors[error_key]
+	else:
+		# Fallback to generic error
+		%StateLabel.text = "Signup failed"
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ce6vd4lykf81q"]
+[gd_scene load_steps=24 format=3 uid="uid://ce6vd4lykf81q"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_vhnfe"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_vhnfe"]
@@ -19,12 +19,24 @@
 [ext_resource type="PackedScene" uid="uid://b5eslcey74iuq" path="res://Bonecos/Player1/mon_player_1.tscn" id="11_2s7iu"]
 [ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_f3cpy"]
 [ext_resource type="PackedScene" uid="uid://c1rg1fssjeian" path="res://Bonecos/Player1/pir_player_1.tscn" id="12_ayw32"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="18_sl560"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
 size = Vector2(81, 661.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsbh1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_sl560")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Mapa Espço" type="Node2D"]
 script = ExtResource("1_vhnfe")
@@ -178,6 +190,12 @@ texture = ExtResource("9_7cq1f")
 position = Vector2(776, 188)
 texture = ExtResource("6_7cq1f")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vitoria"]
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
+sprite_frames = SubResource("SpriteFrames_jsbh1")
+autoplay = "default"
+
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]
 offset_top = -3.0
 offset_right = 1152.0
@@ -248,6 +266,3 @@ script = ExtResource("11_f3cpy")
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

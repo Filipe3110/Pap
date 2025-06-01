@@ -27,7 +27,7 @@ size = Vector2(3004, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
 size = Vector2(81, 661.75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xndh6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnn64"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -190,10 +190,10 @@ texture = ExtResource("17_qeul5")
 position = Vector2(776, 188)
 texture = ExtResource("14_8ywxa")
 
-[node name="A1" type="AnimatedSprite2D" parent="Vitoria"]
-position = Vector2(392, 417.5)
-scale = Vector2(4.19565, 3.59231)
-sprite_frames = SubResource("SpriteFrames_xndh6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vitoria"]
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
+sprite_frames = SubResource("SpriteFrames_fnn64")
 autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]

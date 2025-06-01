@@ -1,11 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://kr1r4fso0jvg"]
+[gd_scene load_steps=9 format=3 uid="uid://kr1r4fso0jvg"]
 
 [ext_resource type="Script" uid="uid://bkb1qdlksjdat" path="res://Scripts/UI/new_account.gd" id="1_j25qx"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_t7q4i"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="2_j25qx"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="4_oluhd"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_741bd"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="5_iwnpw"]
 [ext_resource type="Texture2D" uid="uid://cbgts0dcl7p56" path="res://Assets/BtFundos/Butõespequeno.png" id="6_iwnpw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdbki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oluhd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="New_account" type="Control"]
 layout_mode = 3
@@ -24,6 +36,12 @@ texture = ExtResource("1_t7q4i")
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(776, 188)
 texture = ExtResource("2_j25qx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
+sprite_frames = SubResource("SpriteFrames_xdbki")
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

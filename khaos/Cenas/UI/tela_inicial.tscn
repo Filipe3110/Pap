@@ -158,8 +158,8 @@ autoplay = true
 bus = &"Music"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(392, 417.5)
-scale = Vector2(4.19565, 3.59231)
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
 sprite_frames = SubResource("SpriteFrames_mxej6")
 autoplay = "default"
 frame_progress = 0.311928

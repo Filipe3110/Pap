@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_ub1nx"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="2_4aw55"]
 [ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="2_ub1nx"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="3_yobii"]
+[ext_resource type="PackedScene" uid="uid://cirx2luanlpuh" path="res://Bonecos/Enemy/monenemy.tscn" id="4_afcsc"]
 [ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="6_ub1nx"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="7_7errg"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_gkdv5"]
@@ -30,7 +30,7 @@ texture = ExtResource("2_ub1nx")
 position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("3_yobii")]
+[node name="Enemy" parent="." instance=ExtResource("4_afcsc")]
 position = Vector2(1324, 410)
 scale = Vector2(4, 4)
 

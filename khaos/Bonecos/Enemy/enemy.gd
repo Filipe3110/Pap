@@ -132,7 +132,7 @@ func Enemy_receber_dano(dano):
 	if not barra_de_vida.has_method("receber_dano"):
 		return
 	
-	barra_de_vida.receber_dano(dano)
+	barra_de_vida.receber_dano(2*dano)
 	modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	modulate = Color.WHITE

@@ -26,7 +26,7 @@ const CENAS_MAPAS = {
 	"mapa_1": "res://Mapas/mapa_espço.tscn",
 	"mapa_2": "res://Mapas/mapa_montanhanheve.tscn", 
 	"mapa_3": "res://Mapas/mapa_barco.tscn",
-	"mapa_4": "res://Mapas/mapa_montanhanheve.tscn"
+	"mapa_4": "res://Mapas/mapa_deserto.tscn"
 }
 
 func _ready():
@@ -94,7 +94,7 @@ func tentar_carregar_mapa(id_mapa):
 		carregar_cena_com_loading(CENAS_MAPAS[id_mapa])
 	else:
 		var numero_mapa = id_mapa.split("_")[1]
-		lbl_status.text = "Mapa %s bloqueado!" % numero_mapa
+		lbl_status.text = "Locked Map %s !" % numero_mapa
 		var tween = create_tween()
 		tween.tween_property(lbl_status, "modulate", Color(1, 0, 0), 0.2)
 		tween.tween_property(lbl_status, "modulate", Color(1, 1, 1), 0.2)
@@ -125,6 +125,6 @@ func _on_mapa_3_mouse_exited() -> void:
 
 func _on_mapa_4_mouse_entered() -> void:
 	$"4".color = Color(0.7, 0.7, 0.7)
-
+	
 func _on_mapa_4_mouse_exited() -> void:
-	$"4".modulate = Color(1, 1, 1)
+	$"4".color = Color(1, 1, 1)

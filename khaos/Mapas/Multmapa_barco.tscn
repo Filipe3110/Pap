@@ -27,7 +27,7 @@ size = Vector2(3004, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwa4g"]
 size = Vector2(81, 661.75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xndh6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddeq4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -190,10 +190,10 @@ texture = ExtResource("9_fep56")
 position = Vector2(776, 188)
 texture = ExtResource("6_3d3wu")
 
-[node name="A1" type="AnimatedSprite2D" parent="Vitoria"]
-position = Vector2(392, 417.5)
-scale = Vector2(4.19565, 3.59231)
-sprite_frames = SubResource("SpriteFrames_xndh6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vitoria"]
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
+sprite_frames = SubResource("SpriteFrames_ddeq4")
 autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]
@@ -266,6 +266,3 @@ script = ExtResource("11_l6p0e")
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Change_map" to="." method="_on_change_map_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

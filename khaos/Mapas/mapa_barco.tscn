@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dytdhlf6fghp8"]
+[gd_scene load_steps=17 format=3 uid="uid://dytdhlf6fghp8"]
 
 [ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_mv5pj"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_ar5ce"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_ar5ce"]
-[ext_resource type="PackedScene" uid="uid://cfg701xph710e" path="res://Bonecos/Enemy/enemy.tscn" id="4_rw12q"]
+[ext_resource type="PackedScene" uid="uid://dlqt3dy7yqg7h" path="res://Bonecos/Enemy/pirenemy.tscn" id="4_ar5ce"]
 [ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_rjnsf"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="6_pgc72"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_e5h3u"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_6neya"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_8de5f"]
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_lx5nw"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="10_rw12q"]
 [ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_hxq0t"]
 [ext_resource type="AudioStream" uid="uid://ypfy6n0gr008" path="res://Assets/Msc/victorymale-version-230553.mp3" id="12_ar5ce"]
 
@@ -18,6 +19,17 @@ size = Vector2(3004, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgc72"]
 size = Vector2(81, 661.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw12q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_rw12q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Mapa Barco" type="Node2D"]
 script = ExtResource("1_mv5pj")
@@ -30,7 +42,7 @@ texture = ExtResource("2_ar5ce")
 position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("4_rw12q")]
+[node name="Enemy" parent="." instance=ExtResource("4_ar5ce")]
 position = Vector2(1324, 410)
 scale = Vector2(4, 4)
 
@@ -121,7 +133,6 @@ visible = false
 
 [node name="Vitoria" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
 position = Vector2(576.75, 350)
@@ -131,6 +142,12 @@ texture = ExtResource("9_8de5f")
 [node name="Logo" type="Sprite2D" parent="Vitoria"]
 position = Vector2(776, 188)
 texture = ExtResource("6_pgc72")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vitoria"]
+position = Vector2(393.174, 401.36)
+scale = Vector2(4.84782, 4.08423)
+sprite_frames = SubResource("SpriteFrames_rw12q")
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]
 offset_top = -3.0
@@ -208,5 +225,5 @@ bus = &"SFX"
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_change_map_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
