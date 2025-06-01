@@ -126,6 +126,8 @@ func p2_receber_dano(dano):
 		dano = dano / 2  
 	
 	barra_de_vida.receber_dano(dano) 
-	
+	modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
 	await get_tree().create_timer(.5).timeout
 	in_hit_cooldown = false

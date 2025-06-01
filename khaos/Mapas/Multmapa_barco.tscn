@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://b83f4f7wptg58"]
+[gd_scene load_steps=24 format=3 uid="uid://b83f4f7wptg58"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_yjd12"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_3mk50"]
 [ext_resource type="PackedScene" uid="uid://chpohav3iist1" path="res://Bonecos/Player2/ex_player_2.tscn" id="3_ajylm"]
+[ext_resource type="PackedScene" uid="uid://chfdekplfre2n" path="res://Bonecos/Player2/mum_player_2.tscn" id="3_ddeq4"]
 [ext_resource type="PackedScene" uid="uid://ccc0362diyosh" path="res://Bonecos/Player2/pir_player_2.tscn" id="3_ilko3"]
 [ext_resource type="PackedScene" uid="uid://dg4s4y01dai02" path="res://Bonecos/Player2/player_2.tscn" id="3_lql06"]
 [ext_resource type="PackedScene" uid="uid://p7fsfb8rfk78" path="res://Bonecos/Player2/mon_player_2.tscn" id="3_tmux7"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="6_3d3wu"]
 [ext_resource type="PackedScene" uid="uid://co25j40g8ul54" path="res://Bonecos/Player1/ex_player_1.tscn" id="6_xndh6"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="7_xndh6"]
+[ext_resource type="PackedScene" uid="uid://wmdaq42ibwlv" path="res://Bonecos/Player1/mum_player_1.tscn" id="8_l6p0e"]
 [ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_tmux7"]
 [ext_resource type="PackedScene" uid="uid://b5eslcey74iuq" path="res://Bonecos/Player1/mon_player_1.tscn" id="9_ddeq4"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_fep56"]
@@ -47,6 +49,9 @@ texture = ExtResource("2_3mk50")
 position = Vector2(1251, 430)
 scale = Vector2(4, 4)
 
+[node name="mumPlayer2" parent="Player2" instance=ExtResource("3_ddeq4")]
+visible = false
+
 [node name="monPlayer2" parent="Player2" instance=ExtResource("3_tmux7")]
 visible = false
 
@@ -62,6 +67,8 @@ visible = false
 [node name="Player1" type="Node2D" parent="."]
 position = Vector2(845, 419)
 scale = Vector2(4, 4)
+
+[node name="mumPlayer1" parent="Player1" instance=ExtResource("8_l6p0e")]
 
 [node name="exPlayer1" parent="Player1" instance=ExtResource("6_xndh6")]
 visible = false

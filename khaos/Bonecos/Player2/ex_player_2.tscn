@@ -1,10 +1,11 @@
-[gd_scene load_steps=137 format=3 uid="uid://chpohav3iist1"]
+[gd_scene load_steps=138 format=3 uid="uid://chpohav3iist1"]
 
 [ext_resource type="Script" uid="uid://blg1ejdwu05yo" path="res://Bonecos/Player2/player_2.gd" id="1_a586y"]
 [ext_resource type="Texture2D" uid="uid://3cpqgxl2vg54" path="res://Bonecos/Player/player_sp/exbaixo.png" id="2_ofp3o"]
 [ext_resource type="Texture2D" uid="uid://ih5pn0p1sl0u" path="res://Bonecos/Player/player_sp/exs2baixo.png" id="3_q8c8l"]
 [ext_resource type="Texture2D" uid="uid://db1mip0khl88s" path="res://Bonecos/Player/player_sp/exss2baixo.png" id="4_7bkam"]
 [ext_resource type="Texture2D" uid="uid://b76h4pmppsv2x" path="res://Bonecos/Player/player_sp/exPlayer id1.png" id="5_o67ae"]
+[ext_resource type="Texture2D" uid="uid://jnqm4bqg2r7h" path="res://Bonecos/Player/player_sp/exblock.png" id="5_ofp3o"]
 [ext_resource type="Texture2D" uid="uid://cr8tsseia28ix" path="res://Bonecos/Player/player_sp/exPlayer id2.png" id="6_j7qhe"]
 [ext_resource type="Texture2D" uid="uid://c23u4nm7mop57" path="res://Bonecos/Player/player_sp/exsalto.png" id="7_srdcc"]
 [ext_resource type="Texture2D" uid="uid://b26jibsvrwgso" path="res://Bonecos/Player/player_sp/exwalk1.png" id="8_ru34y"]
@@ -988,6 +989,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"baixo_soco_esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ofp3o")
+}],
+"loop": true,
+"name": &"block",
 "speed": 5.0
 }, {
 "frames": [{

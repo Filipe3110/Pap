@@ -106,6 +106,8 @@ func get_borda_por_mapa(mapa: String) -> ColorRect:
 # Função auxiliar para obter o ColorRect da borda pelo nome do personagem
 func get_borda_por_personagem(pers: String) -> ColorRect:
 	match pers:
+		"Pers":
+			return $PersonagensContainer/BordaP1
 		"Pers1":
 			return $PersonagensContainer/BordaP1
 		"Pers2":
@@ -155,6 +157,17 @@ func _on_mapa_4_mouse_exited():
 	atualizar_borda_mapa("res://Mapas/Multmapa_deserto.tscn", $Borda4)
 
 # Hover functions para todos personagens
+func _on_pers_mouse_entered():
+	if fase_selecao == 2 and jogador_atual == 1:
+		$PersonagensContainer/BordaP.color = COR_P1
+	elif fase_selecao == 2 and jogador_atual == 2:
+		$PersonagensContainer/BordaP.color = COR_P2
+
+func _on_pers_mouse_exited():
+	atualizar_borda_personagem("Pers", $PersonagensContainer/BordaP)
+
+
+
 func _on_pers_1_mouse_entered():
 	if fase_selecao == 2 and jogador_atual == 1:
 		$PersonagensContainer/BordaP1.color = COR_P1
@@ -286,6 +299,9 @@ func _on_mapa_4_pressed():
 	selecionar_mapa("res://Mapas/Multmapa_deserto.tscn")
 
 # Botões dos personagens ligados no editor para chamar essa função
+func _on_pers_pressed() -> void:
+	selecionar_personagem("Pers")
+	
 func _on_pers_1_pressed():
 	selecionar_personagem("Pers1")
 

@@ -109,6 +109,9 @@ func _quando_animacao_finalizar(anim_name):
 
 func _on_soco_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("inimigo"):
+		
+		print("Algo entrou na área de soco: ", body.name)
+
 		if combo[contcombo] == "soco_direita" or combo[contcombo] == "soco_esquerda":
 			body.call("Enemy_receber_dano", 5)  
 		elif combo[contcombo] == "uppercut":
@@ -129,7 +132,9 @@ func Player_receber_dano(dano):
 		dano = dano / 2  
 	
 	barra_de_vida.receber_dano(dano) 
-	
+	modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
 	await get_tree().create_timer(.5).timeout
 	in_hit_cooldown = false
 	

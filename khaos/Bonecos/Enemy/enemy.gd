@@ -3,7 +3,7 @@ extends CharacterBody2D
 const VELOCIDADE = 300.0
 const FORCA_PULO = -400.0
 const GRAVIDADE = 900.0
-const DISTANCIA_MINIMA = 50.0  # Distância mínima do jogador
+const DISTANCIA_MINIMA = 200.0  # Distância mínima do jogador
 
 var esta_pulando := false
 var esta_atacando := false
@@ -133,7 +133,9 @@ func Enemy_receber_dano(dano):
 		return
 	
 	barra_de_vida.receber_dano(dano)
-	
+	modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE
 	await get_tree().create_timer(.5).timeout
 	in_hit_cooldown = false
 

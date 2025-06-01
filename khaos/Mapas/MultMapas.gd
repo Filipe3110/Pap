@@ -121,7 +121,9 @@ func personagens():
 		$Player1/pirPlayer1.visible = true
 	elif Global.personagem_jogador1 == "Pers3":
 		$Player1/monPlayer1.visible = true
-	elif Global.personagem_jogador1 in ["Pers4", "Pers5"]:
+	elif Global.personagem_jogador1 == "Pers4":
+		$Player1/mumPlayer1.visible = true
+	elif Global.personagem_jogador1 == "Pers":
 		$Player1/Player1.visible = true
 		
 	if Global.personagem_jogador2 == "Pers1":
@@ -130,5 +132,7 @@ func personagens():
 		$Player2/pirPlayer2.visible = true
 	elif Global.personagem_jogador2 == "Pers3":
 		$Player2/monPlayer2.visible = true
-	elif Global.personagem_jogador2 in ["Pers4", "Pers5"]:
+	elif Global.personagem_jogador2 == "Pers4":
+		$Player2/mumPlayer2.visible = true
+	elif Global.personagem_jogador2 == "Pers":
 		$Player2/Player2.visible = true
