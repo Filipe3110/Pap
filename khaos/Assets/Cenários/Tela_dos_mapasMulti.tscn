@@ -1,62 +1,93 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgma4jqnsfj0r"]
+[gd_scene load_steps=17 format=3 uid="uid://bgma4jqnsfj0r"]
 
-[ext_resource type="Script" uid="uid://ckwyboqaeemqc" path="res://Scripts/Multijogador/tela_dos_mapas_multi.gd" id="1_5ycn8"]
-[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="1_tqfpy"]
-[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_2l8wv"]
-[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="4_5ycn8"]
-[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon1.png" id="4_8ifip"]
-[ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_favhp"]
-[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_8ifip"]
-[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="6_t7vir"]
-[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_favhp"]
+[ext_resource type="Script" uid="uid://ckwyboqaeemqc" path="res://Scripts/Multijogador/tela_dos_mapas_multi.gd" id="1_6iu3a"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_2f60m"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_cmfjr"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="4_0svdu"]
+[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="5_us1hs"]
+[ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="6_k27lp"]
+[ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="7_u3asi"]
+[ext_resource type="Texture2D" uid="uid://ctiqm3goh4b5" path="res://Assets/Cenários/Deserto.png" id="8_dloyv"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="9_7wsur"]
+[ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="10_kywx2"]
+[ext_resource type="Texture2D" uid="uid://cg60ismalfsu8" path="res://Assets/icons/exIcon.png" id="11_dergu"]
+[ext_resource type="Texture2D" uid="uid://b7rgr3gru31ca" path="res://Assets/icons/pirIcon.png" id="12_kkak8"]
+[ext_resource type="Texture2D" uid="uid://dlaj884ak64jp" path="res://Assets/icons/monIcon.png" id="13_1wqhh"]
+[ext_resource type="Texture2D" uid="uid://djt436axwt5eu" path="res://Assets/icons/mumIcon.png" id="14_yg3cj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6gi27"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8ifip")
+"texture": ExtResource("12_kkak8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0svdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1wqhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dergu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yg3cj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 0.2
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yhwyl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6iu3a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8ifip")
+"texture": ExtResource("13_1wqhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0svdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kkak8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dergu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yg3cj")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.2
 }]
 
 [node name="Multiplayermapas" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5ycn8")
+script = ExtResource("1_6iu3a")
 
 [node name="Tela" type="Sprite2D" parent="."]
 position = Vector2(576.999, 348.5)
 scale = Vector2(1.61852, 1.41667)
-texture = ExtResource("1_tqfpy")
+texture = ExtResource("2_2f60m")
 
 [node name="Khaoslogo" type="Sprite2D" parent="."]
 position = Vector2(572, 64.5)
 scale = Vector2(0.406, 0.298)
-texture = ExtResource("3_2l8wv")
+texture = ExtResource("3_cmfjr")
 
 [node name="A1" type="AnimatedSprite2D" parent="."]
-position = Vector2(392, 417.5)
+position = Vector2(341, 447.5)
 scale = Vector2(4.19565, 3.59231)
 sprite_frames = SubResource("SpriteFrames_6gi27")
 autoplay = "default"
+frame_progress = 0.97215
 
 [node name="A2" type="AnimatedSprite2D" parent="."]
-position = Vector2(765, 417)
+position = Vector2(815, 447.5)
 scale = Vector2(4.196, 3.592)
-sprite_frames = SubResource("SpriteFrames_yhwyl")
+sprite_frames = SubResource("SpriteFrames_6iu3a")
+autoplay = "default"
 flip_h = true
 
 [node name="Borda1" type="ColorRect" parent="."]
@@ -69,7 +100,7 @@ offset_bottom = 217.0
 [node name="FundoEspaço" type="Sprite2D" parent="Borda1"]
 position = Vector2(99.625, 60)
 scale = Vector2(0.102, 0.175)
-texture = ExtResource("4_5ycn8")
+texture = ExtResource("5_us1hs")
 
 [node name="Mapa1" type="Button" parent="Borda1"]
 layout_mode = 0
@@ -88,7 +119,7 @@ offset_bottom = 263.0
 [node name="Fundomontanha" type="Sprite2D" parent="Borda2"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
-texture = ExtResource("5_favhp")
+texture = ExtResource("6_k27lp")
 
 [node name="Mapa2" type="Button" parent="Borda2"]
 layout_mode = 0
@@ -113,10 +144,10 @@ offset_bottom = 114.0
 focus_mode = 0
 flat = true
 
-[node name="Fundomontanha" type="Sprite2D" parent="Borda3"]
+[node name="Barco" type="Sprite2D" parent="Borda3"]
 position = Vector2(99.875, 60.25)
 scale = Vector2(0.102, 0.175)
-texture = ExtResource("6_8ifip")
+texture = ExtResource("7_u3asi")
 
 [node name="Borda4" type="ColorRect" parent="."]
 layout_mode = 0
@@ -125,20 +156,17 @@ offset_top = 96.0
 offset_right = 1095.0
 offset_bottom = 216.0
 
-[node name="Mapas unlocked" type="ColorRect" parent="Borda4"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 198.0
-offset_bottom = 118.0
-color = Color(0.207512, 0.207512, 0.207512, 1)
-
 [node name="Mapa4" type="Button" parent="Borda4"]
 layout_mode = 0
 offset_right = 199.0
 offset_bottom = 118.0
 focus_mode = 0
 flat = true
+
+[node name="Deserto" type="Sprite2D" parent="Borda4/Mapa4"]
+position = Vector2(99.875, 60.25)
+scale = Vector2(0.102, 0.175)
+texture = ExtResource("8_dloyv")
 
 [node name="BordaR" type="ColorRect" parent="."]
 layout_mode = 0
@@ -171,7 +199,7 @@ offset_top = 613.0
 offset_right = 618.0
 offset_bottom = 652.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("6_t7vir")
+theme_override_fonts/font = ExtResource("9_7wsur")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 flat = true
@@ -183,13 +211,13 @@ offset_top = 425.0
 offset_right = 741.0
 offset_bottom = 518.0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("6_t7vir")
+theme_override_fonts/font = ExtResource("9_7wsur")
 theme_override_font_sizes/font_size = 60
 text = "Play"
 flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_favhp")
+stream = ExtResource("10_kywx2")
 autoplay = true
 bus = &"Music"
 
@@ -206,12 +234,17 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 78.0
 offset_bottom = 68.0
-color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+color = Color(0.0980392, 0.0980392, 0.270588, 1)
 
-[node name="Icon1" type="Sprite2D" parent="PersonagensContainer/BordaP1"]
-position = Vector2(41.375, 38.875)
-scale = Vector2(0.408967, 0.44423)
-texture = ExtResource("4_8ifip")
+[node name="Logo" type="Sprite2D" parent="PersonagensContainer/BordaP1"]
+position = Vector2(40.75, 36)
+scale = Vector2(0.112199, 0.0930851)
+texture = ExtResource("3_cmfjr")
+
+[node name="Icon" type="Sprite2D" parent="PersonagensContainer/BordaP1"]
+position = Vector2(40.8288, 42)
+scale = Vector2(0.45214, 0.458333)
+texture = ExtResource("11_dergu")
 
 [node name="Pers1" type="Button" parent="PersonagensContainer/BordaP1"]
 layout_mode = 0
@@ -231,12 +264,17 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 78.0
 offset_bottom = 68.0
-color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+color = Color(0.547606, 0.595174, 0, 1)
 
-[node name="Icon1" type="Sprite2D" parent="PersonagensContainer/BordaP2"]
-position = Vector2(41.375, 38.875)
-scale = Vector2(0.408967, 0.44423)
-texture = ExtResource("4_8ifip")
+[node name="Logo" type="Sprite2D" parent="PersonagensContainer/BordaP2"]
+position = Vector2(40.75, 36)
+scale = Vector2(0.112199, 0.0930851)
+texture = ExtResource("3_cmfjr")
+
+[node name="Icon" type="Sprite2D" parent="PersonagensContainer/BordaP2"]
+position = Vector2(41, 39.9457)
+scale = Vector2(0.4625, 0.458226)
+texture = ExtResource("12_kkak8")
 
 [node name="Pers2" type="Button" parent="PersonagensContainer/BordaP2"]
 layout_mode = 0
@@ -256,12 +294,17 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 78.0
 offset_bottom = 68.0
-color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+color = Color(0.235503, 0.594364, 0.800922, 1)
 
-[node name="Icon1" type="Sprite2D" parent="PersonagensContainer/BordaP3"]
-position = Vector2(41.375, 38.875)
-scale = Vector2(0.408967, 0.44423)
-texture = ExtResource("4_8ifip")
+[node name="Logo" type="Sprite2D" parent="PersonagensContainer/BordaP3"]
+position = Vector2(40.75, 36)
+scale = Vector2(0.112199, 0.0930851)
+texture = ExtResource("3_cmfjr")
+
+[node name="Icon" type="Sprite2D" parent="PersonagensContainer/BordaP3"]
+position = Vector2(40.5, 39.5)
+scale = Vector2(0.46875, 0.493243)
+texture = ExtResource("13_1wqhh")
 
 [node name="Pers3" type="Button" parent="PersonagensContainer/BordaP3"]
 layout_mode = 0
@@ -281,12 +324,17 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 78.0
 offset_bottom = 68.0
-color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+color = Color(0.4584, 0.141577, 0.0429718, 1)
+
+[node name="Logo" type="Sprite2D" parent="PersonagensContainer/BordaP4"]
+position = Vector2(40.75, 36)
+scale = Vector2(0.112199, 0.0930851)
+texture = ExtResource("3_cmfjr")
 
 [node name="Icon1" type="Sprite2D" parent="PersonagensContainer/BordaP4"]
-position = Vector2(41.375, 38.875)
-scale = Vector2(0.408967, 0.44423)
-texture = ExtResource("4_8ifip")
+position = Vector2(44.5, 39.5)
+scale = Vector2(0.50625, 0.493244)
+texture = ExtResource("14_yg3cj")
 
 [node name="Pers4" type="Button" parent="PersonagensContainer/BordaP4"]
 layout_mode = 0
@@ -309,10 +357,15 @@ offset_right = 78.0
 offset_bottom = 68.0
 color = Color(0.0962047, 0.0962048, 0.0962047, 1)
 
+[node name="Logo" type="Sprite2D" parent="PersonagensContainer/BordaP"]
+position = Vector2(40.75, 36)
+scale = Vector2(0.112199, 0.0930851)
+texture = ExtResource("3_cmfjr")
+
 [node name="Icon1" type="Sprite2D" parent="PersonagensContainer/BordaP"]
 position = Vector2(41.375, 38.875)
 scale = Vector2(0.408967, 0.44423)
-texture = ExtResource("4_8ifip")
+texture = ExtResource("4_0svdu")
 
 [node name="Pers" type="Button" parent="PersonagensContainer/BordaP"]
 layout_mode = 0
@@ -332,6 +385,7 @@ flat = true
 [connection signal="pressed" from="Borda3/Mapa3" to="." method="_on_mapa_3_pressed"]
 [connection signal="mouse_entered" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_entered"]
 [connection signal="mouse_exited" from="Borda4/Mapa4" to="." method="_on_mapa_4_mouse_exited"]
+[connection signal="pressed" from="Borda4/Mapa4" to="." method="_on_mapa_4_pressed"]
 [connection signal="mouse_entered" from="BordaR/MapaR" to="." method="_on_mapa_r_mouse_entered"]
 [connection signal="mouse_exited" from="BordaR/MapaR" to="." method="_on_mapa_r_mouse_exited"]
 [connection signal="pressed" from="BordaR/MapaR" to="." method="_on_mapa_r_pressed"]

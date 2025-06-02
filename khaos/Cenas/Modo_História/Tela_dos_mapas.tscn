@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=16 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
 [ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="3_selwn"]
-[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon1.png" id="4_77h5k"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="4_77h5k"]
 [ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="4_ad52v"]
+[ext_resource type="Texture2D" uid="uid://b7rgr3gru31ca" path="res://Assets/icons/pirIcon.png" id="4_w54br"]
 [ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="5_ngor3"]
+[ext_resource type="Texture2D" uid="uid://dlaj884ak64jp" path="res://Assets/icons/monIcon.png" id="6_0u8yt"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="6_77h5k"]
+[ext_resource type="Texture2D" uid="uid://cg60ismalfsu8" path="res://Assets/icons/exIcon.png" id="7_i4uiw"]
+[ext_resource type="Texture2D" uid="uid://djt436axwt5eu" path="res://Assets/icons/mumIcon.png" id="8_2dhq4"]
 [ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_ngor3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ch2ly"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty068"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -18,18 +22,27 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 0.2
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u74l1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6m7ac"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_77h5k")
+"texture": ExtResource("7_i4uiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0u8yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w54br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2dhq4")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.2
 }]
 
 [node name="Tela_dos_mapas" type="Control"]
@@ -48,15 +61,16 @@ scale = Vector2(0.406, 0.298)
 texture = ExtResource("3_selwn")
 
 [node name="A1" type="AnimatedSprite2D" parent="."]
-position = Vector2(392, 417.5)
+position = Vector2(341, 447.5)
 scale = Vector2(4.19565, 3.59231)
-sprite_frames = SubResource("SpriteFrames_ch2ly")
+sprite_frames = SubResource("SpriteFrames_ty068")
 autoplay = "default"
 
 [node name="A2" type="AnimatedSprite2D" parent="."]
-position = Vector2(765, 417)
+position = Vector2(815, 447.5)
 scale = Vector2(4.196, 3.592)
-sprite_frames = SubResource("SpriteFrames_u74l1")
+sprite_frames = SubResource("SpriteFrames_6m7ac")
+autoplay = "default"
 flip_h = true
 
 [node name="1" type="ColorRect" parent="."]

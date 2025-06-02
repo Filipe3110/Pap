@@ -15,7 +15,8 @@ var fase_selecao: int = 1  # 1 = seleção de mapa, 2 = seleção de personagem
 var jogador_atual: int = 1  # Começa no Player 1
 
 @onready var botao_play = $Play
-@onready var personagens_container = $PersonagensContainer  # Container com os personagens     
+@onready var personagens_container = $PersonagensContainer  # Container com os personagens   
+
 
 # Mapas disponíveis (4 mapas)
 var mapas = [
@@ -107,7 +108,7 @@ func get_borda_por_mapa(mapa: String) -> ColorRect:
 func get_borda_por_personagem(pers: String) -> ColorRect:
 	match pers:
 		"Pers":
-			return $PersonagensContainer/BordaP1
+			return $PersonagensContainer/BordaP
 		"Pers1":
 			return $PersonagensContainer/BordaP1
 		"Pers2":

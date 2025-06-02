@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0vjx1v46vuqw"]
 
-[ext_resource type="PackedScene" uid="uid://bgma4jqnsfj0r" path="res://Cenas/Multijogador/Tela_dos_mapasMulti.tscn" id="1_0jai1"]
+[ext_resource type="PackedScene" uid="uid://bgma4jqnsfj0r" path="res://Assets/Cenários/Tela_dos_mapasMulti.tscn" id="1_0jai1"]
 
 [node name="Multijogador" type="Node2D"]
 
