@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://o8fosq6s226y"]
+[gd_scene load_steps=20 format=3 uid="uid://o8fosq6s226y"]
 
 [ext_resource type="Script" uid="uid://dnccu2rpj1gds" path="res://Scripts/Modo_História/tela_dos_mapas.gd" id="1_8hpvv"]
 [ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="2_xqthu"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://djt436axwt5eu" path="res://Assets/icons/mumIcon.png" id="8_2dhq4"]
 [ext_resource type="AudioStream" uid="uid://cq0fi4c1o7ff8" path="res://Assets/Msc/edm-gaming-music-335408.mp3" id="8_ngor3"]
 [ext_resource type="Texture2D" uid="uid://ctiqm3goh4b5" path="res://Assets/Cenários/Deserto.png" id="12_0u8yt"]
+[ext_resource type="Texture2D" uid="uid://cgpubs8ahrsnl" path="res://Assets/icons/Reload1.png" id="15_2dhq4"]
+[ext_resource type="Texture2D" uid="uid://d2e17s0evt107" path="res://Assets/icons/Reload2.png" id="16_ty068"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ty068"]
 animations = [{
@@ -44,6 +46,25 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 0.2
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buk5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2dhq4")
+}],
+"loop": true,
+"name": &"id",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ty068")
+}],
+"loop": true,
+"name": &"idd",
+"speed": 5.0
 }]
 
 [node name="Tela_dos_mapas" type="Control"]
@@ -206,6 +227,22 @@ stream = ExtResource("8_ngor3")
 autoplay = true
 bus = &"Music"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(28.375, 26)
+scale = Vector2(0.0865001, 0.0879999)
+sprite_frames = SubResource("SpriteFrames_buk5j")
+animation = &"idd"
+autoplay = "id"
+
+[node name="Reload" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 43.0
+offset_bottom = 41.0
+focus_mode = 0
+flat = true
+
 [connection signal="mouse_entered" from="1/Mapa1" to="." method="_on_mapa_1_mouse_entered"]
 [connection signal="mouse_exited" from="1/Mapa1" to="." method="_on_mapa_1_mouse_exited"]
 [connection signal="pressed" from="1/Mapa1" to="." method="_on_mapa_1_pressed"]
@@ -219,3 +256,6 @@ bus = &"Music"
 [connection signal="mouse_exited" from="4/Mapa4" to="." method="_on_mapa_4_mouse_exited"]
 [connection signal="pressed" from="4/Mapa4" to="." method="_on_mapa_4_pressed"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="mouse_entered" from="Reload" to="." method="_on_reload_mouse_entered"]
+[connection signal="mouse_exited" from="Reload" to="." method="_on_reload_mouse_exited"]
+[connection signal="pressed" from="Reload" to="." method="_on_reload_pressed"]

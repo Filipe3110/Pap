@@ -128,3 +128,15 @@ func _on_mapa_4_mouse_entered() -> void:
 	
 func _on_mapa_4_mouse_exited() -> void:
 	$"4".color = Color(1, 1, 1)
+
+@onready var rel = $AnimatedSprite2D
+
+
+func _on_reload_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/Modo_História/Tela_dos_mapas.tscn")
+
+func _on_reload_mouse_entered() -> void:
+	rel.play("idd")
+
+func _on_reload_mouse_exited() -> void:
+	rel.play("id")

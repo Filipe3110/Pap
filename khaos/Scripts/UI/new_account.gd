@@ -1,6 +1,7 @@
 extends Control
 
 var COLLECTION_ID = "khaos_stats"
+@onready var transição = $"Transição/AnimationPlayer"
 
 func _ready():
 	Firebase.Auth.connect("signup_succeeded", Callable(self, "on_signup_succeeded"))
@@ -19,6 +20,9 @@ func on_signup_succeeded(auth):
 	%StateLabel.text = "Sign up success!"
 	Firebase.Auth.save_auth(auth)
 	save_data()
+	transição.play("Trasição1")
+	await transição.animation_finished
+	Global.from_authentication = true
 	get_tree().change_scene_to_file("res://Cenas/UI/main.tscn")
 
 func save_data():

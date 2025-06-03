@@ -1,65 +1,66 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0drclnjt7fdc"]
+[gd_scene load_steps=17 format=3 uid="uid://dtwp64gs1usv"]
 
-[ext_resource type="Script" uid="uid://dr22mk2bu7v5x" path="res://Mapas/H2Mapas.gd" id="1_afcsc"]
-[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="2_4aw55"]
-[ext_resource type="Texture2D" uid="uid://c7dd7yo5i6w73" path="res://Assets/Cenários/Montanha da neve.png" id="2_ub1nx"]
-[ext_resource type="PackedScene" uid="uid://cirx2luanlpuh" path="res://Bonecos/Enemy/monenemy.tscn" id="4_afcsc"]
-[ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="6_ub1nx"]
-[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="7_7errg"]
-[ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="7_gkdv5"]
-[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="8_gkdv5"]
-[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_1sdmv"]
-[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="10_67mfi"]
-[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_afcsc"]
-[ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_67mfi"]
-[ext_resource type="AudioStream" uid="uid://ypfy6n0gr008" path="res://Assets/Msc/victorymale-version-230553.mp3" id="12_afcsc"]
+[ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_360m2"]
+[ext_resource type="Texture2D" uid="uid://c8d55aboc1lg4" path="res://Assets/Cenários/espaço.png" id="2_gi46f"]
+[ext_resource type="PackedScene" uid="uid://lhsj0qbyahb3" path="res://Bonecos/Enemy/exenemy.tscn" id="3_ea8so"]
+[ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_hx8d7"]
+[ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="4_jf5l4"]
+[ext_resource type="FontFile" uid="uid://bry6apua5ag3h" path="res://Assets/Fonte/TooMuchInk.ttf" id="5_h6sy4"]
+[ext_resource type="Texture2D" uid="uid://bgmg64qvyuyj5" path="res://Assets/Logo.png" id="5_hx8d7"]
+[ext_resource type="Texture2D" uid="uid://dvpwelbmhq45x" path="res://Assets/BtFundos/Menu pause.png" id="5_rk84j"]
+[ext_resource type="PackedScene" uid="uid://l27ea6n2ywdf" path="res://Cenas/UI/options_ingame.tscn" id="8_gi46f"]
+[ext_resource type="Texture2D" uid="uid://b85vwgmgm8bwx" path="res://Assets/Telas/Tela_sem_nada.jpg" id="9_ea8so"]
+[ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="10_xme7b"]
+[ext_resource type="Script" uid="uid://d4i7ushnn6pxr" path="res://Mapas/story_dynamic_camera.gd" id="11_rk84j"]
+[ext_resource type="AudioStream" uid="uid://ypfy6n0gr008" path="res://Assets/Msc/victorymale-version-230553.mp3" id="12_ea8so"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub1nx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk84j"]
 size = Vector2(3004, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7errg"]
-size = Vector2(110.5, 661.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea8so"]
+size = Vector2(81, 661.75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_omsfs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_df420"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_67mfi")
+"texture": ExtResource("10_xme7b")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
 }]
 
-[node name="Mapa Montanhanheve" type="Node2D"]
-script = ExtResource("1_afcsc")
+[node name="Mapa Espço" type="Node2D"]
+script = ExtResource("1_360m2")
 
-[node name="Fundo montanha" type="Sprite2D" parent="."]
+[node name="Fundo  espaço" type="Sprite2D" parent="."]
 position = Vector2(948, 324)
-texture = ExtResource("2_ub1nx")
+texture = ExtResource("2_gi46f")
 
-[node name="Player" parent="." instance=ExtResource("2_4aw55")]
+[node name="Enemy" parent="." instance=ExtResource("3_ea8so")]
+position = Vector2(1258, 417)
+scale = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("3_hx8d7")]
 position = Vector2(906, 418)
 scale = Vector2(4, 4)
 
-[node name="Enemy" parent="." instance=ExtResource("4_afcsc")]
-position = Vector2(1324, 410)
-scale = Vector2(4, 4)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(0, 3.05176e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1510, 663)
-shape = SubResource("RectangleShape2D_ub1nx")
+shape = SubResource("RectangleShape2D_rk84j")
 
 [node name="Laterais" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1911, 333.125)
-shape = SubResource("RectangleShape2D_7errg")
+shape = SubResource("RectangleShape2D_ea8so")
 
 [node name="Laterais1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(52.75, 316)
-shape = SubResource("RectangleShape2D_7errg")
+position = Vector2(-22, 329)
+shape = SubResource("RectangleShape2D_ea8so")
 
 [node name="Menu_pausa" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -74,12 +75,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MenuPause" type="Sprite2D" parent="Menu_pausa"]
 position = Vector2(570, 371)
-texture = ExtResource("6_ub1nx")
+texture = ExtResource("5_rk84j")
 
 [node name="Logo" type="Sprite2D" parent="Menu_pausa"]
 position = Vector2(572, 48)
 scale = Vector2(0.224398, 0.147099)
-texture = ExtResource("7_7errg")
+texture = ExtResource("5_hx8d7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu_pausa"]
 offset_left = 414.0
@@ -92,7 +93,7 @@ theme_override_constants/separation = 5
 [node name="Back" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Menu •"
 flat = true
@@ -101,7 +102,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Options" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Options •"
 flat = true
@@ -110,7 +111,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Resume" type="Button" parent="Menu_pausa/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Resume •"
 flat = true
@@ -121,14 +122,14 @@ offset_left = 351.0
 offset_top = 194.0
 offset_right = 786.0
 offset_bottom = 299.0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 50
 text = "Paused
 -----------------"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options_ingame" parent="." instance=ExtResource("7_gkdv5")]
+[node name="Options_ingame" parent="." instance=ExtResource("8_gi46f")]
 visible = false
 
 [node name="Vitoria" type="CanvasLayer" parent="."]
@@ -137,16 +138,16 @@ process_mode = 3
 [node name="TelaSemNada" type="Sprite2D" parent="Vitoria"]
 position = Vector2(576.75, 350)
 scale = Vector2(1.61921, 1.42276)
-texture = ExtResource("9_1sdmv")
+texture = ExtResource("9_ea8so")
 
 [node name="Logo" type="Sprite2D" parent="Vitoria"]
 position = Vector2(776, 188)
-texture = ExtResource("7_7errg")
+texture = ExtResource("5_hx8d7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Vitoria"]
 position = Vector2(393.174, 401.36)
 scale = Vector2(4.84782, 4.08423)
-sprite_frames = SubResource("SpriteFrames_omsfs")
+sprite_frames = SubResource("SpriteFrames_df420")
 autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="Vitoria"]
@@ -158,14 +159,14 @@ color = Color(0, 0, 0, 0.631373)
 
 [node name="FundoDoLogin" type="Sprite2D" parent="Vitoria"]
 position = Vector2(788, 477)
-texture = ExtResource("10_afcsc")
+texture = ExtResource("4_jf5l4")
 
 [node name="VitoriaLabel" type="RichTextLabel" parent="Vitoria"]
 offset_left = 633.0
 offset_top = 332.0
 offset_right = 939.0
 offset_bottom = 447.0
-theme_override_fonts/normal_font = ExtResource("8_gkdv5")
+theme_override_fonts/normal_font = ExtResource("5_h6sy4")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "Victory"
@@ -183,7 +184,7 @@ theme_override_constants/separation = 5
 [node name="Back" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Menu •"
 flat = true
@@ -192,7 +193,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Continue" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Continue •
 "
@@ -201,7 +202,7 @@ flat = true
 [node name="Restart" type="Button" parent="Vitoria/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("8_gkdv5")
+theme_override_fonts/font = ExtResource("5_h6sy4")
 theme_override_font_sizes/font_size = 20
 text = "• Restart •"
 flat = true
@@ -213,10 +214,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 1890
 limit_bottom = 650
-script = ExtResource("11_67mfi")
+script = ExtResource("11_rk84j")
 
 [node name="Victory" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_afcsc")
+stream = ExtResource("12_ea8so")
 bus = &"SFX"
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]

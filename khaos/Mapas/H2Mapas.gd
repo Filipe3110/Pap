@@ -13,6 +13,7 @@ extends Node2D
 var is_paused = false
 
 func _ready():
+	Global.set_mapa_atual("mapa_2")
 	victory.process_mode = Node.PROCESS_MODE_ALWAYS
 	conti.visible = false
 	restart.visible = false
@@ -59,7 +60,7 @@ func _on_jogador_morreu(jogador_id):
 	victory.playing = true
 	conti.visible = true
 	restart.visible = false
-	Global.desbloquear_proximo_mapa()
+	Global.desbloquear_proximo_mapa() 
 	vitoria_canvas.visible = true
 	pause_menu.visible = false  
 	options.visible = false     

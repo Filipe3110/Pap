@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b5ypj23ylwabh"]
 
-[ext_resource type="Script" uid="uid://br8flmxycli1q" path="res://Mapas/HMapas.gd" id="1_wukel"]
+[ext_resource type="Script" uid="uid://b7lodujogvedd" path="res://Mapas/H4Mapas.gd" id="1_ojn2t"]
 [ext_resource type="Texture2D" uid="uid://ctiqm3goh4b5" path="res://Assets/Cenários/Deserto.png" id="2_ojn2t"]
 [ext_resource type="PackedScene" uid="uid://di40hisi35iii" path="res://Bonecos/Player/player.tscn" id="3_bo5g7"]
 [ext_resource type="PackedScene" uid="uid://bmwrvvt8itupe" path="res://Bonecos/Enemy/mumenemy.tscn" id="4_wukel"]
@@ -32,7 +32,7 @@ animations = [{
 }]
 
 [node name="Mapa Deserto" type="Node2D"]
-script = ExtResource("1_wukel")
+script = ExtResource("1_ojn2t")
 
 [node name="Fundo montanha" type="Sprite2D" parent="."]
 position = Vector2(948, 324)
@@ -223,3 +223,6 @@ bus = &"SFX"
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Vitoria/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal jogador_morreu(jogador_id)  # Adicione esta linha
 
 @onready var barra_sprite = $BarraSprite  
 var vida_atual = 1
