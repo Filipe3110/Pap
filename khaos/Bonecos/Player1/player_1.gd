@@ -27,8 +27,6 @@ func _ready():
 		soco_area.connect("body_entered", Callable(self, "_on_soco_area_body_entered"))
 
 func _physics_process(delta: float) -> void:
-	
-	
 	# Aplica gravidade
 	if not is_on_floor():
 		velocity.y += GRAVIDADE * delta
@@ -41,8 +39,23 @@ func _physics_process(delta: float) -> void:
 		velocity.y = FORCA_PULO
 		esta_pulando = true
 
-	# Ataques
-	if Input.is_action_just_pressed("attack") and not esta_bloqueando:
+	# Movimento horizontal - Só permite movimento quando não está atacando
+	var direcao := Input.get_axis("left", "right")
+	
+	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
+		if direcao != 0:
+			velocity.x = direcao * VELOCIDADE
+			if direcao * direcao_atual < 0:  # Inverte a direção
+				direcao_atual = direcao
+				scale.x = -scale.x
+		else:
+			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
+	else:
+		# Durante ataques, trava o movimento horizontal
+		velocity.x = 0
+
+	# Ataques (agora com prioridade e trava o movimento)
+	if Input.is_action_just_pressed("attack") and not esta_bloqueando and not esta_pulando:
 		if Input.is_action_pressed("down") and is_on_floor():
 			iniciar_ataque_baixo()
 		else:
@@ -58,24 +71,13 @@ func _physics_process(delta: float) -> void:
 	if esta_bloqueando:
 		animation_player.play("block")
 
-	# Movimento horizontal
-	var direcao := Input.get_axis("left", "right")
-
-	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
-		if direcao != 0:
-			velocity.x = direcao * VELOCIDADE
-			if direcao * direcao_atual < 0:
-				direcao_atual = direcao
-				scale.x *= -1
-		else:
-			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
-
-		# Animação de movimento
+	# Animação de movimento (só muda se não estiver atacando)
+	if not esta_atacando:
 		if esta_pulando:
 			animation_player.play("jump")
-		elif direcao != 0:
+		elif direcao != 0 and not esta_abaixando and not esta_bloqueando:
 			animation_player.play("run")
-		else:
+		elif not esta_abaixando and not esta_bloqueando:
 			animation_player.play("idle")
 
 	move_and_slide()
@@ -84,19 +86,24 @@ func iniciar_ataque() -> void:
 	if not esta_atacando:
 		esta_atacando = true
 		contcombo = 0
+		velocity.x = 0  # Garante que para completamente ao começar ataque
 	else:
-		contcombo = (contcombo + 1) % combo.size()
-
+		contcombo += 1
+		if contcombo >= combo.size():
+			contcombo = 0
 	animation_player.play(combo[contcombo])
 
 func iniciar_ataque_baixo() -> void:
 	if not esta_atacando:
 		esta_atacando = true
 		contcombo_baixo = 0
+		velocity.x = 0  # Garante que para completamente ao começar ataque
 	else:
-		contcombo_baixo = (contcombo_baixo + 1) % baixo_combo.size()
-
+		contcombo_baixo += 1
+		if contcombo_baixo >= baixo_combo.size():
+			contcombo_baixo = 0
 	animation_player.play(baixo_combo[contcombo_baixo])
+
 
 func _quando_animacao_finalizar(anim_name):
 	if anim_name in combo or anim_name in baixo_combo:

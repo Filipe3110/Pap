@@ -1,5 +1,6 @@
 extends Node
 
+var from_authentication := false
 var COLLECTION_ID = "khaos_stats"
 var music_volume: float = 1.0  
 var sfx_volume: float = 1.0

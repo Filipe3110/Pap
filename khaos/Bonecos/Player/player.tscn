@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cr2073dc7k3tp" path="res://Bonecos/Player/player_sp/SS2.png" id="14_76lrf"]
 [ext_resource type="Texture2D" uid="uid://bqxlcs1rj7shf" path="res://Bonecos/Player/player_sp/SSS2.png" id="15_efx54"]
 [ext_resource type="Texture2D" uid="uid://cxi7622pc8m4x" path="res://Bonecos/Player/player_sp/SSS3.png" id="16_755ss"]
-[ext_resource type="Script" uid="uid://bqffk61cjxkhu" path="res://Barra de vida/Barradevida.gd" id="17_pisgm"]
+[ext_resource type="Script" uid="uid://dmx3t10l06vdl" path="res://Bonecos/Player/Plbarra_de_vida.gd" id="16_hfqjn"]
 [ext_resource type="Texture2D" uid="uid://6vscenwrfkm1" path="res://Barra de vida/Barra de vidaSP/0.png" id="18_qh5jn"]
 [ext_resource type="Texture2D" uid="uid://bpgax6w2gkkwx" path="res://Barra de vida/Barra de vidaSP/1.png" id="19_b8amp"]
 [ext_resource type="Texture2D" uid="uid://cyl1s7o5e2die" path="res://Barra de vida/Barra de vidaSP/2.png" id="20_t6vuh"]
@@ -1415,7 +1415,7 @@ position = Vector2(-3, 0)
 polygon = PackedVector2Array(-8, 52, -23, 52, -14, 33, -14, 13, -13, 5, -11, -2, -17, -15, -13, -20, -4, -26, -1, -34, 5, -37, 12, -34, 14, -28, 22, -21, 22, -9, 20, -2, 14, -2, 7, -8, 2, 4, 16, 20, 19, 23, 21, 40, 23, 49, 11, 49, 10, 29, 1, 23, -12, 49)
 
 [node name="BarraDeVida" type="CanvasLayer" parent="."]
-script = ExtResource("17_pisgm")
+script = ExtResource("16_hfqjn")
 
 [node name="BarraSprite" type="AnimatedSprite2D" parent="BarraDeVida"]
 position = Vector2(250.5, 42.25)

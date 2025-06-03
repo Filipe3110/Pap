@@ -3,11 +3,19 @@ extends Control
 var COLLECTION_ID = "khaos_stats"
 
 @onready var Logout = $LogoutScrn
+@onready var transição = $"Transição/AnimationPlayer"
 
 func _ready():
 	Logout.visible = false
 	load_player_data()
-	
+	if Global.from_authentication:
+		transição.play("Transição1")
+		await transição.animation_finished
+		Global.from_authentication = false  
+	else:
+		$"Transição".visible = false
+	$AudioStreamPlayer2D.play()
+
 	
 	
 

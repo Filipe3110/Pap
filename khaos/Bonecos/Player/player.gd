@@ -40,46 +40,46 @@ func _physics_process(delta: float) -> void:
 		velocity.y = FORCA_PULO
 		esta_pulando = true
 
-	# Ataques
-	if Input.is_action_just_pressed("attack") and not esta_bloqueando:
+	# Movimento horizontal - Só permite movimento quando não está atacando
+	var direcao := Input.get_axis("left", "right")
+	
+	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
+		if direcao != 0:
+			velocity.x = direcao * VELOCIDADE
+			if direcao * direcao_atual < 0:  # Inverte a direção
+				direcao_atual = direcao
+				scale.x = -scale.x
+		else:
+			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
+	else:
+		# Durante ataques, trava o movimento horizontal
+		velocity.x = 0
+
+	# Ataques (agora com prioridade e trava o movimento)
+	if Input.is_action_just_pressed("attack") and not esta_bloqueando and not esta_pulando:
 		if Input.is_action_pressed("down") and is_on_floor():
 			iniciar_ataque_baixo()
 		else:
 			iniciar_ataque()
 
 	# Abaixar
-	if Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_abaixando = true
-		animation_player.play("crouch") 
-	else:
-		esta_abaixando = false
+	esta_abaixando = Input.is_action_pressed("down") and is_on_floor() and not esta_pulando and not esta_atacando
+	if esta_abaixando:
+		animation_player.play("crouch")
 
 	# Bloqueio
-	if Input.is_action_pressed("block") and is_on_floor() and not esta_pulando and not esta_atacando:
-		esta_bloqueando = true
+	esta_bloqueando = Input.is_action_pressed("block") and is_on_floor() and not esta_pulando and not esta_atacando
+	if esta_bloqueando:
 		animation_player.play("block")
-	else:
-		esta_bloqueando = false
 
-	# Movimento horizontal
-	var direcao := Input.get_axis("left", "right")
-
-	if not esta_atacando and not esta_abaixando and not esta_bloqueando:
-		if direcao != 0:
-			velocity.x = direcao * VELOCIDADE
-			if direcao * direcao_atual < 0:
-				direcao_atual = direcao
-				scale.x = -scale.x
-		else:
-			velocity.x = move_toward(velocity.x, 0, VELOCIDADE)
-		
-		# Animação de movimento
-		if esta_pulando and animation_player.current_animation:
-			animation_player.current_animation = "jump"
-		elif direcao != 0:
-			animation_player.current_animation = "run"
-		else:
-			animation_player.current_animation = "idle"
+	# Animação de movimento (só muda se não estiver atacando)
+	if not esta_atacando:
+		if esta_pulando:
+			animation_player.play("jump")
+		elif direcao != 0 and not esta_abaixando and not esta_bloqueando:
+			animation_player.play("run")
+		elif not esta_abaixando and not esta_bloqueando:
+			animation_player.play("idle")
 
 	move_and_slide()
 
@@ -87,6 +87,7 @@ func iniciar_ataque() -> void:
 	if not esta_atacando:
 		esta_atacando = true
 		contcombo = 0
+		velocity.x = 0  # Garante que para completamente ao começar ataque
 	else:
 		contcombo += 1
 		if contcombo >= combo.size():
@@ -97,6 +98,7 @@ func iniciar_ataque_baixo() -> void:
 	if not esta_atacando:
 		esta_atacando = true
 		contcombo_baixo = 0
+		velocity.x = 0  # Garante que para completamente ao começar ataque
 	else:
 		contcombo_baixo += 1
 		if contcombo_baixo >= baixo_combo.size():

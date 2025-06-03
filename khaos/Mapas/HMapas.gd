@@ -24,7 +24,7 @@ func _ready():
 	
 	# Conecta os sinais dos personagens  
 	if p1 and p1.has_node("BarraDeVida"):
-		p1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
+		p1.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_enemy_morreu"))
 	if p2 and p2.has_node("BarraDeVida"):
 		p2.get_node("BarraDeVida").connect("jogador_morreu", Callable(self, "_on_jogador_morreu"))
 	
@@ -55,24 +55,25 @@ func _setup_camera():
 func _on_jogador_morreu(jogador_id):
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	if jogador_id == "Player":
-		vitoria_label.text = "[center][color=#FF0000]Defeat[/color][/center]"
-		conti.visible = false
-		restart.visible = true
-	else:
-		# Jogador ganhou
-		vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
-		victory.playing = true
-		conti.visible = true
-		restart.visible = false
-		Global.desbloquear_proximo_mapa()
-		
-		
+	vitoria_label.text = "[center][color=#00FF00]Victory[/color][/center]"
+	victory.playing = true
+	conti.visible = true
+	restart.visible = false
+	Global.desbloquear_proximo_mapa()
 	vitoria_canvas.visible = true
 	pause_menu.visible = false  
 	options.visible = false     
 
+func _on_enemy_morreu(jogador_id):
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	vitoria_label.text = "[center][color=#FF0000]Defeat[/color][/center]"
+	conti.visible = false
+	restart.visible = true
+	vitoria_canvas.visible = true
+	pause_menu.visible = false  
+	options.visible = false    
+	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if is_paused:
