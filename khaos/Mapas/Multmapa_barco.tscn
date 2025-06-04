@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b83f4f7wptg58"]
+[gd_scene load_steps=25 format=3 uid="uid://b83f4f7wptg58"]
 
 [ext_resource type="Script" uid="uid://dp5n4ipbvyt8j" path="res://Mapas/MultMapas.gd" id="1_yjd12"]
 [ext_resource type="Texture2D" uid="uid://d4haq4ixfd0sw" path="res://Assets/Cenários/Barco.png" id="2_3mk50"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b1stdee72g4e2" path="res://Assets/BtFundos/Fundo do login.png" id="10_ddeq4"]
 [ext_resource type="Script" uid="uid://do6p467fo7cm6" path="res://Mapas/dynamic_camera.gd" id="11_l6p0e"]
 [ext_resource type="Texture2D" uid="uid://bqaes3r3flsuf" path="res://Assets/icons/Icon.png" id="14_3d3wu"]
+[ext_resource type="AudioStream" uid="uid://cuvkb5jn7lxh" path="res://Assets/Msc/brutal-psycho-phonk-for-martial-arts-308471.mp3" id="21_l6p0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltyrb"]
 size = Vector2(3004, 20)
@@ -260,6 +261,11 @@ limit_top = 0
 limit_right = 1890
 limit_bottom = 650
 script = ExtResource("11_l6p0e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_l6p0e")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu_pausa/VBoxContainer/Options" to="." method="_on_options_pressed"]
